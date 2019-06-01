@@ -7,8 +7,6 @@
 
 [node name="YSort" type="YSort" parent="."]
 
-[node name="Doors" type="Node2D" parent="YSort"]
-
 [node name="Regions" type="YSort" parent="YSort"]
 
 [node name="SalaDeEstar" type="YSort" parent="YSort/Regions"]
@@ -61,6 +59,7 @@ texture = ExtResource( 1 )
 centered = false
 
 [node name="Garagem" type="YSort" parent="YSort/Regions"]
+editor/display_folded = true
 
 [node name="Ground" type="Sprite" parent="YSort/Regions/Garagem"]
 modulate = Color( 0.643137, 0.8, 0.654902, 1 )
