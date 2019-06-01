@@ -56,7 +56,6 @@ scale = Vector2( 3, 3 )
 texture = ExtResource( 3 )
 
 [node name="SalaDeMusica" type="YSort" parent="YSort/Regions"]
-editor/display_folded = true
 script = ExtResource( 2 )
 
 [node name="Ground2" type="Sprite" parent="YSort/Regions/SalaDeMusica"]
@@ -272,6 +271,7 @@ __meta__ = {
 shape = ExtResource( 7 )
 
 [node name="Player" parent="YSort" instance=ExtResource( 8 )]
+editor/display_folded = true
 position = Vector2( 572.102, 412.16 )
 
 [connection signal="body_entered" from="YSort/Regions/SalaDeJogos/DetectArea" to="YSort/Regions/SalaDeJogos" method="_on_DetectArea_body_entered"]
