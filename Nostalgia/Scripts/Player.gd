@@ -4,7 +4,7 @@ var speed = 450
 var motion = Vector2()
 
 func _ready():
-	pass
+	Global.player = self
 	
 func _process(delta):
 	move()
