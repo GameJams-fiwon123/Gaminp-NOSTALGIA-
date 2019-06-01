@@ -1,10 +1,13 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scripts/Regions.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Region.gd" type="Script" id=2]
 [ext_resource path="res://GFX/Piso.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/Door.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Shapes/WallVertical.tres" type="Shape2D" id=5]
+[ext_resource path="res://Shapes/WallVertical-half.tres" type="Shape2D" id=6]
+[ext_resource path="res://Shapes/WallHorizontal.tres" type="Shape2D" id=7]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1920, 540 )
@@ -14,6 +17,9 @@ extents = Vector2( 960, 540 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 1920, 540 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 10, 1080 )
 
 [node name="Terreo" type="Node2D"]
 
@@ -47,9 +53,11 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Regions/SalaDeEstar/DetectArea"]
+visible = false
 shape = SubResource( 1 )
 
 [node name="Banheiro" type="YSort" parent="YSort/Regions"]
+editor/display_folded = true
 script = ExtResource( 2 )
 
 [node name="Ground" type="Sprite" parent="YSort/Regions/Banheiro"]
@@ -70,6 +78,7 @@ __meta__ = {
 shape = SubResource( 2 )
 
 [node name="Garagem" type="YSort" parent="YSort/Regions"]
+editor/display_folded = true
 script = ExtResource( 2 )
 
 [node name="Ground" type="Sprite" parent="YSort/Regions/Garagem"]
@@ -90,6 +99,7 @@ __meta__ = {
 shape = SubResource( 2 )
 
 [node name="Lavanderia" type="YSort" parent="YSort/Regions"]
+editor/display_folded = true
 script = ExtResource( 2 )
 
 [node name="Ground" type="Sprite" parent="YSort/Regions/Lavanderia"]
@@ -110,6 +120,7 @@ __meta__ = {
 shape = SubResource( 2 )
 
 [node name="Cozinha" type="YSort" parent="YSort/Regions"]
+editor/display_folded = true
 script = ExtResource( 2 )
 
 [node name="Ground" type="Sprite" parent="YSort/Regions/Cozinha"]
@@ -192,7 +203,95 @@ rotation = 0.0
 position = Vector2( 736, 1080 )
 rotation = 0.0
 
-[node name="Player" parent="YSort" instance=ExtResource( 5 )]
+[node name="Walls" type="Node2D" parent="YSort/Regions"]
+z_index = 1
+
+[node name="Vertical" type="Node2D" parent="YSort/Regions/Walls"]
+editor/display_folded = true
+
+[node name="Wall" type="StaticBody2D" parent="YSort/Regions/Walls/Vertical"]
+collision_layer = 2
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Regions/Walls/Vertical/Wall"]
+shape = ExtResource( 5 )
+
+[node name="Wall3" type="StaticBody2D" parent="YSort/Regions/Walls/Vertical"]
+position = Vector2( 3840, 0 )
+collision_layer = 2
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Regions/Walls/Vertical/Wall3"]
+shape = ExtResource( 5 )
+
+[node name="Wall4" type="StaticBody2D" parent="YSort/Regions/Walls/Vertical"]
+position = Vector2( 1920, -540 )
+collision_layer = 2
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Regions/Walls/Vertical/Wall4"]
+shape = ExtResource( 6 )
+
+[node name="Wall5" type="StaticBody2D" parent="YSort/Regions/Walls/Vertical"]
+position = Vector2( 5760, -540 )
+collision_layer = 2
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Regions/Walls/Vertical/Wall5"]
+shape = ExtResource( 6 )
+
+[node name="Wall2" type="StaticBody2D" parent="YSort/Regions/Walls/Vertical"]
+position = Vector2( 7680, 0 )
+collision_layer = 2
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Regions/Walls/Vertical/Wall2"]
+shape = SubResource( 4 )
+
+[node name="Horizontal" type="Node2D" parent="YSort/Regions/Walls"]
+
+[node name="Wall6" type="StaticBody2D" parent="YSort/Regions/Walls/Horizontal"]
+editor/display_folded = true
+position = Vector2( 3840, 0 )
+collision_layer = 2
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Regions/Walls/Horizontal/Wall6"]
+shape = ExtResource( 7 )
+
+[node name="Wall7" type="StaticBody2D" parent="YSort/Regions/Walls/Horizontal"]
+position = Vector2( 3840, 1080 )
+collision_layer = 2
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Regions/Walls/Horizontal/Wall7"]
+shape = ExtResource( 7 )
+
+[node name="Wall8" type="StaticBody2D" parent="YSort/Regions/Walls/Horizontal"]
+position = Vector2( 3840, -1080 )
+collision_layer = 2
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Regions/Walls/Horizontal/Wall8"]
+shape = ExtResource( 7 )
+
+[node name="Player" parent="YSort" instance=ExtResource( 8 )]
 position = Vector2( 572.102, 412.16 )
 
 [connection signal="body_entered" from="YSort/Regions/SalaDeEstar/DetectArea" to="YSort/Regions/SalaDeEstar" method="_on_DetectArea_body_entered"]
