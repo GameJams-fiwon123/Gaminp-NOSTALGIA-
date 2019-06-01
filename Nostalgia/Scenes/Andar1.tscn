@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://GFX/Piso.png" type="Texture" id=2]
+[ext_resource path="res://GFX/Piso.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Door.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1920, 540 )
@@ -16,20 +17,15 @@ extents = Vector2( 960, 540 )
 
 [node name="YSort" type="YSort" parent="."]
 
-[node name="Player" parent="YSort" instance=ExtResource( 1 )]
-position = Vector2( 572.102, 412.16 )
-
-[node name="Camera2D" type="Camera2D" parent="YSort/Player"]
-current = true
-
 [node name="Regions" type="YSort" parent="YSort"]
 
 [node name="SalaDeJogos" type="YSort" parent="YSort/Regions"]
+editor/display_folded = true
 
 [node name="Ground" type="Sprite" parent="YSort/Regions/SalaDeJogos"]
 modulate = Color( 0.909804, 0.898039, 0.631373, 1 )
 scale = Vector2( 60, 16.875 )
-texture = ExtResource( 2 )
+texture = ExtResource( 1 )
 centered = false
 
 [node name="DetectArea" type="Area2D" parent="YSort/Regions/SalaDeJogos"]
@@ -41,36 +37,23 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Regions/SalaDeJogos/DetectArea"]
 shape = SubResource( 1 )
 
-[node name="Doors" type="YSort" parent="YSort/Regions/SalaDeJogos"]
-
-[node name="Door" type="Sprite" parent="YSort/Regions/SalaDeJogos/Doors"]
-position = Vector2( 2890, 20 )
-scale = Vector2( 3, 0.5 )
-texture = ExtResource( 2 )
-
 [node name="Stairs" type="YSort" parent="YSort/Regions/SalaDeJogos"]
 
 [node name="Stair" type="Sprite" parent="YSort/Regions/SalaDeJogos/Stairs"]
 modulate = Color( 0.517647, 0.356863, 0.0784314, 1 )
 position = Vector2( 120, 960 )
 scale = Vector2( 3, 3 )
-texture = ExtResource( 2 )
+texture = ExtResource( 1 )
 
 [node name="SalaDeMusica" type="YSort" parent="YSort/Regions"]
+editor/display_folded = true
 
 [node name="Ground2" type="Sprite" parent="YSort/Regions/SalaDeMusica"]
 modulate = Color( 0.737255, 0.631373, 0.909804, 1 )
 position = Vector2( 3840, 0 )
 scale = Vector2( 60, 16.875 )
-texture = ExtResource( 2 )
+texture = ExtResource( 1 )
 centered = false
-
-[node name="Doors" type="YSort" parent="YSort/Regions/SalaDeMusica"]
-
-[node name="Door" type="Sprite" parent="YSort/Regions/SalaDeMusica/Doors"]
-position = Vector2( 4740, 10 )
-scale = Vector2( 3, 0.5 )
-texture = ExtResource( 2 )
 
 [node name="Stairs" type="YSort" parent="YSort/Regions/SalaDeMusica"]
 
@@ -78,7 +61,7 @@ texture = ExtResource( 2 )
 modulate = Color( 0.517647, 0.356863, 0.0784314, 1 )
 position = Vector2( 7560, 970 )
 scale = Vector2( 3, 3 )
-texture = ExtResource( 2 )
+texture = ExtResource( 1 )
 
 [node name="DetectArea" type="Area2D" parent="YSort/Regions/SalaDeMusica"]
 position = Vector2( 5760, 540 )
@@ -90,21 +73,14 @@ __meta__ = {
 shape = SubResource( 2 )
 
 [node name="Sacada" type="YSort" parent="YSort/Regions"]
+editor/display_folded = true
 
 [node name="Ground" type="Sprite" parent="YSort/Regions/Sacada"]
 modulate = Color( 0.631373, 0.909804, 0.898039, 1 )
 position = Vector2( 5760, -1080 )
 scale = Vector2( 30, 16.875 )
-texture = ExtResource( 2 )
+texture = ExtResource( 1 )
 centered = false
-
-[node name="Doors" type="YSort" parent="YSort/Regions/Sacada"]
-
-[node name="Door" type="Sprite" parent="YSort/Regions/Sacada/Doors"]
-position = Vector2( 5780, -550 )
-rotation = 1.5708
-scale = Vector2( 3, 0.5 )
-texture = ExtResource( 2 )
 
 [node name="DetectArea" type="Area2D" parent="YSort/Regions/Sacada"]
 position = Vector2( 6720, -540 )
@@ -116,26 +92,14 @@ __meta__ = {
 shape = SubResource( 3 )
 
 [node name="Escritorio" type="YSort" parent="YSort/Regions"]
+editor/display_folded = true
 
 [node name="Ground" type="Sprite" parent="YSort/Regions/Escritorio"]
 modulate = Color( 0.631373, 0.760784, 0.909804, 1 )
 position = Vector2( 3840, -1080 )
 scale = Vector2( 30, 16.875 )
-texture = ExtResource( 2 )
+texture = ExtResource( 1 )
 centered = false
-
-[node name="Doors" type="YSort" parent="YSort/Regions/Escritorio"]
-
-[node name="Door" type="Sprite" parent="YSort/Regions/Escritorio/Doors"]
-position = Vector2( 5740, -550 )
-rotation = 1.5708
-scale = Vector2( 3, 0.5 )
-texture = ExtResource( 2 )
-
-[node name="Door2" type="Sprite" parent="YSort/Regions/Escritorio/Doors"]
-position = Vector2( 4740, -30 )
-scale = Vector2( 3, 0.5 )
-texture = ExtResource( 2 )
 
 [node name="DetectArea" type="Area2D" parent="YSort/Regions/Escritorio"]
 position = Vector2( 4800, -540 )
@@ -147,26 +111,14 @@ __meta__ = {
 shape = SubResource( 3 )
 
 [node name="Quarto" type="YSort" parent="YSort/Regions"]
+editor/display_folded = true
 
 [node name="Ground" type="Sprite" parent="YSort/Regions/Quarto"]
 modulate = Color( 0.631373, 0.909804, 0.72549, 1 )
 position = Vector2( 1920, -1080 )
 scale = Vector2( 30, 16.875 )
-texture = ExtResource( 2 )
+texture = ExtResource( 1 )
 centered = false
-
-[node name="Doors" type="YSort" parent="YSort/Regions/Quarto"]
-
-[node name="Door" type="Sprite" parent="YSort/Regions/Quarto/Doors"]
-position = Vector2( 1940, -620 )
-rotation = 1.5708
-scale = Vector2( 3, 0.5 )
-texture = ExtResource( 2 )
-
-[node name="Door2" type="Sprite" parent="YSort/Regions/Quarto/Doors"]
-position = Vector2( 2890, -20 )
-scale = Vector2( 3, 0.5 )
-texture = ExtResource( 2 )
 
 [node name="DetectArea" type="Area2D" parent="YSort/Regions/Quarto"]
 position = Vector2( 2880, -540 )
@@ -178,21 +130,14 @@ __meta__ = {
 shape = SubResource( 3 )
 
 [node name="Banheiro" type="YSort" parent="YSort/Regions"]
+editor/display_folded = true
 
 [node name="Ground" type="Sprite" parent="YSort/Regions/Banheiro"]
 modulate = Color( 0.909804, 0.631373, 0.631373, 1 )
 position = Vector2( 0, -1080 )
 scale = Vector2( 30, 16.875 )
-texture = ExtResource( 2 )
+texture = ExtResource( 1 )
 centered = false
-
-[node name="Doors2" type="YSort" parent="YSort/Regions/Banheiro"]
-
-[node name="Door" type="Sprite" parent="YSort/Regions/Banheiro/Doors2"]
-position = Vector2( 1900, -620 )
-rotation = 1.5708
-scale = Vector2( 3, 0.5 )
-texture = ExtResource( 2 )
 
 [node name="DetectArea2" type="Area2D" parent="YSort/Regions/Banheiro"]
 position = Vector2( 960, -540 )
@@ -202,4 +147,27 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Regions/Banheiro/DetectArea2"]
 shape = SubResource( 3 )
+
+[node name="Doors" type="YSort" parent="YSort/Regions"]
+
+[node name="Door" parent="YSort/Regions/Doors" instance=ExtResource( 2 )]
+position = Vector2( 1920, -620 )
+
+[node name="Door2" parent="YSort/Regions/Doors" instance=ExtResource( 2 )]
+position = Vector2( 5760, -480 )
+
+[node name="Door3" parent="YSort/Regions/Doors" instance=ExtResource( 2 )]
+position = Vector2( 4760, 0 )
+rotation = 0.0
+
+[node name="Door4" parent="YSort/Regions/Doors" instance=ExtResource( 2 )]
+position = Vector2( 2890, 0 )
+rotation = 0.0
+
+[node name="Player" parent="YSort" instance=ExtResource( 3 )]
+editor/display_folded = true
+position = Vector2( 572.102, 412.16 )
+
+[node name="Camera2D" type="Camera2D" parent="YSort/Player"]
+current = true
 
