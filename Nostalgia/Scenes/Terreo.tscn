@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://GFX/Piso.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 1920, 540 )
 
 [node name="Terreo" type="Node2D"]
 
@@ -49,6 +52,12 @@ position = Vector2( 112, 976 )
 scale = Vector2( 3, 3 )
 texture = ExtResource( 1 )
 
+[node name="DetectArea" type="Area2D" parent="YSort/Regions/SalaDeEstar"]
+position = Vector2( 1920, 540 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Regions/SalaDeEstar/DetectArea"]
+shape = SubResource( 1 )
+
 [node name="Banheiro" type="YSort" parent="YSort/Regions"]
 
 [node name="Ground" type="Sprite" parent="YSort/Regions/Banheiro"]
@@ -57,6 +66,20 @@ position = Vector2( 0, -1080 )
 scale = Vector2( 30, 16.875 )
 texture = ExtResource( 1 )
 centered = false
+
+[node name="Doors" type="YSort" parent="YSort/Regions/Banheiro"]
+
+[node name="Door" type="Sprite" parent="YSort/Regions/Banheiro/Doors"]
+position = Vector2( 1904, -640 )
+rotation = 1.5708
+scale = Vector2( 4, 0.5 )
+texture = ExtResource( 1 )
+
+[node name="DetectArea" type="Area2D" parent="YSort/Regions/Banheiro"]
+position = Vector2( 1920, 540 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Regions/Banheiro/DetectArea"]
+shape = SubResource( 1 )
 
 [node name="Garagem" type="YSort" parent="YSort/Regions"]
 editor/display_folded = true
