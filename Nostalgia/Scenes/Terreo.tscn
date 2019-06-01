@@ -184,6 +184,3 @@ rotation = 0.0
 [node name="Player" parent="YSort" instance=ExtResource( 3 )]
 position = Vector2( 572.102, 412.16 )
 
-[node name="Camera2D" type="Camera2D" parent="YSort/Player"]
-current = true
-

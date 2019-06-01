@@ -3,6 +3,8 @@ extends KinematicBody2D
 var speed = 450
 var motion = Vector2()
 
+onready var camera = $Camera2D
+
 func _ready():
 	Global.player = self
 	
