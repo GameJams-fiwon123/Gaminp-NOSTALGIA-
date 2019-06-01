@@ -81,7 +81,7 @@ script = ExtResource( 2 )
 
 [node name="Ground" type="Sprite" parent="YSort/Regions/Garagem"]
 modulate = Color( 0.643137, 0.8, 0.654902, 1 )
-position = Vector2( 1264, -352 )
+position = Vector2( 1280, -352 )
 scale = Vector2( 20.25, 11.125 )
 texture = ExtResource( 3 )
 centered = false
@@ -150,7 +150,7 @@ centered = false
 
 [node name="Stair" type="Sprite" parent="YSort/Regions/SalaDeJantar/Stairs2"]
 modulate = Color( 0.517647, 0.356863, 0.0784314, 1 )
-position = Vector2( 7552, 976 )
+position = Vector2( 4976, 960 )
 scale = Vector2( 3, 3 )
 texture = ExtResource( 3 )
 
@@ -167,23 +167,23 @@ shape = SubResource( 3 )
 [node name="Doors" type="YSort" parent="YSort/Regions"]
 
 [node name="Door" parent="YSort/Regions/Doors" instance=ExtResource( 4 )]
-position = Vector2( 3840, 560 )
+position = Vector2( 2560, 688 )
 
 [node name="Door2" parent="YSort/Regions/Doors" instance=ExtResource( 4 )]
-position = Vector2( 1920, -608 )
+position = Vector2( 2560, 0 )
 
 [node name="Door3" parent="YSort/Regions/Doors" instance=ExtResource( 4 )]
-position = Vector2( 3840, -608 )
+position = Vector2( 3840, 0 )
 
 [node name="Door4" parent="YSort/Regions/Doors" instance=ExtResource( 4 )]
-position = Vector2( 5760, -608 )
+position = Vector2( 1280, 16 )
 
 [node name="Door5" parent="YSort/Regions/Doors" instance=ExtResource( 4 )]
-position = Vector2( 6880, 0 )
+position = Vector2( 4608, 368 )
 rotation = 0.0
 
 [node name="Door6" parent="YSort/Regions/Doors" instance=ExtResource( 4 )]
-position = Vector2( 2912, 0 )
+position = Vector2( 1840, 368 )
 rotation = 0.0
 
 [node name="Door7" parent="YSort/Regions/Doors" instance=ExtResource( 4 )]
@@ -191,7 +191,7 @@ position = Vector2( 2896, 1080 )
 rotation = 0.0
 
 [node name="Door8" parent="YSort/Regions/Doors" instance=ExtResource( 4 )]
-position = Vector2( 6880, 1080 )
+position = Vector2( 2960, 368 )
 rotation = 0.0
 
 [node name="Door9" parent="YSort/Regions/Doors" instance=ExtResource( 4 )]
@@ -204,6 +204,7 @@ z_index = 1
 [node name="Vertical" type="Node2D" parent="YSort/Regions/Walls"]
 
 [node name="Wall" type="StaticBody2D" parent="YSort/Regions/Walls/Vertical"]
+position = Vector2( 0, 360 )
 collision_layer = 2
 __meta__ = {
 "_edit_group_": true
@@ -213,7 +214,7 @@ __meta__ = {
 shape = ExtResource( 5 )
 
 [node name="Wall3" type="StaticBody2D" parent="YSort/Regions/Walls/Vertical"]
-position = Vector2( 3840, 0 )
+position = Vector2( 5120, 360 )
 collision_layer = 2
 __meta__ = {
 "_edit_group_": true
@@ -223,7 +224,7 @@ __meta__ = {
 shape = ExtResource( 5 )
 
 [node name="Wall4" type="StaticBody2D" parent="YSort/Regions/Walls/Vertical"]
-position = Vector2( 1920, -540 )
+position = Vector2( 1280, 0 )
 collision_layer = 2
 __meta__ = {
 "_edit_group_": true
@@ -233,7 +234,7 @@ __meta__ = {
 shape = ExtResource( 6 )
 
 [node name="Wall5" type="StaticBody2D" parent="YSort/Regions/Walls/Vertical"]
-position = Vector2( 5760, -540 )
+position = Vector2( 3840, 0 )
 collision_layer = 2
 __meta__ = {
 "_edit_group_": true
@@ -243,7 +244,7 @@ __meta__ = {
 shape = ExtResource( 6 )
 
 [node name="Wall2" type="StaticBody2D" parent="YSort/Regions/Walls/Vertical"]
-position = Vector2( 3840, 0 )
+position = Vector2( 2560, 376 )
 collision_layer = 2
 __meta__ = {
 "_edit_group_": true
@@ -256,7 +257,7 @@ shape = SubResource( 4 )
 
 [node name="Wall6" type="StaticBody2D" parent="YSort/Regions/Walls/Horizontal"]
 editor/display_folded = true
-position = Vector2( 2560, 0 )
+position = Vector2( 2560, 368 )
 collision_layer = 2
 __meta__ = {
 "_edit_group_": true
