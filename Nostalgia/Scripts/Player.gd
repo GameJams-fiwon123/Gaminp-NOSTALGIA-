@@ -7,8 +7,6 @@ onready var camera = $Camera2D
 
 func _ready():
 	Global.player = self
-	if Global.actual_positon != null:
-		global_position = Global.actual_positon
 	
 func _process(delta):
 	move()

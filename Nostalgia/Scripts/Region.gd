@@ -14,4 +14,5 @@ func _ready():
 	maxY = $DetectArea.global_position.y + areaSize.y
 
 func _on_DetectArea_body_entered(body):
+	print(body.name)
 	get_parent().body_entered(body, self)

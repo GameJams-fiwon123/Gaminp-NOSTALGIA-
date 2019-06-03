@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scripts/Regions.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Region.gd" type="Script" id=2]
@@ -8,9 +8,6 @@
 [ext_resource path="res://Shapes/WallVertical.tres" type="Shape2D" id=6]
 [ext_resource path="res://Shapes/WallVertical-half.tres" type="Shape2D" id=7]
 [ext_resource path="res://Shapes/WallHorizontal.tres" type="Shape2D" id=8]
-[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=9]
-
-
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1280, 360 )
@@ -21,7 +18,7 @@ extents = Vector2( 1280, 360 )
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 640, 360 )
 
-[node name="Andar1" type="Node2D"]
+[node name="Andar1" type="YSort"]
 
 [node name="YSort" type="YSort" parent="."]
 
@@ -54,6 +51,7 @@ z_index = 1
 
 [node name="Stair" parent="YSort/Regions/SalaDeJogos/Stairs" instance=ExtResource( 4 )]
 position = Vector2( 170, 950 )
+index_comodo = 1
 
 [node name="SalaDeMusica" type="YSort" parent="YSort/Regions"]
 script = ExtResource( 2 )
@@ -70,6 +68,7 @@ z_index = 1
 
 [node name="Stair" parent="YSort/Regions/SalaDeMusica/Stairs" instance=ExtResource( 4 )]
 position = Vector2( 4970, 930 )
+index_comodo = 3
 teleport_comodo = 2
 
 [node name="DetectArea" type="Area2D" parent="YSort/Regions/SalaDeMusica"]
@@ -105,7 +104,6 @@ __meta__ = {
 shape = SubResource( 3 )
 
 [node name="Escritorio" type="YSort" parent="YSort/Regions"]
-editor/display_folded = true
 script = ExtResource( 2 )
 
 [node name="Ground" type="Sprite" parent="YSort/Regions/Escritorio"]
@@ -147,7 +145,6 @@ __meta__ = {
 shape = SubResource( 3 )
 
 [node name="Banheiro" type="YSort" parent="YSort/Regions"]
-editor/display_folded = true
 script = ExtResource( 2 )
 
 [node name="Ground" type="Sprite" parent="YSort/Regions/Banheiro"]
@@ -209,14 +206,15 @@ __meta__ = {
 shape = ExtResource( 6 )
 
 [node name="Wall3" type="StaticBody2D" parent="YSort/Regions/Walls/Vertical"]
-position = Vector2( 7680, 0 )
+position = Vector2( 7680, 10 )
 collision_layer = 2
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Regions/Walls/Vertical/Wall3"]
-shape = ExtResource( 6 )
+position = Vector2( -3850, -10 )
+shape = ExtResource( 7 )
 
 [node name="Wall4" type="StaticBody2D" parent="YSort/Regions/Walls/Vertical"]
 position = Vector2( 1270, -10 )
@@ -270,16 +268,9 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Regions/Walls/Horizontal/StaticBody2D3"]
 shape = ExtResource( 8 )
 
-[node name="Player" parent="YSort" instance=ExtResource( 9 )]
-editor/display_folded = true
-position = Vector2( 572.102, 412.16 )
-z_index = 2
-
 [connection signal="body_entered" from="YSort/Regions/SalaDeJogos/DetectArea" to="YSort/Regions/SalaDeJogos" method="_on_DetectArea_body_entered"]
 [connection signal="body_entered" from="YSort/Regions/SalaDeMusica/DetectArea" to="YSort/Regions/SalaDeMusica" method="_on_DetectArea_body_entered"]
 [connection signal="body_entered" from="YSort/Regions/Sacada/DetectArea" to="YSort/Regions/Sacada" method="_on_DetectArea_body_entered"]
 [connection signal="body_entered" from="YSort/Regions/Escritorio/DetectArea" to="YSort/Regions/Escritorio" method="_on_DetectArea_body_entered"]
 [connection signal="body_entered" from="YSort/Regions/Quarto/DetectArea" to="YSort/Regions/Quarto" method="_on_DetectArea_body_entered"]
 [connection signal="body_entered" from="YSort/Regions/Banheiro/DetectArea" to="YSort/Regions/Banheiro" method="_on_DetectArea_body_entered"]
-
-[editable path="YSort/Player"]
