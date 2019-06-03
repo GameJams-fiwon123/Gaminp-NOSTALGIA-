@@ -11,5 +11,5 @@ dest_files=[ "res://.import/varrendo.ogg-2c029f8fa4fdcf62632a813aa39978ce.oggstr
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

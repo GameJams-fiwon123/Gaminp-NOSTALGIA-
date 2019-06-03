@@ -11,5 +11,5 @@ dest_files=[ "res://.import/desentupindo.ogg-53ca204fe7e3294378a90072b14a1873.og
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Escada_Subindo.ogg-3b3b123d153c580708cc108413c634f3.
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

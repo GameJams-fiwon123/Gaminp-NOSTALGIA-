@@ -11,5 +11,5 @@ dest_files=[ "res://.import/pegar_item.ogg-292751378560c8954f8d3abe8638bb9f.oggs
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

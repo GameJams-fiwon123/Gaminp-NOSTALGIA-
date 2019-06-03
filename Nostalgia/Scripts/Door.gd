@@ -7,7 +7,6 @@ onready var position_enter = $EnterDetect/Position2D
 onready var position_exit = $ExitDetect/Position2D
 
 func _on_ExitDetect_body_entered(body):
-	print(body.name)
 	is_near_enter = true
 
 

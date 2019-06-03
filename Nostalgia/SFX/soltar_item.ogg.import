@@ -11,5 +11,5 @@ dest_files=[ "res://.import/soltar_item.ogg-5dbc6422c2136a0b2e9cadf429b73ddf.ogg
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

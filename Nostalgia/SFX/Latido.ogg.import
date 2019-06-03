@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Latido.ogg-98c977b55118d803bbfbe5285f3f3b39.oggstr" 
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

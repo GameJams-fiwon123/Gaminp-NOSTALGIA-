@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Alicate.ogg-aa69acd8978f96c06e50a4a375d8790d.oggstr"
+
+[deps]
+
+source_file="res://SFX/Alicate.ogg"
+dest_files=[ "res://.import/Alicate.ogg-aa69acd8978f96c06e50a4a375d8790d.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

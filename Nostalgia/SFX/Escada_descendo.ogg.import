@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Escada_descendo.ogg-3341f3edc573002ba8a986a5005ec2ac
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

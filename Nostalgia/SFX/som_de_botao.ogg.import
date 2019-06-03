@@ -11,5 +11,5 @@ dest_files=[ "res://.import/som_de_botao.ogg-a80878ec5d6516b785507472b40e9d6b.og
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
