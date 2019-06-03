@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Escada_descendo.ogg-3341f3edc573002ba8a986a5005ec2ac.oggstr"
+
+[deps]
+
+source_file="res://SFX/Escada_descendo.ogg"
+dest_files=[ "res://.import/Escada_descendo.ogg-3341f3edc573002ba8a986a5005ec2ac.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

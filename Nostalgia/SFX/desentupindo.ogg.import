@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/desentupindo.ogg-53ca204fe7e3294378a90072b14a1873.oggstr"
+
+[deps]
+
+source_file="res://SFX/desentupindo.ogg"
+dest_files=[ "res://.import/desentupindo.ogg-53ca204fe7e3294378a90072b14a1873.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

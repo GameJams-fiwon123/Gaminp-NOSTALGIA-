@@ -57,6 +57,7 @@ __meta__ = {
 shape = SubResource( 1 )
 
 [node name="Banheiro" type="YSort" parent="YSort/Regions"]
+editor/display_folded = true
 script = ExtResource( 2 )
 
 [node name="Ground" type="Sprite" parent="YSort/Regions/Banheiro"]
@@ -77,6 +78,7 @@ __meta__ = {
 shape = SubResource( 2 )
 
 [node name="Garagem" type="YSort" parent="YSort/Regions"]
+editor/display_folded = true
 script = ExtResource( 2 )
 
 [node name="Ground" type="Sprite" parent="YSort/Regions/Garagem"]
@@ -97,6 +99,7 @@ __meta__ = {
 shape = SubResource( 2 )
 
 [node name="Lavanderia" type="YSort" parent="YSort/Regions"]
+editor/display_folded = true
 script = ExtResource( 2 )
 
 [node name="Ground" type="Sprite" parent="YSort/Regions/Lavanderia"]
@@ -117,6 +120,7 @@ __meta__ = {
 shape = SubResource( 2 )
 
 [node name="Cozinha" type="YSort" parent="YSort/Regions"]
+editor/display_folded = true
 script = ExtResource( 2 )
 
 [node name="Ground" type="Sprite" parent="YSort/Regions/Cozinha"]
@@ -137,6 +141,7 @@ __meta__ = {
 shape = SubResource( 2 )
 
 [node name="SalaDeJantar" type="YSort" parent="YSort/Regions"]
+editor/display_folded = true
 script = ExtResource( 2 )
 
 [node name="Ground" type="Sprite" parent="YSort/Regions/SalaDeJantar"]
@@ -164,6 +169,7 @@ __meta__ = {
 shape = SubResource( 3 )
 
 [node name="Doors" type="YSort" parent="YSort/Regions"]
+editor/display_folded = true
 
 [node name="Door" parent="YSort/Regions/Doors" instance=ExtResource( 5 )]
 position = Vector2( 2560, 688 )
@@ -198,6 +204,7 @@ position = Vector2( 736, 1080 )
 rotation = 0.0
 
 [node name="Walls" type="Node2D" parent="YSort/Regions"]
+editor/display_folded = true
 z_index = 1
 
 [node name="Vertical" type="Node2D" parent="YSort/Regions/Walls"]

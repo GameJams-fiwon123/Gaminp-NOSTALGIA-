@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/varrendo.ogg-2c029f8fa4fdcf62632a813aa39978ce.oggstr"
+
+[deps]
+
+source_file="res://SFX/varrendo.ogg"
+dest_files=[ "res://.import/varrendo.ogg-2c029f8fa4fdcf62632a813aa39978ce.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
