@@ -4,7 +4,7 @@ var can_catch = false
 
 func _input(event):
 	if Input.is_action_just_pressed("interact") and can_catch:
-		Global.game.catch_ball()
+		Global.game.catch_ball($Sprite.texture)
 		queue_free()
 
 func _on_Detect_body_entered(body):

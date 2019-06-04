@@ -33,4 +33,5 @@ func _input(event):
 			Global.player.global_position = position_exit.global_position
 			is_near_exit = false
 	elif Global.game.has_bath_key:
+		Global.game.remove_item(6)
 		is_locked = false

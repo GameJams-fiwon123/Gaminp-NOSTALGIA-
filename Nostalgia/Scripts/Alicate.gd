@@ -4,7 +4,7 @@ var can_interact = false
 
 func _input(event):
 	if Input.is_action_just_pressed("interact") and can_interact:
-		Global.game.catch_alicate()
+		Global.game.catch_alicate($Sprite.texture)
 		can_interact = false
 		queue_free()
 

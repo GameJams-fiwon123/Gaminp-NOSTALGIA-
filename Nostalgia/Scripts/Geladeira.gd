@@ -6,6 +6,7 @@ var can_interact = false
 func _input(event):
 	if Input.is_action_just_pressed("interact") and can_interact:
 		if Global.game.has_ladder and has_photo:
+			Global.game.remove_item(2)
 			Global.game.catch_photo()
 			has_photo = false
 		else:

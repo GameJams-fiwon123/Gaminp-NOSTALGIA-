@@ -2,6 +2,7 @@ extends Node
 
 var player
 var game
+var hud
 
 #IN GAME
 var stairs_positions = [Vector2(), Vector2(), Vector2(), Vector2()]
