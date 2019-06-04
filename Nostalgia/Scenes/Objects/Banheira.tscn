@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scripts/Banheira.gd" type="Script" id=1]
+[ext_resource path="res://GFX/Piso.png" type="Texture" id=2]
+[ext_resource path="res://GFX/Font/RPGSystem.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 162.319, 40.7301 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 197.005, 76.0822 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 32
+font_data = ExtResource( 3 )
+
+[node name="Banheira" type="StaticBody2D"]
+collision_layer = 2
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 144.294, 28.8588 )
+scale = Vector2( 5.50919, 1.90184 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 145.549, 42.6354 )
+shape = SubResource( 1 )
+
+[node name="Detect" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detect"]
+position = Vector2( 143.343, 29.4037 )
+shape = SubResource( 2 )
+
+[node name="Label" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 14.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "BANHEIRA"
+
+[connection signal="body_entered" from="Detect" to="." method="_on_Detect_body_entered"]
+[connection signal="body_exited" from="Detect" to="." method="_on_Detect_body_exited"]

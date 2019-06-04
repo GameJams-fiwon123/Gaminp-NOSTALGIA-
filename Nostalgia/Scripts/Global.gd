@@ -6,6 +6,10 @@ var game
 #IN GAME
 var stairs_positions = [Vector2(), Vector2(), Vector2(), Vector2()]
 
+#Dog
+var navigation
+var destinations
+
 #Floors
 var andar1 = "res://Scenes/Floors/Andar1.tscn"
 var terreo = "res://Scenes/Floors/Terreo.tscn"

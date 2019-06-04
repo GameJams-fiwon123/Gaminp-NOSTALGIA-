@@ -32,7 +32,7 @@ position = Vector2( -0.00011584, -32 )
 shape = SubResource( 2 )
 
 [node name="Position2D" type="Position2D" parent="EnterDetect"]
-position = Vector2( -0.000411987, -112 )
+position = Vector2( 0.000404358, 112.939 )
 
 [node name="ExitDetect" type="Area2D" parent="."]
 collision_layer = 2
@@ -42,7 +42,7 @@ position = Vector2( 0.000116348, 32 )
 shape = SubResource( 3 )
 
 [node name="Position2D" type="Position2D" parent="ExitDetect"]
-position = Vector2( 0.000404358, 112 )
+position = Vector2( -2.94083, -126.17 )
 
 [connection signal="body_entered" from="EnterDetect" to="." method="_on_EnterDetect_body_entered"]
 [connection signal="body_exited" from="EnterDetect" to="." method="_on_EnterDetect_body_exited"]

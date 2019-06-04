@@ -10,7 +10,7 @@ func _ready():
 
 func _input(event):
 	if event is InputEventKey:
-		if Input.is_action_pressed("interact") and is_enter:
+		if Input.is_action_just_pressed("interact") and is_enter:
 				Global.game.teleport(teleport_comodo)
 				is_enter = false
 				

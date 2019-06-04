@@ -1,24 +1,39 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Scripts/Game.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Floors/Terreo.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Floors/Andar1.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Objects/Ball.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Objects/Gaveta.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Objects/Geladeira.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Objects/Alicate.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Objects/Ladder.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Objects/Sofa.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Objects/Partitura.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/Objects/Piano.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/Objects/CriadoMudo.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/Objects/Armario.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/Objects/Cama.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/Objects/Mesa.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Scenes/Objects/Key.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Scenes/Objects/Desentupidor.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Scenes/Objects/Banheira.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Scripts/Navigation2D.gd" type="Script" id=20]
+[ext_resource path="res://Scripts/Destinations.gd" type="Script" id=21]
 
+[sub_resource type="NavigationPolygon" id=1]
+vertices = PoolVector2Array( 426.599, 600.931, 2461.9, 593.756, 2476.51, 1022.28, 415.062, 1011.12 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+outlines = [ PoolVector2Array( 426.599, 600.931, 2461.9, 593.756, 2476.51, 1022.28, 415.062, 1011.12 ) ]
 
-
-
-
-
-
-[node name="Game" type="Node2D"]
+[node name="Level1" type="Node2D"]
 script = ExtResource( 1 )
 
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Player" parent="YSort" instance=ExtResource( 2 )]
-position = Vector2( 4950, 928 )
+position = Vector2( 1689.13, 133.645 )
 z_index = 2
 
 [node name="Terreo" parent="YSort" instance=ExtResource( 3 )]
@@ -30,11 +45,81 @@ position = Vector2( 0, -2880 )
 editor/display_folded = true
 
 [node name="Ball" parent="YSort/Balls" instance=ExtResource( 5 )]
-position = Vector2( 4940, 680 )
+position = Vector2( 4990.54, 724.613 )
 
 [node name="Ball2" parent="YSort/Balls" instance=ExtResource( 5 )]
-position = Vector2( 1400, 260 )
+position = Vector2( 1466.81, 252.968 )
 
 [node name="Ball3" parent="YSort/Balls" instance=ExtResource( 5 )]
 position = Vector2( 5020, -2620 )
+
+[node name="Gaveta" parent="YSort" instance=ExtResource( 6 )]
+position = Vector2( 999.27, -2473.71 )
+
+[node name="Geladeira" parent="YSort" instance=ExtResource( 7 )]
+position = Vector2( 4335.79, -280.801 )
+
+[node name="Alicate" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 120.208, -3112.71 )
+
+[node name="Ladder" parent="." instance=ExtResource( 9 )]
+position = Vector2( 4958.02, -3118.08 )
+
+[node name="Sofa" parent="." instance=ExtResource( 10 )]
+position = Vector2( 839.212, 433.774 )
+
+[node name="Partitura" parent="Sofa" instance=ExtResource( 11 )]
+position = Vector2( 214.283, 13.6362 )
+
+[node name="Piano" parent="." instance=ExtResource( 12 )]
+position = Vector2( 3862.48, -2450.92 )
+
+[node name="CriadoMudo" parent="." instance=ExtResource( 13 )]
+position = Vector2( 2118.55, -3173.61 )
+
+[node name="Armario" parent="." instance=ExtResource( 14 )]
+position = Vector2( 2866.18, -289.675 )
+
+[node name="Cama" parent="." instance=ExtResource( 15 )]
+position = Vector2( 1712.37, -3179.62 )
+
+[node name="Mesa" parent="." instance=ExtResource( 16 )]
+position = Vector2( 3013.86, -3176.45 )
+
+[node name="Key" parent="Mesa" instance=ExtResource( 17 )]
+position = Vector2( 302.297, -2.43091 )
+
+[node name="Desentupidor" parent="." instance=ExtResource( 18 )]
+position = Vector2( 3516.29, -280.24 )
+
+[node name="Banheira" parent="." instance=ExtResource( 19 )]
+position = Vector2( 105.9, 204.965 )
+
+[node name="Navigation2D" type="Navigation2D" parent="."]
+script = ExtResource( 20 )
+
+[node name="Destinations" type="NavigationPolygonInstance" parent="Navigation2D"]
+navpoly = SubResource( 1 )
+script = ExtResource( 21 )
+
+[node name="Position2D" type="Position2D" parent="Navigation2D/Destinations"]
+position = Vector2( 535.732, 710.323 )
+
+[node name="Position2D2" type="Position2D" parent="Navigation2D/Destinations"]
+position = Vector2( 2078.35, 906.439 )
+
+[node name="Position2D3" type="Position2D" parent="Navigation2D/Destinations"]
+position = Vector2( 1358.46, 741.414 )
+
+[node name="Position2D4" type="Position2D" parent="Navigation2D/Destinations"]
+position = Vector2( 2111.84, 739.023 )
+
+[node name="Position2D5" type="Position2D" parent="Navigation2D/Destinations"]
+position = Vector2( 973.406, 908.831 )
+
+[node name="Position2D6" type="Position2D" parent="Navigation2D/Destinations"]
+position = Vector2( 1614.37, 884.914 )
+
+[node name="Position2D7" type="Position2D" parent="Navigation2D/Destinations"]
+position = Vector2( 593.131, 870.564 )
 
