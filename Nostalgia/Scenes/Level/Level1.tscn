@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Scripts/Game.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=2]
@@ -21,6 +21,7 @@
 [ext_resource path="res://Scenes/Objects/Banheira.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Scripts/Navigation2D.gd" type="Script" id=20]
 [ext_resource path="res://Scripts/Destinations.gd" type="Script" id=21]
+[ext_resource path="res://Scenes/HUD.tscn" type="PackedScene" id=22]
 
 [sub_resource type="NavigationPolygon" id=1]
 vertices = PoolVector2Array( 426.599, 600.931, 2461.9, 593.756, 2476.51, 1022.28, 415.062, 1011.12 )
@@ -96,6 +97,7 @@ position = Vector2( 3516.29, -280.24 )
 position = Vector2( 105.9, 204.965 )
 
 [node name="Navigation2D" type="Navigation2D" parent="."]
+editor/display_folded = true
 script = ExtResource( 20 )
 
 [node name="Destinations" type="NavigationPolygonInstance" parent="Navigation2D"]
@@ -122,4 +124,6 @@ position = Vector2( 1614.37, 884.914 )
 
 [node name="Position2D7" type="Position2D" parent="Navigation2D/Destinations"]
 position = Vector2( 593.131, 870.564 )
+
+[node name="HUD" parent="." instance=ExtResource( 22 )]
 
