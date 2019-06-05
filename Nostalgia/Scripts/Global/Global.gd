@@ -7,6 +7,11 @@ var hud
 #IN GAME
 var stairs_positions = [Vector2(), Vector2(), Vector2(), Vector2()]
 
+#AUDIOS
+onready var audio = $AudioStreamPlayer
+var audio_main_menu = "res://SFX/Screens/Scrapbook-Tela_Titulo.ogg"
+var audio_game = "res://SFX/Gameplay/Scrapbook-Moving_Day.ogg"
+
 #Dog
 var navigation
 var destinations
