@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Scrapbook-Final.ogg-6ba6445dcb6410ae4915eb9842383c10.oggstr"
+
+[deps]
+
+source_file="res://SFX/Screens/Scrapbook-Final.ogg"
+dest_files=[ "res://.import/Scrapbook-Final.ogg-6ba6445dcb6410ae4915eb9842383c10.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

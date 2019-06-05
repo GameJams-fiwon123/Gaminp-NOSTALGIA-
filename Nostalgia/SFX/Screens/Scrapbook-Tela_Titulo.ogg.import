@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Scrapbook-Tela_Titulo.ogg-4bb21f566046a9f6e291b3c723c54a1a.oggstr"
+
+[deps]
+
+source_file="res://SFX/Screens/Scrapbook-Tela_Titulo.ogg"
+dest_files=[ "res://.import/Scrapbook-Tela_Titulo.ogg-4bb21f566046a9f6e291b3c723c54a1a.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Melodia_do_Piano.ogg-ea1d396537bd1d96e8f25b3e9e4cff5
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

@@ -2,10 +2,15 @@ extends StaticBody2D
 
 export(bool) var is_locked = false
 
+var audio_destrancar = "res://SFX/Destrancar.ogg"
+var audio_porta = "res://SFX/porta.ogg"
+
 var is_near_enter = false
 var is_near_exit = false
 
 var can_interact = false
+
+onready var audio = $AudioStreamPlayer
 
 onready var position_enter = $EnterDetect/Position2D
 onready var position_exit = $ExitDetect/Position2D
@@ -38,6 +43,11 @@ func _input(event):
 		elif is_near_exit:
 			Global.player.global_position = position_exit.global_position
 			is_near_exit = false
-	elif Global.game.has_bath_key and can_interact and is_locked:
+			
+		audio.stream = load(audio_porta)
+		audio.play()
+	elif Input.is_action_just_pressed("interact") and Global.game.has_bath_key and can_interact and is_locked:
 		Global.game.remove_item()
+		audio.stream = load(audio_destrancar)
+		audio.play()
 		is_locked = false

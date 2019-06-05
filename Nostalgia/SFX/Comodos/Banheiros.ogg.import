@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Banheiros.ogg-c2624a0c5d1837f38291e7d4d6f2cd7d.oggstr"
+
+[deps]
+
+source_file="res://SFX/Comodos/Banheiros.ogg"
+dest_files=[ "res://.import/Banheiros.ogg-c2624a0c5d1837f38291e7d4d6f2cd7d.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

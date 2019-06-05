@@ -139,6 +139,9 @@ texture = ExtResource( 24 )
 [node name="BathKey" parent="." instance=ExtResource( 25 )]
 position = Vector2( 3321.81, -3172.73 )
 
+[node name="BathKey2" parent="." instance=ExtResource( 25 )]
+position = Vector2( 1556.55, -53.0007 )
+
 
 [editable path="Balls/Ball"]
 

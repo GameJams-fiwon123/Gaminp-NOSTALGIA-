@@ -44,6 +44,8 @@ shape = SubResource( 3 )
 [node name="Position2D" type="Position2D" parent="ExitDetect"]
 position = Vector2( -2.94083, -126.17 )
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
 [connection signal="body_entered" from="EnterDetect" to="." method="_on_EnterDetect_body_entered"]
 [connection signal="body_exited" from="EnterDetect" to="." method="_on_EnterDetect_body_exited"]
 [connection signal="body_entered" from="ExitDetect" to="." method="_on_ExitDetect_body_entered"]

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Destrancar.ogg-5fafd564526273ce66ebac8aa88fee11.oggstr"
+
+[deps]
+
+source_file="res://SFX/Destrancar.ogg"
+dest_files=[ "res://.import/Destrancar.ogg-5fafd564526273ce66ebac8aa88fee11.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
