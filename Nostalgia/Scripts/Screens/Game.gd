@@ -24,6 +24,9 @@ const VASSOURA = 5
 const BATH_KEY = 6
 const DESENTUPIDOR = 7
 
+var audio_item = "res://SFX/pegar_item.ogg"
+onready var audio = $AudioStreamPlayer
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Global.game = self
@@ -70,6 +73,9 @@ func add_item(object):
 
 # ITEMS	
 func catch_item(object):
+	audio.stream = load(audio_item)
+	audio.play()
+	
 	match (object.index):
 		BALL:
 			has_ball = true

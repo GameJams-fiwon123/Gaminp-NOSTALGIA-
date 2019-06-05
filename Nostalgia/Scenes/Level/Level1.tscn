@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Scripts/Screens/Game.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=2]
@@ -25,6 +25,7 @@
 [ext_resource path="res://GFX/2.png" type="Texture" id=23]
 [ext_resource path="res://GFX/3.png" type="Texture" id=24]
 [ext_resource path="res://Scenes/Objects/Pegaveis/BathKey.tscn" type="PackedScene" id=25]
+[ext_resource path="res://SFX/pegar_item.ogg" type="AudioStream" id=26]
 
 [sub_resource type="NavigationPolygon" id=1]
 vertices = PoolVector2Array( 426.599, 600.931, 2461.9, 593.756, 2476.51, 1022.28, 415.062, 1011.12 )
@@ -139,8 +140,8 @@ texture = ExtResource( 24 )
 [node name="BathKey" parent="." instance=ExtResource( 25 )]
 position = Vector2( 3321.81, -3172.73 )
 
-[node name="BathKey2" parent="." instance=ExtResource( 25 )]
-position = Vector2( 1556.55, -53.0007 )
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 26 )
 
 
 [editable path="Balls/Ball"]

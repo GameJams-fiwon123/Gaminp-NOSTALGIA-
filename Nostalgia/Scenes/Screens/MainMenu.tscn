@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/Screens/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://GFX/Font/RPGSystem.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://SFX/som_de_botao.ogg" type="AudioStream" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 100
@@ -54,6 +55,9 @@ custom_fonts/font = SubResource( 2 )
 text = "Start"
 flat = true
 
+[node name="AudioButtonStart" type="AudioStreamPlayer" parent="ColorRect/VBoxContainer2/VBoxContainer/ButtonStart"]
+stream = ExtResource( 3 )
+
 [node name="ButtonCredits" type="Button" parent="ColorRect/VBoxContainer2/VBoxContainer"]
 margin_top = 61.0
 margin_right = 378.0
@@ -61,6 +65,9 @@ margin_bottom = 107.0
 custom_fonts/font = SubResource( 2 )
 text = "Credits"
 flat = true
+
+[node name="AudioButtonCredis" type="AudioStreamPlayer" parent="ColorRect/VBoxContainer2/VBoxContainer/ButtonCredits"]
+stream = ExtResource( 3 )
 
 [node name="ButtonExit" type="Button" parent="ColorRect/VBoxContainer2/VBoxContainer"]
 margin_top = 122.0
@@ -70,6 +77,12 @@ custom_fonts/font = SubResource( 2 )
 text = "Exit"
 flat = true
 
+[node name="AudioButtonExit" type="AudioStreamPlayer" parent="ColorRect/VBoxContainer2/VBoxContainer/ButtonExit"]
+stream = ExtResource( 3 )
+
 [connection signal="pressed" from="ColorRect/VBoxContainer2/VBoxContainer/ButtonStart" to="." method="_on_ButtonStart_pressed"]
+[connection signal="finished" from="ColorRect/VBoxContainer2/VBoxContainer/ButtonStart/AudioButtonStart" to="." method="_on_AudioButtonStart_finished"]
 [connection signal="pressed" from="ColorRect/VBoxContainer2/VBoxContainer/ButtonCredits" to="." method="_on_ButtonCredits_pressed"]
+[connection signal="finished" from="ColorRect/VBoxContainer2/VBoxContainer/ButtonCredits/AudioButtonCredis" to="." method="_on_AudioButtonCredis_finished"]
 [connection signal="pressed" from="ColorRect/VBoxContainer2/VBoxContainer/ButtonExit" to="." method="_on_ButtonExit_pressed"]
+[connection signal="finished" from="ColorRect/VBoxContainer2/VBoxContainer/ButtonExit/AudioButtonExit" to="." method="_on_AudioButtonExit_finished"]

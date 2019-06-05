@@ -45,5 +45,7 @@ custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Cama"
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
 [connection signal="body_entered" from="Detect" to="." method="_on_Detect_body_entered"]
 [connection signal="body_exited" from="Detect" to="." method="_on_Detect_body_exited"]

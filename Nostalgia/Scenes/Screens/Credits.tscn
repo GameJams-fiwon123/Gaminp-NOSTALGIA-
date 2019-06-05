@@ -1,8 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/Screens/Credits.gd" type="Script" id=1]
 [ext_resource path="res://GFX/Font/RPGSystem.ttf" type="DynamicFontData" id=2]
-
+[ext_resource path="res://SFX/som_de_botao.ogg" type="AudioStream" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 100
@@ -86,4 +86,8 @@ custom_fonts/font = SubResource( 3 )
 text = "Go Back"
 flat = true
 
+[node name="AudioButtonGoBack" type="AudioStreamPlayer" parent="ColorRect/ButtonGoBack"]
+stream = ExtResource( 3 )
+
 [connection signal="pressed" from="ColorRect/ButtonGoBack" to="." method="_on_ButtonGoBack_pressed"]
+[connection signal="finished" from="ColorRect/ButtonGoBack/AudioButtonGoBack" to="." method="_on_ButtonGoBack_finished"]
