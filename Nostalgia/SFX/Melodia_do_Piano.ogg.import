@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Melodia_do_Piano.ogg-ea1d396537bd1d96e8f25b3e9e4cff5f.oggstr"
+
+[deps]
+
+source_file="res://SFX/Melodia_do_Piano.ogg"
+dest_files=[ "res://.import/Melodia_do_Piano.ogg-ea1d396537bd1d96e8f25b3e9e4cff5f.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Piso.png-468e51c6957d3895c574c25e028fc745.stex"
+path="res://.import/8.png-351616f25ced9a79e61771a1e8692192.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GFX/Piso.png"
-dest_files=[ "res://.import/Piso.png-468e51c6957d3895c574c25e028fc745.stex" ]
+source_file="res://GFX/8.png"
+dest_files=[ "res://.import/8.png-351616f25ced9a79e61771a1e8692192.stex" ]
 
 [params]
 

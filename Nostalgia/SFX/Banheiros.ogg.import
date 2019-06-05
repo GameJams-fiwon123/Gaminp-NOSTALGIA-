@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Banheiros.ogg-9f09b098c97052517dc8b2dac49980a7.oggstr"
+
+[deps]
+
+source_file="res://SFX/Banheiros.ogg"
+dest_files=[ "res://.import/Banheiros.ogg-9f09b098c97052517dc8b2dac49980a7.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

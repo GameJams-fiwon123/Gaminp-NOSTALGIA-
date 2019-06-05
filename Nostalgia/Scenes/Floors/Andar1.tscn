@@ -1,13 +1,18 @@
 [gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://Scripts/Regions.gd" type="Script" id=1]
-[ext_resource path="res://Scripts/Region.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/Navigation/Regions.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Navigation/Region.gd" type="Script" id=2]
 [ext_resource path="res://GFX/Piso.png" type="Texture" id=3]
-[ext_resource path="res://Scenes/Objects/Stair.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/Objects/Door.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Objects/Interact/Stair.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Objects/Interact/Door.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Shapes/WallVertical.tres" type="Shape2D" id=6]
 [ext_resource path="res://Shapes/WallVertical-half.tres" type="Shape2D" id=7]
 [ext_resource path="res://Shapes/WallHorizontal.tres" type="Shape2D" id=8]
+
+
+
+
+
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1280, 360 )

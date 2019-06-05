@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Porta_Batendo.ogg-e9e6fbae9f2b64709225b3d06b11cf13.oggstr"
+
+[deps]
+
+source_file="res://SFX/Porta_Batendo.ogg"
+dest_files=[ "res://.import/Porta_Batendo.ogg-e9e6fbae9f2b64709225b3d06b11cf13.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

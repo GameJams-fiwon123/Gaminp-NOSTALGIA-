@@ -1,0 +1,69 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scripts/Screens/HUD.gd" type="Script" id=1]
+[ext_resource path="res://GFX/Photo/foto_background.png" type="Texture" id=2]
+[ext_resource path="res://GFX/Photo/foto.png" type="Texture" id=3]
+[ext_resource path="res://GFX/Font/RPGSystem.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://GFX/Slot.png" type="Texture" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 4 )
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource( 1 )
+
+[node name="Control" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="TextureProgress" type="TextureProgress" parent="Control"]
+modulate = Color( 1, 1, 1, 0.784314 )
+margin_left = 59.4244
+margin_top = 549.629
+margin_right = 187.424
+margin_bottom = 621.629
+rect_scale = Vector2( 1.5, 1.5 )
+max_value = 6.0
+texture_under = ExtResource( 2 )
+texture_progress = ExtResource( 3 )
+fill_mode = 4
+
+[node name="Label" type="Label" parent="Control/TextureProgress"]
+margin_left = 42.5005
+margin_top = 20.1133
+margin_right = 96.5005
+margin_bottom = 50.1133
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "FOTO"
+
+[node name="SlotItem" type="TextureRect" parent="Control"]
+modulate = Color( 1, 1, 1, 0.784314 )
+margin_left = 1098.07
+margin_top = 24.5009
+margin_right = 1226.07
+margin_bottom = 152.501
+texture = ExtResource( 5 )
+expand = true
+
+[node name="Label2" type="Label" parent="Control/SlotItem"]
+margin_left = 38.606
+margin_top = -7.6435
+margin_right = 92.606
+margin_bottom = 22.3565
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Item"
+
+[node name="Item" type="TextureRect" parent="Control/SlotItem"]
+modulate = Color( 1, 1, 1, 0.784314 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -37.0
+margin_top = -37.0
+margin_right = 37.0
+margin_bottom = 37.0
+

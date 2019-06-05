@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Piso.png-468e51c6957d3895c574c25e028fc745.stex"
+path="res://.import/desentupidor.png-eebb405bf8a9a2fe3f78b11e44b597ed.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GFX/Piso.png"
-dest_files=[ "res://.import/Piso.png-468e51c6957d3895c574c25e028fc745.stex" ]
+source_file="res://GFX/desentupidor.png"
+dest_files=[ "res://.import/desentupidor.png-eebb405bf8a9a2fe3f78b11e44b597ed.stex" ]
 
 [params]
 

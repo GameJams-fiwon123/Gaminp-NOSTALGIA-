@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Piso.png-468e51c6957d3895c574c25e028fc745.stex"
+path="res://.import/ladder.png-87c07a1886b9a4949e51b0e9ebcce543.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GFX/Piso.png"
-dest_files=[ "res://.import/Piso.png-468e51c6957d3895c574c25e028fc745.stex" ]
+source_file="res://GFX/ladder.png"
+dest_files=[ "res://.import/ladder.png-87c07a1886b9a4949e51b0e9ebcce543.stex" ]
 
 [params]
 

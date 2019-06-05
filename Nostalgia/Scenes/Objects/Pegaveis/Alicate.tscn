@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scripts/Pegaveis/Alicate.gd" type="Script" id=1]
+[ext_resource path="res://GFX/Font/RPGSystem.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://GFX/4.png" type="Texture" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 2 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 29.1376, 30.5803 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 40.8172, 37.9569 )
+
+[node name="Alicate" type="StaticBody2D"]
+z_index = 1
+collision_layer = 2
+script = ExtResource( 1 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = -20.1528
+margin_top = -53.3877
+margin_right = 19.8472
+margin_bottom = -38.3877
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Alicate"
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
+
+[node name="Detect" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detect"]
+shape = SubResource( 3 )
+
+[connection signal="body_entered" from="Detect" to="." method="_on_Detect_body_entered"]
+[connection signal="body_exited" from="Detect" to="." method="_on_Detect_body_exited"]
