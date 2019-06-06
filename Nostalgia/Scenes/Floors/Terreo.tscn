@@ -49,7 +49,7 @@ index_type = 1
 teleport_comodo = 1
 
 [node name="DetectArea" type="Area2D" parent="YSort/Regions/SalaDeEstar"]
-position = Vector2( 1280, 717.482 )
+position = Vector2( 1280, 727.482 )
 collision_layer = 4
 __meta__ = {
 "_edit_group_": true
@@ -165,7 +165,7 @@ index_comodo = 2
 teleport_comodo = 3
 
 [node name="DetectArea" type="Area2D" parent="YSort/Regions/SalaDeJantar"]
-position = Vector2( 3840, 720 )
+position = Vector2( 3840, 725 )
 collision_layer = 4
 __meta__ = {
 "_edit_group_": true
