@@ -89,6 +89,10 @@ func catch_item(object):
 	audio.stream = load(audio_pegar)
 	audio.play()
 	
+	if ref_object != null:	
+		ref_object.global_position = object.global_position
+		remove_item()
+	
 	match (object.index):
 		BALL:
 			has_ball = true
@@ -106,10 +110,6 @@ func catch_item(object):
 			has_bath_key = true
 		DESENTUPIDOR:
 			has_desentupidor = true
-			
-	if ref_object != null:	
-		ref_object.global_position = object.global_position
-		remove_item()
 	
 	add_item(object)
 	
