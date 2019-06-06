@@ -48,7 +48,6 @@ anchor_bottom = 1.0
 color = Color( 0, 0, 0, 0 )
 
 [node name="TextureProgress" type="TextureProgress" parent="Control"]
-modulate = Color( 1, 1, 1, 0.784314 )
 margin_left = 59.4244
 margin_top = 549.629
 margin_right = 187.424
@@ -69,7 +68,6 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "FOTO"
 
 [node name="SlotItem" type="TextureRect" parent="Control"]
-modulate = Color( 1, 1, 1, 0.784314 )
 margin_left = 1098.07
 margin_top = 24.5009
 margin_right = 1226.07
@@ -87,7 +85,6 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Item"
 
 [node name="Item" type="TextureRect" parent="Control/SlotItem"]
-modulate = Color( 1, 1, 1, 0.784314 )
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
