@@ -7,7 +7,7 @@ func _input(event):
 	if Input.is_action_just_pressed("interact") and can_interact:
 		if Global.game.has_ladder and has_photo:
 			Global.game.drop_item()
-			Global.game.catch_photo()
+			$Photo.global_position = $SpawnPhoto.global_position
 			has_photo = false
 		else:
 			print("precisa de escada")

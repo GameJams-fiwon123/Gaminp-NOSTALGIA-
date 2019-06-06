@@ -42,6 +42,8 @@ text = "Cama"
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PoolVector2Array( 21.2968, 33.1594, 17.5142, 274.7, 207.548, 272.933, 198.535, 30.998 )
 
+[node name="SpawnPhoto" type="Position2D" parent="."]
+
 [connection signal="body_entered" from="Detect" to="." method="_on_Detect_body_entered"]
 [connection signal="body_exited" from="Detect" to="." method="_on_Detect_body_exited"]
 [connection signal="finished" from="AudioStreamPlayer" to="." method="_on_AudioStreamPlayer_finished"]

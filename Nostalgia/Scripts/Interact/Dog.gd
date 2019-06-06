@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+var photo = preload("res://Scenes/Objects/Pegaveis/Photo.tscn")
+
 var has_photo = true
 var can_interact = false
 
@@ -74,7 +76,10 @@ func _on_Timer_timeout():
 func _input(event):
 	if Input.is_action_just_pressed("interact") and can_interact:
 		if has_photo:
-			Global.game.catch_photo()
+			var new_photo = photo.instance()
+			new_photo.global_position = $SpawnPhoto.global_position
+			Global.game.add_child(new_photo)
+			
 			has_photo = false
 
 func _on_Detect_body_entered(body):

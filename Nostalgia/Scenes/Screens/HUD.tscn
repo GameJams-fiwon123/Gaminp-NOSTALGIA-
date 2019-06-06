@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/Screens/HUD.gd" type="Script" id=1]
 [ext_resource path="res://GFX/Photo/foto_background.png" type="Texture" id=2]
@@ -37,6 +37,21 @@ tracks/1/keys = {
 "args": [  ],
 "method": "change_position_player"
 } ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "change_scene"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Control:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
 }
 
 [node name="HUD" type="CanvasLayer"]
@@ -98,4 +113,6 @@ stretch_mode = 5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/change_comodo = SubResource( 2 )
+anims/change_scene = SubResource( 3 )
 
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

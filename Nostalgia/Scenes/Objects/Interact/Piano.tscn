@@ -48,6 +48,8 @@ shape = SubResource( 3 )
 stream = ExtResource( 4 )
 volume_db = -5.0
 
+[node name="SpawnPhoto" type="Position2D" parent="."]
+
 [connection signal="body_entered" from="Detect" to="." method="_on_Detect_body_entered"]
 [connection signal="body_exited" from="Detect" to="." method="_on_Detect_body_exited"]
 [connection signal="finished" from="AudioStreamPlayer" to="." method="_on_AudioStreamPlayer_finished"]

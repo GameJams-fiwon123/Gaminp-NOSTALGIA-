@@ -1,5 +1,7 @@
 extends StaticBody2D
 
+var photo = preload("res://Scenes/Objects/Pegaveis/Photo.tscn")
+
 var has_photo = true
 var can_interact = false
 
@@ -12,7 +14,9 @@ func _input(event):
 			Global.game.drop_item()
 			if balls.size() >= 3 and has_photo:
 				has_photo = false
-				Global.game.catch_photo()
+				var new_photo = photo.instance()
+				new_photo.global_position = $SpawnPhoto.global_position
+				Global.game.add_child(new_photo)
 
 func _on_Detect_body_entered(body):
 	can_interact = true

@@ -89,8 +89,14 @@ position = Vector2( 593.131, 870.564 )
 [node name="Gaveta" parent="." instance=ExtResource( 8 )]
 position = Vector2( 999.27, -2473.71 )
 
+[node name="SpawnPhoto" parent="Gaveta" index="4"]
+position = Vector2( 261.287, 179.493 )
+
 [node name="Geladeira" parent="." instance=ExtResource( 9 )]
 position = Vector2( 4335.79, -280.801 )
+
+[node name="SpawnPhoto" parent="Geladeira" index="5"]
+position = Vector2( 72.894, 104.721 )
 
 [node name="Alicate" parent="." instance=ExtResource( 10 )]
 position = Vector2( 120.208, -3112.71 )
@@ -107,11 +113,17 @@ position = Vector2( 214.283, 13.6362 )
 [node name="Piano" parent="." instance=ExtResource( 14 )]
 position = Vector2( 3862.48, -2450.92 )
 
+[node name="SpawnPhoto" parent="Piano" index="5"]
+position = Vector2( 195.609, 183.092 )
+
 [node name="CriadoMudo" parent="." instance=ExtResource( 15 )]
 position = Vector2( 2375.28, -2572.18 )
 
 [node name="Armario" parent="." instance=ExtResource( 16 )]
 position = Vector2( 2866.18, -289.675 )
+
+[node name="SpawnVassoura" parent="Armario" index="4"]
+position = Vector2( 34.2949, 72.0193 )
 
 [node name="Cama" parent="." instance=ExtResource( 17 )]
 position = Vector2( 2209.93, -2945.92 )
@@ -125,6 +137,9 @@ shape = SubResource( 2 )
 
 [node name="CollisionPolygon2D" parent="Cama" index="4"]
 polygon = PoolVector2Array( 41.7969, 119.221, -1.57349, 332.398, 219.625, 333.094, 178.029, 115.657 )
+
+[node name="SpawnPhoto" parent="Cama" index="5"]
+position = Vector2( 63.9998, 157.999 )
 
 [node name="Mesa" parent="." instance=ExtResource( 18 )]
 position = Vector2( 3013.86, -3176.45 )
@@ -148,6 +163,9 @@ position = Vector2( 139.65, -7.60001 )
 [node name="CollisionShape2D" parent="Banheira/Detect" index="0"]
 position = Vector2( 124.391, 15.8662 )
 shape = SubResource( 4 )
+
+[node name="SpawnPosition" parent="Banheira" index="5"]
+position = Vector2( 52.9828, -115.989 )
 
 [node name="Balls" type="YSort" parent="."]
 
@@ -178,6 +196,14 @@ stream = ExtResource( 26 )
 [node name="Escrivaninha" parent="." instance=ExtResource( 27 )]
 position = Vector2( 1577.93, -2900.97 )
 
+
+[editable path="Gaveta"]
+
+[editable path="Geladeira"]
+
+[editable path="Piano"]
+
+[editable path="Armario"]
 
 [editable path="Cama"]
 

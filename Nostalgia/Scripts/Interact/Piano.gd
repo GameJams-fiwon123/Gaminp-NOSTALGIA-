@@ -1,5 +1,7 @@
 extends StaticBody2D
 
+var photo = preload("res://Scenes/Objects/Pegaveis/Photo.tscn")
+
 var has_photo = true
 var can_interact = false
 
@@ -12,7 +14,6 @@ func _input(event):
 			Global.player.speed = 0
 			Global.audio.volume_db = -400
 			Global.game.remove_item()
-			Global.game.catch_photo()
 			has_photo = false
 
 func _on_Detect_body_entered(body):
@@ -26,3 +27,6 @@ func _on_Detect_body_exited(body):
 func _on_AudioStreamPlayer_finished():
 	Global.player.speed = Global.player.base_speed
 	Global.audio.volume_db = -10
+	var new_photo = photo.instance()
+	new_photo.global_position = $SpawnPhoto.global_position
+	Global.game.add_child(new_photo)

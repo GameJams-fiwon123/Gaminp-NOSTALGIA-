@@ -45,6 +45,9 @@ wait_time = 5.0
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
 
+[node name="SpawnPhoto" type="Position2D" parent="."]
+position = Vector2( -42.9155, -32.1866 )
+
 [connection signal="body_entered" from="Detect" to="." method="_on_Detect_body_entered"]
 [connection signal="body_exited" from="Detect" to="." method="_on_Detect_body_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

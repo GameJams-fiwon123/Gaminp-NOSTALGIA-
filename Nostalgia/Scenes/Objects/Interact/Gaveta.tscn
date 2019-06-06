@@ -43,5 +43,7 @@ collision_layer = 2
 position = Vector2( 120.501, 59.9801 )
 shape = SubResource( 3 )
 
+[node name="SpawnPhoto" type="Position2D" parent="."]
+
 [connection signal="body_entered" from="Detect" to="." method="_on_Detect_body_entered"]
 [connection signal="body_exited" from="Detect" to="." method="_on_Detect_body_exited"]
