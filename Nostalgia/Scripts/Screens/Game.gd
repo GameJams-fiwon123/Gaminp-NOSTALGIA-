@@ -33,6 +33,7 @@ onready var audio = $AudioStreamPlayer
 func _ready():
 	if Global.audio.stream != load(Global.audio_game):
 		Global.audio.stream = load(Global.audio_game)
+		Global.audio.volume_db = -10
 		Global.audio.play()
 	Global.game = self
 

@@ -5,6 +5,7 @@ onready var audio_button_skip = $ColorRect/ButtonSkip/AudioButtonSkip
 func _on_ButtonSkip_pressed():
 	if not audio_button_skip.is_playing():
 		$AnimationPlayer.play("change_scene")
+		Global.audio.volume_db = -4000
 		audio_button_skip.play()
 
 

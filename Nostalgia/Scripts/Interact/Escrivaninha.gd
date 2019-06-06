@@ -5,6 +5,7 @@ var can_interact = false
 func _input(event):
 	if Input.is_action_just_pressed("interact") and can_interact:
 		if Global.game.photos.size() >= 6:
+			Global.audio.volume_db = -4000
 			get_tree().change_scene(Global.FINAL)
 
 

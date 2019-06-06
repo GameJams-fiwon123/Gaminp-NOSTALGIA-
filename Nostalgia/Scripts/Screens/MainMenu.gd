@@ -6,6 +6,7 @@ onready var audio_button_exit = $ColorRect/VBoxContainer2/VBoxContainer/ButtonEx
 
 func _ready():
 	if Global.audio.stream != load(Global.audio_main_menu):
+		Global.audio.volume_db = -10
 		Global.audio.stream = load(Global.audio_main_menu)
 		Global.audio.play()
 

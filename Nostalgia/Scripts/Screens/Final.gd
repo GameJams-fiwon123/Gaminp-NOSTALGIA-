@@ -7,10 +7,12 @@ func _ready():
 	if Global.audio.stream != load(Global.audio_final):
 		Global.audio.stream = load(Global.audio_final)
 		Global.audio.play()
+		Global.audio.volume_db = -10
 
 
 func _on_ButtonExit_pressed():
 	if not audio_button_exit.is_playing():
+		Global.audio.volume_db = -4000
 		$AnimationPlayer.play("change_scene")
 		audio_button_exit.play()
 
