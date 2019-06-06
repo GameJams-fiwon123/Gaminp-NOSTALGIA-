@@ -102,7 +102,7 @@ position = Vector2( 72.894, 104.721 )
 position = Vector2( 120.208, -3112.71 )
 
 [node name="Ladder" parent="." instance=ExtResource( 11 )]
-position = Vector2( 4958.02, -3118.08 )
+position = Vector2( 4366.65, -3165.5 )
 
 [node name="Sofa" parent="." instance=ExtResource( 12 )]
 position = Vector2( 839.212, 433.774 )
