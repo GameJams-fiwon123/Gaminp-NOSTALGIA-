@@ -3,9 +3,12 @@ extends StaticBody2D
 var has_photo = true
 var can_interact = false
 
+onready var audio = $AudioStreamPlayer
+
 func _input(event):
 	if Input.is_action_just_pressed("interact") and can_interact:
 		if Global.game.has_desentupidor and has_photo:
+			audio.play()
 			Global.game.remove_item()
 			Global.game.catch_photo()
 			has_photo = false

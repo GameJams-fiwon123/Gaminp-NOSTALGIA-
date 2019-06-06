@@ -24,7 +24,9 @@ const VASSOURA = 5
 const BATH_KEY = 6
 const DESENTUPIDOR = 7
 
-var audio_item = "res://SFX/pegar_item.ogg"
+var audio_pegar = "res://SFX/pegar_item.ogg"
+var audio_soltar = "res://SFX/soltar_item.ogg"
+
 onready var audio = $AudioStreamPlayer
 
 # Called when the node enters the scene tree for the first time.
@@ -47,8 +49,13 @@ func catch_photo():
 		new_dog.global_position = $Navigation2D/Destinations/Position2D.global_position
 		self.add_child(new_dog)
 
-func remove_item():
+func drop_item():
+	audio.stream = load(audio_soltar)
+	audio.play()
+	
+	remove_item()
 
+func remove_item():
 	match (ref_object.index):
 		BALL:
 			has_ball = false
@@ -76,7 +83,7 @@ func add_item(object):
 
 # ITEMS	
 func catch_item(object):
-	audio.stream = load(audio_item)
+	audio.stream = load(audio_pegar)
 	audio.play()
 	
 	match (object.index):

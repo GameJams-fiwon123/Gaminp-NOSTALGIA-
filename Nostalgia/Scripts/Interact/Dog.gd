@@ -18,7 +18,10 @@ var index = 0
 onready var navigation = Global.navigation
 onready var available_destinations = Global.destinations
 
+onready var audio = $AudioStreamPlayer
+
 func _ready():
+	audio.play()
 	possible_destination = available_destinations.get_children()
 	make_path()
 
@@ -59,6 +62,7 @@ func update_path():
 		path.remove(0)
 
 func _on_Timer_timeout():
+	audio.play()
 	make_path()
 
 func _input(event):

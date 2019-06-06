@@ -1,34 +1,25 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scripts/Navigation/Regions.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Navigation/Region.gd" type="Script" id=2]
 [ext_resource path="res://GFX/Piso.png" type="Texture" id=3]
-[ext_resource path="res://Scripts/Interact/Stair.gd" type="Script" id=4]
-[ext_resource path="res://Scenes/Objects/Interact/Stair.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Objects/Interact/Stair.tscn" type="PackedScene" id=4]
+[ext_resource path="res://SFX/Comodos/Banheiros.ogg" type="AudioStream" id=5]
 [ext_resource path="res://Scenes/Objects/Interact/Door.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Shapes/WallVertical.tres" type="Shape2D" id=7]
 [ext_resource path="res://Shapes/WallVertical-half.tres" type="Shape2D" id=8]
 [ext_resource path="res://Shapes/WallHorizontal.tres" type="Shape2D" id=9]
 
-
-
-
-
-
-
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 32, 32 )
+extents = Vector2( 1280, 360 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 1280, 360 )
-
-[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 640, 360 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 1280, 360 )
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 10, 720 )
 
 [node name="Terreo" type="YSort"]
@@ -50,34 +41,25 @@ centered = false
 
 [node name="Stairs" type="Node2D" parent="YSort/Regions/SalaDeEstar"]
 
-[node name="Stair" type="Area2D" parent="YSort/Regions/SalaDeEstar/Stairs"]
-modulate = Color( 0.517647, 0.356863, 0.0784314, 1 )
-position = Vector2( 144, 944 )
-scale = Vector2( 3, 3 )
+[node name="Stair" parent="YSort/Regions/SalaDeEstar/Stairs" instance=ExtResource( 4 )]
+position = Vector2( 170.307, 924.944 )
 z_index = 1
-collision_layer = 2
-script = ExtResource( 4 )
+index_type = 1
 teleport_comodo = 1
 
-[node name="Sprite" type="Sprite" parent="YSort/Regions/SalaDeEstar/Stairs/Stair"]
-texture = ExtResource( 3 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Regions/SalaDeEstar/Stairs/Stair"]
-shape = SubResource( 1 )
-
 [node name="DetectArea" type="Area2D" parent="YSort/Regions/SalaDeEstar"]
-position = Vector2( 1280, 720 )
+position = Vector2( 1280, 717.482 )
 collision_layer = 4
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Regions/SalaDeEstar/DetectArea"]
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Banheiro" type="YSort" parent="YSort/Regions"]
-editor/display_folded = true
 script = ExtResource( 2 )
+index_type = 2
 
 [node name="Ground" type="Sprite" parent="YSort/Regions/Banheiro"]
 modulate = Color( 0.909804, 0.631373, 0.631373, 1 )
@@ -94,7 +76,12 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Regions/Banheiro/DetectArea"]
-shape = SubResource( 3 )
+shape = SubResource( 2 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="YSort/Regions/Banheiro"]
+stream = ExtResource( 5 )
+volume_db = -80.0
+autoplay = true
 
 [node name="Garagem" type="YSort" parent="YSort/Regions"]
 editor/display_folded = true
@@ -115,7 +102,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Regions/Garagem/DetectArea"]
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 [node name="Lavanderia" type="YSort" parent="YSort/Regions"]
 editor/display_folded = true
@@ -136,7 +123,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Regions/Lavanderia/DetectArea"]
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 [node name="Cozinha" type="YSort" parent="YSort/Regions"]
 editor/display_folded = true
@@ -157,7 +144,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Regions/Cozinha/DetectArea"]
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 [node name="SalaDeJantar" type="YSort" parent="YSort/Regions"]
 script = ExtResource( 2 )
@@ -172,8 +159,9 @@ centered = false
 [node name="Stairs" type="Node2D" parent="YSort/Regions/SalaDeJantar"]
 z_index = 1
 
-[node name="Stair" parent="YSort/Regions/SalaDeJantar/Stairs" instance=ExtResource( 5 )]
+[node name="Stair" parent="YSort/Regions/SalaDeJantar/Stairs" instance=ExtResource( 4 )]
 position = Vector2( 4960, 928 )
+index_type = 1
 index_comodo = 2
 teleport_comodo = 3
 
@@ -185,7 +173,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Regions/SalaDeJantar/DetectArea"]
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 
 [node name="Doors" type="YSort" parent="YSort/Regions"]
 
@@ -275,7 +263,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Regions/Walls/Vertical/Wall2"]
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 
 [node name="Horizontal" type="Node2D" parent="YSort/Regions/Walls"]
 
@@ -310,10 +298,9 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Regions/Walls/Horizontal/Wall8"]
 shape = ExtResource( 9 )
 
-[connection signal="body_entered" from="YSort/Regions/SalaDeEstar/Stairs/Stair" to="YSort/Regions/SalaDeEstar/Stairs/Stair" method="_on_Stair_body_entered"]
-[connection signal="body_exited" from="YSort/Regions/SalaDeEstar/Stairs/Stair" to="YSort/Regions/SalaDeEstar/Stairs/Stair" method="_on_Stair_body_exited"]
 [connection signal="body_entered" from="YSort/Regions/SalaDeEstar/DetectArea" to="YSort/Regions/SalaDeEstar" method="_on_DetectArea_body_entered"]
 [connection signal="body_entered" from="YSort/Regions/Banheiro/DetectArea" to="YSort/Regions/Banheiro" method="_on_DetectArea_body_entered"]
+[connection signal="body_exited" from="YSort/Regions/Banheiro/DetectArea" to="YSort/Regions/Banheiro" method="_on_DetectArea_body_exited"]
 [connection signal="body_entered" from="YSort/Regions/Garagem/DetectArea" to="YSort/Regions/Garagem" method="_on_DetectArea_body_entered"]
 [connection signal="body_entered" from="YSort/Regions/Lavanderia/DetectArea" to="YSort/Regions/Lavanderia" method="_on_DetectArea_body_entered"]
 [connection signal="body_entered" from="YSort/Regions/Cozinha/DetectArea" to="YSort/Regions/Cozinha" method="_on_DetectArea_body_entered"]

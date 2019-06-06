@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scripts/Interact/Piano.gd" type="Script" id=1]
 [ext_resource path="res://GFX/Piso.png" type="Texture" id=2]
 [ext_resource path="res://GFX/Font/RPGSystem.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://SFX/Melodia_do_Piano.ogg" type="AudioStream" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 45
@@ -43,5 +44,9 @@ collision_layer = 2
 position = Vector2( 94.6006, 53.2877 )
 shape = SubResource( 3 )
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+
 [connection signal="body_entered" from="Detect" to="." method="_on_Detect_body_entered"]
 [connection signal="body_exited" from="Detect" to="." method="_on_Detect_body_exited"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_AudioStreamPlayer_finished"]

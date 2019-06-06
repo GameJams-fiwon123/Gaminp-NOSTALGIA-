@@ -1,5 +1,7 @@
 extends YSort
 
+export(int, "None", "Area", "Banheiro") var index_type
+
 var minX
 var maxX
 var minY
@@ -15,3 +17,12 @@ func _ready():
 
 func _on_DetectArea_body_entered(body):
 	get_parent().body_entered(body, self)
+	if index_type >= 1:
+		Global.audio.volume_db = -4000
+		$AudioStreamPlayer.volume_db = 0
+
+
+func _on_DetectArea_body_exited(body):
+	if index_type >= 1:
+		Global.audio.volume_db = -10
+		$AudioStreamPlayer.volume_db = -4000

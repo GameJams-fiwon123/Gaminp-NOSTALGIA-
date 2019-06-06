@@ -8,7 +8,7 @@ var can_interact = false
 func _input(event):
 	if Input.is_action_just_pressed("interact") and can_interact:
 		if Global.game.has_key and has_vassoura:	
-			Global.game.remove_item()		
+			Global.game.drop_item()
 			has_vassoura = false
 			var new_vassoura = vassoura.instance()
 			new_vassoura.global_position = global_position
