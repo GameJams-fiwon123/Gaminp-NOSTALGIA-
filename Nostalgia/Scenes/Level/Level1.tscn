@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://Scripts/Screens/Game.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=2]
@@ -26,11 +26,21 @@
 [ext_resource path="res://GFX/3.png" type="Texture" id=24]
 [ext_resource path="res://Scenes/Objects/Pegaveis/BathKey.tscn" type="PackedScene" id=25]
 [ext_resource path="res://SFX/pegar_item.ogg" type="AudioStream" id=26]
+[ext_resource path="res://Scenes/Objects/Interact/Escrivaninha.tscn" type="PackedScene" id=27]
 
 [sub_resource type="NavigationPolygon" id=1]
 vertices = PoolVector2Array( 426.599, 600.931, 2461.9, 593.756, 2476.51, 1022.28, 415.062, 1011.12 )
 polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
 outlines = [ PoolVector2Array( 426.599, 600.931, 2461.9, 593.756, 2476.51, 1022.28, 415.062, 1011.12 ) ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 129.998, 149.906 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 342.636, 56.9412 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 363.13, 76.0822 )
 
 [node name="Level1" type="Node2D"]
 script = ExtResource( 1 )
@@ -38,7 +48,7 @@ script = ExtResource( 1 )
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Player" parent="YSort" instance=ExtResource( 2 )]
-position = Vector2( 1790.04, -2733.99 )
+position = Vector2( 2069.41, -2761.33 )
 z_index = 2
 
 [node name="Terreo" parent="YSort" instance=ExtResource( 3 )]
@@ -99,13 +109,23 @@ position = Vector2( 214.283, 13.6362 )
 position = Vector2( 3862.48, -2450.92 )
 
 [node name="CriadoMudo" parent="." instance=ExtResource( 15 )]
-position = Vector2( 2118.55, -3173.61 )
+position = Vector2( 2375.28, -2572.18 )
 
 [node name="Armario" parent="." instance=ExtResource( 16 )]
 position = Vector2( 2866.18, -289.675 )
 
 [node name="Cama" parent="." instance=ExtResource( 17 )]
-position = Vector2( 1712.37, -3179.62 )
+position = Vector2( 2209.93, -2945.92 )
+
+[node name="Sprite" parent="Cama" index="0"]
+visible = false
+
+[node name="CollisionShape2D" parent="Cama/Detect" index="0"]
+position = Vector2( 117.624, 205.174 )
+shape = SubResource( 2 )
+
+[node name="CollisionPolygon2D" parent="Cama" index="4"]
+polygon = PoolVector2Array( 41.7969, 119.221, -1.57349, 332.398, 219.625, 333.094, 178.029, 115.657 )
 
 [node name="Mesa" parent="." instance=ExtResource( 18 )]
 position = Vector2( 3013.86, -3176.45 )
@@ -114,7 +134,21 @@ position = Vector2( 3013.86, -3176.45 )
 position = Vector2( 3516.29, -280.24 )
 
 [node name="Banheira" parent="." instance=ExtResource( 20 )]
-position = Vector2( 105.9, 204.965 )
+position = Vector2( 642.227, 265.706 )
+
+[node name="Sprite" parent="Banheira" index="0"]
+visible = false
+
+[node name="CollisionShape2D" parent="Banheira" index="1"]
+position = Vector2( 289.949, 35.0354 )
+shape = SubResource( 3 )
+
+[node name="Detect" parent="Banheira" index="2"]
+position = Vector2( 139.65, -7.60001 )
+
+[node name="CollisionShape2D" parent="Banheira/Detect" index="0"]
+position = Vector2( 124.391, 15.8662 )
+shape = SubResource( 4 )
 
 [node name="Balls" type="YSort" parent="."]
 
@@ -125,7 +159,7 @@ position = Vector2( 4951.68, 713.188 )
 texture = ExtResource( 22 )
 
 [node name="Ball2" parent="Balls" instance=ExtResource( 21 )]
-position = Vector2( 1466.81, 252.968 )
+position = Vector2( 1468.32, -172.101 )
 
 [node name="Sprite" parent="Balls/Ball2" index="0"]
 texture = ExtResource( 23 )
@@ -142,6 +176,13 @@ position = Vector2( 3321.81, -3172.73 )
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 26 )
 
+[node name="Escrivaninha" parent="." instance=ExtResource( 27 )]
+position = Vector2( 1577.93, -2900.97 )
+
+
+[editable path="Cama"]
+
+[editable path="Banheira"]
 
 [editable path="Balls/Ball"]
 

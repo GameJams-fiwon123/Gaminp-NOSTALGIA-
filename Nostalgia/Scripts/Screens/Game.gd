@@ -43,6 +43,9 @@ func teleport(index):
 func catch_photo():
 	photos.append("photo")
 	Global.hud.change_progress(photos.size())	
+	
+	audio.stream = load(audio_pegar)
+	audio.play()
 
 	if photos.size() == 5:
 		var new_dog = dog.instance()

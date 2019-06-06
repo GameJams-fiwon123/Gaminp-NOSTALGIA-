@@ -23,6 +23,9 @@ z_index = 1
 collision_layer = 2
 physics_material_override = SubResource( 1 )
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )

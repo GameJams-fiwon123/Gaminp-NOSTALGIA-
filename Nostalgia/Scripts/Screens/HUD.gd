@@ -11,7 +11,6 @@ func change_progress(value):
 	progress.value = value
 
 func add_item(texture):
-	print(texture)
 	item.texture = texture
 	
 func remove_item():

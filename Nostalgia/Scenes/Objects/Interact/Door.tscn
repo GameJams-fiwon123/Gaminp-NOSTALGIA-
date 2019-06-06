@@ -16,6 +16,9 @@ extents = Vector2( 160, 16 )
 rotation = 1.5708
 collision_layer = 2
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 4, 0.5 )

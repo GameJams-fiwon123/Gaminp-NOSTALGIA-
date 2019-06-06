@@ -149,6 +149,13 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Regions/Quarto/DetectArea"]
 shape = SubResource( 3 )
 
+[node name="Wall" type="StaticBody2D" parent="YSort/Regions/Quarto"]
+position = Vector2( 1432.16, -226.032 )
+collision_layer = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="YSort/Regions/Quarto/Wall"]
+polygon = PoolVector2Array( -131.123, 204.762, -129.956, -128.813, 1113.63, -127.003, 1116.97, 574.473, 1050.39, 572.162, 1043.48, 195.342, 677.659, 195.309, 678.358, 258.16, 293.429, 259.581, 294.595, 198.931 )
+
 [node name="Banheiro" type="YSort" parent="YSort/Regions"]
 script = ExtResource( 2 )
 
@@ -172,7 +179,10 @@ shape = SubResource( 3 )
 [node name="Doors" type="YSort" parent="YSort/Regions"]
 
 [node name="Door" parent="YSort/Regions/Doors" instance=ExtResource( 7 )]
-position = Vector2( 1280, -20 )
+position = Vector2( 1272.63, -129.474 )
+
+[node name="Position2D" parent="YSort/Regions/Doors/Door/ExitDetect" index="1"]
+position = Vector2( 61.8549, -94.129 )
 
 [node name="Door2" parent="YSort/Regions/Doors" instance=ExtResource( 7 )]
 position = Vector2( 3830, -10 )
@@ -182,8 +192,14 @@ position = Vector2( 3140, 370 )
 rotation = 0.0
 
 [node name="Door4" parent="YSort/Regions/Doors" instance=ExtResource( 7 )]
-position = Vector2( 1930, 364.16 )
+position = Vector2( 1750.07, 363.933 )
 rotation = 0.0
+
+[node name="Position2D" parent="YSort/Regions/Doors/Door4/EnterDetect" index="1"]
+position = Vector2( 1.4705, 93.8266 )
+
+[node name="Position2D" parent="YSort/Regions/Doors/Door4/ExitDetect" index="1"]
+position = Vector2( -0.735508, -80.5943 )
 
 [node name="Walls" type="Node2D" parent="YSort/Regions"]
 z_index = 1
@@ -280,3 +296,7 @@ shape = ExtResource( 10 )
 [connection signal="body_entered" from="YSort/Regions/Escritorio/DetectArea" to="YSort/Regions/Escritorio" method="_on_DetectArea_body_entered"]
 [connection signal="body_entered" from="YSort/Regions/Quarto/DetectArea" to="YSort/Regions/Quarto" method="_on_DetectArea_body_entered"]
 [connection signal="body_entered" from="YSort/Regions/Banheiro/DetectArea" to="YSort/Regions/Banheiro" method="_on_DetectArea_body_entered"]
+
+[editable path="YSort/Regions/Doors/Door"]
+
+[editable path="YSort/Regions/Doors/Door4"]
