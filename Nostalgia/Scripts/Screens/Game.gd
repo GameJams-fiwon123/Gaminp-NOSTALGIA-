@@ -37,7 +37,7 @@ func _ready():
 	Global.game = self
 
 func teleport(index):
-	Global.player.global_position = Global.stairs_positions[index]
+	Global.hud.change_comodo(Global.stairs_positions[index])
 			
 	
 func catch_photo():

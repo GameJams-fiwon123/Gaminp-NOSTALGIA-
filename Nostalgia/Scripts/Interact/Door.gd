@@ -38,10 +38,10 @@ func _on_ExitDetect_body_exited(body):
 func _input(event):
 	if Input.is_action_just_pressed("interact") and can_interact and not is_locked:
 		if is_near_enter:
-			Global.player.global_position = position_enter.global_position
+			Global.hud.change_comodo(position_enter.global_position)
 			is_near_enter = false
 		elif is_near_exit:
-			Global.player.global_position = position_exit.global_position
+			Global.hud.change_comodo(position_exit.global_position)
 			is_near_exit = false
 			
 		audio.stream = load(audio_porta)
