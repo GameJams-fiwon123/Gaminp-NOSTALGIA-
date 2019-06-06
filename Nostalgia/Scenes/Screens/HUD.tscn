@@ -66,4 +66,6 @@ margin_left = -37.0
 margin_top = -37.0
 margin_right = 37.0
 margin_bottom = 37.0
+expand = true
+stretch_mode = 5
 

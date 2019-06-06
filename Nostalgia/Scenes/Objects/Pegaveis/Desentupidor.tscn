@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/Pegaveis/Desentupidor.gd" type="Script" id=1]
-[ext_resource path="res://GFX/desentupidor.png" type="Texture" id=2]
+[ext_resource path="res://GFX/Itens/desentupidor.png" type="Texture" id=2]
 [ext_resource path="res://GFX/Font/RPGSystem.ttf" type="DynamicFontData" id=3]
 
 [sub_resource type="DynamicFont" id=1]
@@ -21,6 +21,7 @@ script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( -0.291244, 2.09536 )
+scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="."]

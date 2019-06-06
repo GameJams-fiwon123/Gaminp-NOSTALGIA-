@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Scripts/Pegaveis/Alicate.gd" type="Script" id=1]
 [ext_resource path="res://GFX/Font/RPGSystem.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://GFX/4.png" type="Texture" id=3]
+[ext_resource path="res://GFX/Itens/alicate.png" type="Texture" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 2 )
@@ -28,6 +28,7 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Alicate"
 
 [node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

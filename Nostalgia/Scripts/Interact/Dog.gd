@@ -19,6 +19,7 @@ onready var navigation = Global.navigation
 onready var available_destinations = Global.destinations
 
 onready var audio = $AudioStreamPlayer
+onready var sprite = $Sprite
 
 func _ready():
 	audio.play()
@@ -39,6 +40,11 @@ func navigate():
 	
 func move():
 	motion = (destination-position).normalized() * speed
+	
+	if motion.x >= 0:
+		sprite.flip_h = true
+	else:
+		sprite.flip_h = false
 	
 	if is_on_wall():
 		make_path()
