@@ -19,8 +19,12 @@ func add_item(texture):
 func remove_item():
 	item.texture = null
 	
+func can_change_comodo():
+	return not animation.is_playing()	
+	
 func change_comodo(position):
 	new_position = position
+	Global.player.speed = 0
 	animation.play("change_comodo")
 
 func change_position_player():

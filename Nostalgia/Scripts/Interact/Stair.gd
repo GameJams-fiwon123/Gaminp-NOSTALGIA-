@@ -14,14 +14,12 @@ func _ready():
 	print(audio)
 
 func _input(event):
-	if event is InputEventKey:
-		if Input.is_action_just_pressed("interact") and is_enter:
-				audio.stream = load(audio_type[index_type])
-				audio.play()
-				Global.player.speed = 0
-				Global.game.teleport(teleport_comodo)
-				is_enter = false
-				
+	if Input.is_action_just_pressed("interact") and is_enter and Global.hud.can_change_comodo():
+		audio.stream = load(audio_type[index_type])
+		audio.play()
+		Global.game.teleport(teleport_comodo)
+		is_enter = false
+			
 func _on_Stair_body_entered(body):
 	is_enter = true
 
