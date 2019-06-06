@@ -1,5 +1,6 @@
 extends StaticBody2D
 
+export(int, "None", "Banheiro") var type_door
 export(bool) var is_locked = false
 
 var audio_destrancar = "res://SFX/Destrancar.ogg"
@@ -48,7 +49,7 @@ func _input(event):
 	
 			audio.stream = load(audio_porta)
 			audio.play()
-	elif Input.is_action_just_pressed("interact") and Global.game.has_bath_key and can_interact and is_locked:
+	elif Input.is_action_just_pressed("interact") and Global.game.has_bath_key and can_interact and is_locked and type_door == 1:
 		Global.game.remove_item()
 		audio.stream = load(audio_destrancar)
 		audio.play()
