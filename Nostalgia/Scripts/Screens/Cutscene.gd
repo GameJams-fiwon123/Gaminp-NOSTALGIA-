@@ -3,7 +3,9 @@ extends Control
 onready var audio_button_skip = $ColorRect/ButtonSkip/AudioButtonSkip
 
 func _on_ButtonSkip_pressed():
-	audio_button_skip.play()
+	if not audio_button_skip.is_playing():
+		$AnimationPlayer.play("change_scene")
+		audio_button_skip.play()
 
 
 func _on_AudioButtonSkip_finished():

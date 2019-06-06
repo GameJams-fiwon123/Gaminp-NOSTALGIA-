@@ -10,13 +10,19 @@ func _ready():
 		Global.audio.play()
 
 func _on_ButtonStart_pressed():
-	audio_button_start.play()
+	if not audio_button_start.is_playing():
+		$AnimationPlayer.play("change_scene")
+		audio_button_start.play()
 
 func _on_ButtonCredits_pressed():
-	audio_button_credits.play()
+	if not audio_button_credits.is_playing():
+		$AnimationPlayer.play("change_scene")
+		audio_button_credits.play()
 	
 func _on_ButtonExit_pressed():
-	audio_button_exit.play()
+	if not audio_button_exit.is_playing():
+		$AnimationPlayer.play("change_scene")
+		audio_button_exit.play()
 
 
 func _on_AudioButtonStart_finished():
