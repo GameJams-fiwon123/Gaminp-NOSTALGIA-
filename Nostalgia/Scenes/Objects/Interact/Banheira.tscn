@@ -47,3 +47,4 @@ stream = ExtResource( 4 )
 
 [connection signal="body_entered" from="Detect" to="." method="_on_Detect_body_entered"]
 [connection signal="body_exited" from="Detect" to="." method="_on_Detect_body_exited"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_AudioStreamPlayer_finished"]

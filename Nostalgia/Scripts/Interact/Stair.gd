@@ -18,6 +18,7 @@ func _input(event):
 		if Input.is_action_just_pressed("interact") and is_enter:
 				audio.stream = load(audio_type[index_type])
 				audio.play()
+				Global.player.speed = 0
 				Global.game.teleport(teleport_comodo)
 				is_enter = false
 				

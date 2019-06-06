@@ -4,10 +4,10 @@
 [ext_resource path="res://GFX/Piso.png" type="Texture" id=2]
 [ext_resource path="res://GFX/Font/RPGSystem.ttf" type="DynamicFontData" id=3]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 80.2466, 110.124 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=2]
 size = 42
 font_data = ExtResource( 3 )
 
@@ -26,14 +26,14 @@ collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detect"]
 position = Vector2( 110.477, 157.266 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Label" type="Label" parent="."]
 margin_left = 71.2087
 margin_top = 7.36642
 margin_right = 154.209
 margin_bottom = 47.3664
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Cama"
 
@@ -44,3 +44,4 @@ polygon = PoolVector2Array( 21.2968, 33.1594, 17.5142, 274.7, 207.548, 272.933, 
 
 [connection signal="body_entered" from="Detect" to="." method="_on_Detect_body_entered"]
 [connection signal="body_exited" from="Detect" to="." method="_on_Detect_body_exited"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_AudioStreamPlayer_finished"]

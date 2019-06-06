@@ -24,4 +24,5 @@ func change_comodo(position):
 	animation.play("change_comodo")
 
 func change_position_player():
+	Global.player.speed = Global.player.base_speed
 	Global.player.global_position = new_position

@@ -12,6 +12,7 @@ func _input(event):
 		if has_photo and Global.game.has_vassoura:
 			audio.stream = load(audio_varrendo)
 			audio.play()
+			Global.player.speed = 0
 			Global.game.remove_item()
 			has_photo = false
 			Global.game.catch_photo()
@@ -22,3 +23,7 @@ func _on_Detect_body_entered(body):
 
 func _on_Detect_body_exited(body):
 	can_interact = false
+
+
+func _on_AudioStreamPlayer_finished():
+	Global.player.speed = Global.player.base_speed
