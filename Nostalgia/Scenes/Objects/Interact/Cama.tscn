@@ -1,48 +1,35 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/Interact/Cama.gd" type="Script" id=1]
-[ext_resource path="res://GFX/Piso.png" type="Texture" id=2]
-[ext_resource path="res://GFX/Font/RPGSystem.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://GFX/Objects/cama.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 80.2466, 110.124 )
-
-[sub_resource type="DynamicFont" id=2]
-size = 42
-font_data = ExtResource( 3 )
+extents = Vector2( 130.524, 132.342 )
 
 [node name="Cama" type="StaticBody2D"]
 collision_layer = 2
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-modulate = Color( 0.643137, 1, 0.541176, 1 )
-position = Vector2( 109.39, 149.584 )
-scale = Vector2( 4.41843, 5.67451 )
+position = Vector2( -4.98457, -94.2287 )
 texture = ExtResource( 2 )
 
 [node name="Detect" type="Area2D" parent="."]
+position = Vector2( -114.375, -243.813 )
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detect"]
 position = Vector2( 110.477, 157.266 )
 shape = SubResource( 1 )
 
-[node name="Label" type="Label" parent="."]
-margin_left = 71.2087
-margin_top = 7.36642
-margin_right = 154.209
-margin_bottom = 47.3664
-custom_fonts/font = SubResource( 2 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Cama"
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PoolVector2Array( 21.2968, 33.1594, 17.5142, 274.7, 207.548, 272.933, 198.535, 30.998 )
+position = Vector2( -114.375, -243.813 )
+polygon = PoolVector2Array( 30.1961, 60.3884, -15.463, 266.983, 210.216, 267.148, 169.73, 57.638 )
 
 [node name="SpawnPhoto" type="Position2D" parent="."]
+position = Vector2( -93.3994, -85.6705 )
 
 [connection signal="body_entered" from="Detect" to="." method="_on_Detect_body_entered"]
 [connection signal="body_exited" from="Detect" to="." method="_on_Detect_body_exited"]

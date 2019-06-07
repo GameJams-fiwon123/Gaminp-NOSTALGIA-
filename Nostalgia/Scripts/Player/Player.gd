@@ -1,8 +1,8 @@
 extends KinematicBody2D
 
-var base_speed = 400
+var base_speed = 450
 
-var speed = 400
+var speed = 450
 var motion = Vector2()
 
 onready var camera = $Camera2D
@@ -30,13 +30,11 @@ func move():
 	if speed > 0:
 		if Input.is_action_pressed("left"):
 			sprite.play("walk")
-			sprite.scale.x = -0.1
-			collision.position.x = -0.6
+			sprite.scale.x = -0.15
 			motion.x = -1
 		elif Input.is_action_pressed("right"):
 			sprite.play("walk")
-			sprite.scale.x = 0.1
-			collision.position.x = 0.6
+			sprite.scale.x = 0.15
 			motion.x = 1
 
 			

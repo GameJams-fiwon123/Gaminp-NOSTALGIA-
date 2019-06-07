@@ -1,7 +1,5 @@
 extends StaticBody2D
 
-var key = preload("res://Scenes/Objects/Pegaveis/Key.tscn")
-
 var has_key = true
 var can_interact = false
 

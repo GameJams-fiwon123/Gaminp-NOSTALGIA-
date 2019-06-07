@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/Pegaveis/Ball.gd" type="Script" id=1]
 [ext_resource path="res://GFX/Itens/bola 8.png" type="Texture" id=2]
-[ext_resource path="res://GFX/Font/RPGSystem.ttf" type="DynamicFontData" id=3]
 
 [sub_resource type="PhysicsMaterial" id=1]
 friction = 100.0
@@ -10,13 +9,10 @@ rough = true
 bounce = 0.1
 
 [sub_resource type="CircleShape2D" id=2]
-radius = 30.0
+radius = 11.0884
 
 [sub_resource type="CircleShape2D" id=3]
 radius = 50.0
-
-[sub_resource type="DynamicFont" id=4]
-font_data = ExtResource( 3 )
 
 [node name="Ball" type="StaticBody2D"]
 z_index = 1
@@ -32,6 +28,7 @@ scale = Vector2( 0.05, 0.05 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.225937, 5.8743 )
 shape = SubResource( 2 )
 
 [node name="Detect" type="Area2D" parent="."]
@@ -39,17 +36,6 @@ collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detect"]
 shape = SubResource( 3 )
-
-[node name="Label" type="Label" parent="."]
-margin_left = -20.0
-margin_top = -10.0
-margin_right = 20.0
-margin_bottom = 4.0
-custom_fonts/font = SubResource( 4 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "BOLA"
-align = 1
-valign = 1
 
 [connection signal="body_entered" from="Detect" to="." method="_on_Detect_body_entered"]
 [connection signal="body_exited" from="Detect" to="." method="_on_Detect_body_exited"]

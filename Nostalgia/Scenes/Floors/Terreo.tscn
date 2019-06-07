@@ -82,6 +82,12 @@ stream = ExtResource( 6 )
 volume_db = -80.0
 autoplay = true
 
+[node name="Wall" type="StaticBody2D" parent="YSort/Regions/Banheiro"]
+collision_layer = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="YSort/Regions/Banheiro/Wall"]
+polygon = PoolVector2Array( 11.6321, -26.1046, 8.81783, -350.892, 1260, -352, 1259.75, -17.7924, 789.983, -19.5894, 787.527, -9.84137, 504.369, -10.894, 503.316, -23.5256 )
+
 [node name="Garagem" type="YSort" parent="YSort/Regions"]
 editor/display_folded = true
 script = ExtResource( 2 )

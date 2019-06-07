@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/cama.png-90b785450ade0748bb81175ad33390f0.stex"
+path="res://.import/Passaro2.png-481cb4eaf4ce2a74e96d3583a9fa7d66.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GFX/Objects/cama.png"
-dest_files=[ "res://.import/cama.png-90b785450ade0748bb81175ad33390f0.stex" ]
+source_file="res://GFX/Objects/Passaro2.png"
+dest_files=[ "res://.import/Passaro2.png-481cb4eaf4ce2a74e96d3583a9fa7d66.stex" ]
 
 [params]
 
