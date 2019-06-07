@@ -15,7 +15,6 @@ func _input(event):
 			audio.play()
 			Global.player.speed = 0
 			Global.game.remove_item()
-			Global.game.catch_photo()
 			has_photo = false
 		elif(has_photo):
 			Global.player.show_idea(load(idea_texture))
