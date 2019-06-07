@@ -1,5 +1,7 @@
 extends StaticBody2D
 
+var idea_texture = "res://GFX/Icons/Balao_Chave_azul.png"
+
 export(int, "None", "Banheiro") var type_door
 export(bool) var is_locked = false
 
@@ -54,3 +56,5 @@ func _input(event):
 		audio.stream = load(audio_destrancar)
 		audio.play()
 		is_locked = false
+	elif Input.is_action_just_pressed("interact") and not Global.game.has_bath_key and can_interact and is_locked and type_door == 1:
+		Global.player.show_idea(load(idea_texture))

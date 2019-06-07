@@ -13,9 +13,14 @@ onready var collision = $CollisionShape2D
 func _ready():
 	Global.player = self
 	
+	
 func _process(delta):
 	move()
 	move_and_slide(motion * speed)
+	
+func show_idea(texture):
+	$Idea.texture = texture
+	$AnimationPlayer.play("show_idea")
 	
 func move():
 	

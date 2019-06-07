@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://Scripts/Screens/Game.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=2]
@@ -21,12 +21,11 @@
 [ext_resource path="res://Scenes/Objects/Pegaveis/Desentupidor.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Scenes/Objects/Interact/Banheira.tscn" type="PackedScene" id=20]
 [ext_resource path="res://Scenes/Objects/Pegaveis/Ball.tscn" type="PackedScene" id=21]
-[ext_resource path="res://GFX/Sprite-0001.png" type="Texture" id=22]
-[ext_resource path="res://GFX/2.png" type="Texture" id=23]
-[ext_resource path="res://GFX/3.png" type="Texture" id=24]
-[ext_resource path="res://Scenes/Objects/Pegaveis/BathKey.tscn" type="PackedScene" id=25]
-[ext_resource path="res://SFX/pegar_item.ogg" type="AudioStream" id=26]
-[ext_resource path="res://Scenes/Objects/Interact/Escrivaninha.tscn" type="PackedScene" id=27]
+[ext_resource path="res://GFX/Itens/bola 1.png" type="Texture" id=22]
+[ext_resource path="res://GFX/Itens/bola 12.png" type="Texture" id=23]
+[ext_resource path="res://Scenes/Objects/Pegaveis/BathKey.tscn" type="PackedScene" id=24]
+[ext_resource path="res://SFX/pegar_item.ogg" type="AudioStream" id=25]
+[ext_resource path="res://Scenes/Objects/Interact/Escrivaninha.tscn" type="PackedScene" id=26]
 
 [sub_resource type="NavigationPolygon" id=1]
 vertices = PoolVector2Array( 426.599, 600.931, 2461.9, 593.756, 2476.51, 1022.28, 415.062, 1011.12 )
@@ -99,10 +98,10 @@ position = Vector2( 4335.79, -280.801 )
 position = Vector2( 72.894, 104.721 )
 
 [node name="Alicate" parent="." instance=ExtResource( 10 )]
-position = Vector2( 120.208, -3112.71 )
+position = Vector2( 232.448, -2840.74 )
 
 [node name="Ladder" parent="." instance=ExtResource( 11 )]
-position = Vector2( 4366.65, -3165.5 )
+position = Vector2( 4612.03, -2940.57 )
 
 [node name="Sofa" parent="." instance=ExtResource( 12 )]
 position = Vector2( 839.212, 433.774 )
@@ -172,28 +171,25 @@ position = Vector2( 52.9828, -115.989 )
 [node name="Ball" parent="Balls" instance=ExtResource( 21 )]
 position = Vector2( 4951.68, 713.188 )
 
-[node name="Sprite" parent="Balls/Ball" index="0"]
-texture = ExtResource( 22 )
-
 [node name="Ball2" parent="Balls" instance=ExtResource( 21 )]
 position = Vector2( 1468.32, -172.101 )
 
 [node name="Sprite" parent="Balls/Ball2" index="0"]
-texture = ExtResource( 23 )
+texture = ExtResource( 22 )
 
 [node name="Ball3" parent="Balls" instance=ExtResource( 21 )]
-position = Vector2( 5020, -2620 )
+position = Vector2( 4962.32, -2623.6 )
 
 [node name="Sprite" parent="Balls/Ball3" index="0"]
-texture = ExtResource( 24 )
+texture = ExtResource( 23 )
 
-[node name="BathKey" parent="." instance=ExtResource( 25 )]
-position = Vector2( 3321.81, -3172.73 )
+[node name="BathKey" parent="." instance=ExtResource( 24 )]
+position = Vector2( 3489.12, -3012.95 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 26 )
+stream = ExtResource( 25 )
 
-[node name="Escrivaninha" parent="." instance=ExtResource( 27 )]
+[node name="Escrivaninha" parent="." instance=ExtResource( 26 )]
 position = Vector2( 1577.93, -2900.97 )
 
 

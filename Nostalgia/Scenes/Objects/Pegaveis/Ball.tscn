@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scripts/Pegaveis/Ball.gd" type="Script" id=1]
-[ext_resource path="res://GFX/ball.png" type="Texture" id=2]
+[ext_resource path="res://GFX/Itens/bola 8.png" type="Texture" id=2]
 [ext_resource path="res://GFX/Font/RPGSystem.ttf" type="DynamicFontData" id=3]
 
 [sub_resource type="PhysicsMaterial" id=1]
@@ -28,6 +28,7 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.05, 0.05 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
