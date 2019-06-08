@@ -52,10 +52,10 @@ extents = Vector2( 91.9385, 90.6298 )
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 135.295, 71.3793 )
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 335.423, 42.4268 )
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 356.225, 65.8521 )
 
 [node name="Level1" type="Node2D"]
@@ -303,10 +303,10 @@ position = Vector2( 768.263, -2611.69 )
 script = null
 
 [node name="CollisionShape2D" parent="YSort/Banheira" index="1"]
-shape = SubResource( 7 )
+shape = SubResource( 6 )
 
 [node name="CollisionShape2D" parent="YSort/Banheira/Detect" index="0"]
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="Partitura" parent="YSort" instance=ExtResource( 30 )]
 position = Vector2( 1406.27, 744.474 )

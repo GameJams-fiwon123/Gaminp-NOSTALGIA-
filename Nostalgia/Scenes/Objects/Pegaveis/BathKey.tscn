@@ -4,7 +4,7 @@
 [ext_resource path="res://GFX/Itens/chave azul.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 7.93228, 17.5129 )
+extents = Vector2( 18.5076, 31.2573 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 39.9016, 42.0491 )
@@ -14,11 +14,11 @@ collision_layer = 2
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( 0.05, 0.05 )
+scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 1.74825, -2.0979 )
+position = Vector2( 0.889691, 0.907036 )
 shape = SubResource( 1 )
 
 [node name="Detect" type="Area2D" parent="."]

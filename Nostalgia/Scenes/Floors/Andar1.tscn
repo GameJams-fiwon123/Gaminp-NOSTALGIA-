@@ -251,6 +251,12 @@ position = Vector2( 3837.41, -85.9308 )
 [node name="Sprite" parent="YSort/Regions/Doors/Door2" index="0"]
 visible = false
 
+[node name="Position2D" parent="YSort/Regions/Doors/Door2/EnterDetect" index="1"]
+position = Vector2( 127.133, 132.767 )
+
+[node name="Position2D" parent="YSort/Regions/Doors/Door2/ExitDetect" index="1"]
+position = Vector2( 140.52, -109.841 )
+
 [node name="Door3" parent="YSort/Regions/Doors" instance=ExtResource( 12 )]
 position = Vector2( 3047.09, 374.282 )
 rotation = 0.0

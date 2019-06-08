@@ -1,17 +1,13 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/Pegaveis/Desentupidor.gd" type="Script" id=1]
 [ext_resource path="res://GFX/Itens/desentupidor.png" type="Texture" id=2]
-[ext_resource path="res://GFX/Font/RPGSystem.ttf" type="DynamicFontData" id=3]
 
-[sub_resource type="DynamicFont" id=1]
-font_data = ExtResource( 3 )
-
-[sub_resource type="CapsuleShape2D" id=2]
+[sub_resource type="CapsuleShape2D" id=1]
 radius = 3.67021
 height = 46.1589
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 12.1819, 31.5062 )
 
 [node name="Desentupidor" type="StaticBody2D"]
@@ -24,23 +20,14 @@ position = Vector2( -0.291244, 2.09536 )
 scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 2 )
 
-[node name="Label" type="Label" parent="."]
-margin_left = -33.5462
-margin_top = -31.0427
-margin_right = 42.4538
-margin_bottom = -16.0427
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Desentupidor"
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Detect" type="Area2D" parent="."]
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detect"]
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 [connection signal="body_entered" from="Detect" to="." method="_on_Detect_body_entered"]
 [connection signal="body_exited" from="Detect" to="." method="_on_Detect_body_exited"]
