@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/foto_background.png-119519f4675c7a4dbdb7fbba0aaa6435.stex"
+path="res://.import/Seta.png-13934696e637cf0ebbde093e4d3e0491.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GFX/Photo/foto_background.png"
-dest_files=[ "res://.import/foto_background.png-119519f4675c7a4dbdb7fbba0aaa6435.stex" ]
+source_file="res://GFX/Seta.png"
+dest_files=[ "res://.import/Seta.png-13934696e637cf0ebbde093e4d3e0491.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

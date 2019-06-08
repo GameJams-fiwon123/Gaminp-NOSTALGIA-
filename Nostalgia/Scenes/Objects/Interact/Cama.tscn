@@ -26,7 +26,7 @@ shape = SubResource( 1 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2( -114.375, -243.813 )
-polygon = PoolVector2Array( 30.1961, 60.3884, -15.463, 266.983, 210.216, 267.148, 169.73, 57.638 )
+polygon = PoolVector2Array( 30.1961, 60.3884, -15.463, 266.983, 235.886, 268.353, 179.284, 57.3812 )
 
 [node name="SpawnPhoto" type="Position2D" parent="."]
 position = Vector2( -93.3994, -85.6705 )

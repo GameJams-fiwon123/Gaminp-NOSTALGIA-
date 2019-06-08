@@ -24,13 +24,13 @@ extents = Vector2( 640, 360 )
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 1280, 360 )
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 170.614, 127.303 )
 
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 170.614, 120.749 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 10, 720 )
 
 [node name="Terreo" type="YSort"]
@@ -58,6 +58,10 @@ teleport_comodo = 1
 
 [node name="Sprite" parent="YSort/Regions/SalaDeEstar/Stairs/Stair" index="0"]
 visible = false
+
+[node name="Arrow" parent="YSort/Regions/SalaDeEstar/Stairs/Stair" index="3"]
+position = Vector2( 92.5809, 3.06674 )
+rotation = -1.5708
 
 [node name="DetectArea" type="Area2D" parent="YSort/Regions/SalaDeEstar"]
 position = Vector2( 1280, 727.482 )
@@ -198,6 +202,10 @@ teleport_comodo = 3
 [node name="Sprite" parent="YSort/Regions/SalaDeJantar/Stairs/Stair" index="0"]
 visible = false
 
+[node name="Arrow" parent="YSort/Regions/SalaDeJantar/Stairs/Stair" index="3"]
+position = Vector2( -77.9384, 0.188477 )
+rotation = 1.5708
+
 [node name="DetectArea" type="Area2D" parent="YSort/Regions/SalaDeJantar"]
 position = Vector2( 3840, 725 )
 collision_layer = 4
@@ -278,10 +286,13 @@ position = Vector2( -315.335, 388.211 )
 
 [node name="CollisionShape2D" parent="YSort/Regions/Doors/Door5/ExitDetect" index="0"]
 position = Vector2( -316.123, 241.678 )
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="Position2D" parent="YSort/Regions/Doors/Door5/ExitDetect" index="1"]
 position = Vector2( -1.64835, -101.615 )
+
+[node name="ExitArrow" parent="YSort/Regions/Doors/Door5/ExitDetect" index="2"]
+position = Vector2( -313.709, 483.781 )
 
 [node name="Door6" parent="YSort/Regions/Doors" instance=ExtResource( 11 )]
 position = Vector2( 1778.61, 365.545 )
@@ -296,6 +307,9 @@ position = Vector2( -14.9637, 404.06 )
 [node name="CollisionShape2D" parent="YSort/Regions/Doors/Door6/ExitDetect" index="0"]
 position = Vector2( -17.6848, 234.696 )
 shape = SubResource( 5 )
+
+[node name="ExitArrow" parent="YSort/Regions/Doors/Door6/ExitDetect" index="2"]
+position = Vector2( -14.864, 482.449 )
 
 [node name="Walls" type="Node2D" parent="YSort/Regions"]
 z_index = 1
@@ -350,7 +364,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Regions/Walls/Vertical/Wall2"]
-shape = SubResource( 4 )
+shape = SubResource( 6 )
 
 [node name="Horizontal" type="Node2D" parent="YSort/Regions/Walls"]
 

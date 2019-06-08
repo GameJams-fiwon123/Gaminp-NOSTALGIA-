@@ -10,7 +10,6 @@ extents = Vector2( 21.5636, 55.9816 )
 extents = Vector2( 31.7521, 66.1702 )
 
 [node name="Vassoura" type="StaticBody2D"]
-z_index = 1
 collision_layer = 2
 script = ExtResource( 1 )
 

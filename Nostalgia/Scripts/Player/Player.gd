@@ -19,8 +19,11 @@ func _process(delta):
 	move_and_slide(motion * speed)
 	
 func show_idea(texture):
-	$Idea.texture = texture
+	$Node2D/Idea.texture = texture
 	$AnimationPlayer.play("show_idea")
+	
+func hide_idea():
+	$AnimationPlayer.play("hide_idea")
 	
 func move():
 	

@@ -28,6 +28,9 @@ var audio_pegar = "res://SFX/pegar_item.ogg"
 var audio_soltar = "res://SFX/soltar_item.ogg"
 
 onready var audio = $AudioStreamPlayer
+onready var objects = $YSort
+
+var current_comodo
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -51,7 +54,7 @@ func catch_photo():
 	if photos.size() == 5:
 		var new_dog = dog.instance()
 		new_dog.global_position = $Navigation2D/Destinations/Position2D.global_position
-		self.add_child(new_dog)
+		objects.add_child(new_dog)
 
 func drop_item():
 	audio.stream = load(audio_soltar)

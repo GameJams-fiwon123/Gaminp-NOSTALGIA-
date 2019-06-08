@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://GFX/Seta.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Arrow.gd" type="Script" id=2]
+
+[node name="Arrow" type="Sprite"]
+modulate = Color( 1, 0.501961, 0.501961, 1 )
+position = Vector2( -0.710598, 114.357 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="PositionStart" type="Position2D" parent="."]
+position = Vector2( -0.0950882, 12.5401 )
+
+[node name="PositionEnd" type="Position2D" parent="."]
+position = Vector2( -0.000854492, -226.1 )
+
+[node name="Tween" type="Tween" parent="."]
+
+[connection signal="tween_completed" from="Tween" to="." method="_on_Tween_tween_completed"]

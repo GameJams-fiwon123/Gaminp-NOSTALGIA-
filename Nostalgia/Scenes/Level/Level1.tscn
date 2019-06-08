@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://Scripts/Screens/Game.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Floors/Terreo.tscn" type="PackedScene" id=2]
@@ -20,17 +20,20 @@
 [ext_resource path="res://Scenes/Objects/Interact/BoxOpen.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Scenes/Objects/Interact/Privada.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Scripts/Interact/Banheira.gd" type="Script" id=20]
-[ext_resource path="res://Scenes/Objects/Pegaveis/Alicate.tscn" type="PackedScene" id=21]
-[ext_resource path="res://Scenes/Objects/Pegaveis/Key.tscn" type="PackedScene" id=22]
-[ext_resource path="res://Scenes/Objects/Pegaveis/Ladder.tscn" type="PackedScene" id=23]
-[ext_resource path="res://Scenes/Objects/Pegaveis/BathKey.tscn" type="PackedScene" id=24]
-[ext_resource path="res://Scenes/Objects/Interact/Passaro1.tscn" type="PackedScene" id=25]
-[ext_resource path="res://Scenes/Objects/Interact/Passaro2.tscn" type="PackedScene" id=26]
-[ext_resource path="res://Scenes/Objects/Interact/Passaro3.tscn" type="PackedScene" id=27]
-[ext_resource path="res://Scenes/Objects/Interact/Banheira.tscn" type="PackedScene" id=28]
-[ext_resource path="res://Scenes/Objects/Pegaveis/Partitura.tscn" type="PackedScene" id=29]
-[ext_resource path="res://Scenes/Objects/Pegaveis/Desentupidor.tscn" type="PackedScene" id=30]
-[ext_resource path="res://Scenes/Objects/Pegaveis/Ball.tscn" type="PackedScene" id=31]
+[ext_resource path="res://SFX/desentupindo.ogg" type="AudioStream" id=21]
+[ext_resource path="res://Scenes/Objects/Pegaveis/Alicate.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Scenes/Objects/Pegaveis/Key.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Scenes/Objects/Pegaveis/Ladder.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Scenes/Objects/Pegaveis/BathKey.tscn" type="PackedScene" id=25]
+[ext_resource path="res://Scenes/Objects/Interact/Passaro1.tscn" type="PackedScene" id=26]
+[ext_resource path="res://Scenes/Objects/Interact/Passaro2.tscn" type="PackedScene" id=27]
+[ext_resource path="res://Scenes/Objects/Interact/Passaro3.tscn" type="PackedScene" id=28]
+[ext_resource path="res://Scenes/Objects/Interact/Banheira.tscn" type="PackedScene" id=29]
+[ext_resource path="res://Scenes/Objects/Pegaveis/Partitura.tscn" type="PackedScene" id=30]
+[ext_resource path="res://Scenes/Objects/Pegaveis/Desentupidor.tscn" type="PackedScene" id=31]
+[ext_resource path="res://Scenes/Objects/Pegaveis/Ball.tscn" type="PackedScene" id=32]
+[ext_resource path="res://GFX/Itens/bola 1.png" type="Texture" id=33]
+[ext_resource path="res://GFX/Itens/bola 12.png" type="Texture" id=34]
 
 [sub_resource type="NavigationPolygon" id=1]
 vertices = PoolVector2Array( 362.419, 793.632, 2468.62, 782.272, 2476.51, 1022.28, 360.147, 1039.01 )
@@ -43,11 +46,17 @@ extents = Vector2( 194.664, 157.779 )
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 234.005, 195.45 )
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 91.9385, 90.6298 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 135.295, 71.3793 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 335.423, 42.4268 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 356.225, 65.8521 )
 
 [node name="Level1" type="Node2D"]
 script = ExtResource( 1 )
@@ -127,10 +136,10 @@ position = Vector2( 266.838, 269.43 )
 position = Vector2( 2775.03, -54.0736 )
 
 [node name="CollisionShape2D" parent="Armario/Detect" index="0"]
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 
 [node name="SpawnVassoura" parent="Armario" index="3"]
-position = Vector2( 34.2949, 72.0193 )
+position = Vector2( -1.0303, 82.1978 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )
@@ -257,61 +266,76 @@ position = Vector2( 0.902466, 48.7347 )
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Privada2/Detect"]
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="YSort/Privada2"]
+stream = ExtResource( 21 )
 
 [node name="SpawnPosition" type="Position2D" parent="YSort/Privada2"]
 position = Vector2( 74.8915, -76.1192 )
 
-[node name="Alicate" parent="YSort" instance=ExtResource( 21 )]
+[node name="Alicate" parent="YSort" instance=ExtResource( 22 )]
 position = Vector2( 486.306, -2810.04 )
 z_index = 0
 
-[node name="Key" parent="YSort" instance=ExtResource( 22 )]
+[node name="Key" parent="YSort" instance=ExtResource( 23 )]
 position = Vector2( 2085.34, -2628.4 )
 z_index = 0
 
-[node name="Ladder" parent="YSort" instance=ExtResource( 23 )]
+[node name="Ladder" parent="YSort" instance=ExtResource( 24 )]
 position = Vector2( 4599.73, -2784.73 )
 z_index = 0
 
-[node name="BathKey" parent="YSort" instance=ExtResource( 24 )]
+[node name="BathKey" parent="YSort" instance=ExtResource( 25 )]
 position = Vector2( 3500.23, -2846.35 )
 
-[node name="Passaro1" parent="YSort" instance=ExtResource( 25 )]
+[node name="Passaro1" parent="YSort" instance=ExtResource( 26 )]
 position = Vector2( 4841.23, -2708.96 )
 
-[node name="Passaro2" parent="YSort" instance=ExtResource( 26 )]
+[node name="Passaro2" parent="YSort" instance=ExtResource( 27 )]
 position = Vector2( 4950.33, -2739.21 )
 
-[node name="Passaro3" parent="YSort" instance=ExtResource( 27 )]
+[node name="Passaro3" parent="YSort" instance=ExtResource( 28 )]
 position = Vector2( 4878.67, -2614.19 )
 
-[node name="Banheira" parent="YSort" instance=ExtResource( 28 )]
+[node name="Banheira" parent="YSort" instance=ExtResource( 29 )]
 position = Vector2( 768.263, -2611.69 )
 script = null
 
-[node name="Partitura" parent="YSort" instance=ExtResource( 29 )]
+[node name="CollisionShape2D" parent="YSort/Banheira" index="1"]
+shape = SubResource( 7 )
+
+[node name="CollisionShape2D" parent="YSort/Banheira/Detect" index="0"]
+shape = SubResource( 6 )
+
+[node name="Partitura" parent="YSort" instance=ExtResource( 30 )]
 position = Vector2( 1406.27, 744.474 )
 z_index = 0
 
-[node name="Desentupidor" parent="YSort" instance=ExtResource( 30 )]
+[node name="Desentupidor" parent="YSort" instance=ExtResource( 31 )]
 position = Vector2( 3157.99, 229.156 )
+z_index = 0
 
 [node name="Balls" type="YSort" parent="YSort"]
 
-[node name="Ball" parent="YSort/Balls" instance=ExtResource( 31 )]
+[node name="Ball" parent="YSort/Balls" instance=ExtResource( 32 )]
 editor/display_folded = true
 position = Vector2( 4999.17, 879.389 )
+z_index = 0
 
-[node name="Ball2" parent="YSort/Balls" instance=ExtResource( 31 )]
-editor/display_folded = true
+[node name="Ball2" parent="YSort/Balls" instance=ExtResource( 32 )]
 position = Vector2( 1461.29, 40.6262 )
+z_index = 0
 
-[node name="Ball3" parent="YSort/Balls" instance=ExtResource( 31 )]
+[node name="Sprite" parent="YSort/Balls/Ball2" index="0"]
+texture = ExtResource( 33 )
+
+[node name="Ball3" parent="YSort/Balls" instance=ExtResource( 32 )]
 position = Vector2( 4974.02, -2611.68 )
 z_index = 0
+
+[node name="Sprite" parent="YSort/Balls/Ball3" index="0"]
+texture = ExtResource( 34 )
 
 [connection signal="body_entered" from="YSort/Privada2/Detect" to="YSort/Privada2" method="_on_Detect_body_entered"]
 [connection signal="body_exited" from="YSort/Privada2/Detect" to="YSort/Privada2" method="_on_Detect_body_exited"]
@@ -333,3 +357,9 @@ z_index = 0
 [editable path="YSort/BoxOpen7"]
 
 [editable path="YSort/Privada2"]
+
+[editable path="YSort/Banheira"]
+
+[editable path="YSort/Balls/Ball2"]
+
+[editable path="YSort/Balls/Ball3"]

@@ -25,10 +25,10 @@ extents = Vector2( 1280, 360 )
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 640, 360 )
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 170.614, 120.74 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 170.614, 117.728 )
 
 [node name="Andar1" type="YSort"]
@@ -69,6 +69,10 @@ visible = false
 [node name="CollisionShape2D" parent="YSort/Regions/SalaDeJogos/Stairs/Stair" index="1"]
 position = Vector2( 0.197845, -5.10266 )
 
+[node name="Arrow" parent="YSort/Regions/SalaDeJogos/Stairs/Stair" index="3"]
+position = Vector2( 85.685, -2.73865 )
+rotation = -1.5708
+
 [node name="Wall" type="StaticBody2D" parent="YSort/Regions/SalaDeJogos"]
 position = Vector2( 1280, 720 )
 collision_layer = 2
@@ -94,6 +98,10 @@ teleport_comodo = 2
 
 [node name="Sprite" parent="YSort/Regions/SalaDeMusica/Stairs/Stair" index="0"]
 visible = false
+
+[node name="Arrow" parent="YSort/Regions/SalaDeMusica/Stairs/Stair" index="3"]
+position = Vector2( -81.0435, 2.3291 )
+rotation = 1.5708
 
 [node name="DetectArea" type="Area2D" parent="YSort/Regions/SalaDeMusica"]
 editor/display_folded = true
@@ -238,13 +246,13 @@ position = Vector2( 87.3115, 97.3843 )
 position = Vector2( 61.8549, -94.129 )
 
 [node name="Door2" parent="YSort/Regions/Doors" instance=ExtResource( 12 )]
-position = Vector2( 3830, -10 )
+position = Vector2( 3837.41, -85.9308 )
 
 [node name="Sprite" parent="YSort/Regions/Doors/Door2" index="0"]
 visible = false
 
 [node name="Door3" parent="YSort/Regions/Doors" instance=ExtResource( 12 )]
-position = Vector2( 3043.41, 350.955 )
+position = Vector2( 3047.09, 374.282 )
 rotation = 0.0
 
 [node name="Sprite" parent="YSort/Regions/Doors/Door3" index="0"]
@@ -254,9 +262,12 @@ visible = false
 position = Vector2( 310.166, 395.897 )
 
 [node name="CollisionShape2D" parent="YSort/Regions/Doors/Door3/ExitDetect" index="0"]
-position = Vector2( 312.475, 246.139 )
+position = Vector2( 306.643, 225.145 )
 z_index = 1
-shape = SubResource( 5 )
+shape = SubResource( 4 )
+
+[node name="ExitArrow" parent="YSort/Regions/Doors/Door3/ExitDetect" index="2"]
+position = Vector2( 307.849, 468.54 )
 
 [node name="Door4" parent="YSort/Regions/Doors" instance=ExtResource( 12 )]
 position = Vector2( 1750.07, 363.933 )
@@ -270,10 +281,13 @@ position = Vector2( 4.32377, 376.387 )
 
 [node name="CollisionShape2D" parent="YSort/Regions/Doors/Door4/ExitDetect" index="0"]
 position = Vector2( 14.7858, 231.111 )
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 
 [node name="Position2D" parent="YSort/Regions/Doors/Door4/ExitDetect" index="1"]
 position = Vector2( 8.26461, -109.594 )
+
+[node name="ExitArrow" parent="YSort/Regions/Doors/Door4/ExitDetect" index="2"]
+position = Vector2( 5.74292, 474.284 )
 
 [node name="Walls" type="Node2D" parent="YSort/Regions"]
 z_index = 1

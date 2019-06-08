@@ -18,24 +18,33 @@ onready var audio = $AudioStreamPlayer
 onready var position_enter = $EnterDetect/Position2D
 onready var position_exit = $ExitDetect/Position2D
 
+
 func _on_ExitDetect_body_entered(body):
 	is_near_exit = true
 	can_interact = true
+	if is_locked and type_door == 1:
+		Global.player.show_idea(load(idea_texture))
 
 
 func _on_EnterDetect_body_entered(body):
 	is_near_enter = true
 	can_interact = true
+	if is_locked and type_door == 1:
+		Global.player.show_idea(load(idea_texture))
 
 
 func _on_EnterDetect_body_exited(body):
 	is_near_enter = false
 	can_interact = false
+	if is_locked and type_door == 1:
+		Global.player.hide_idea()
 
 
 func _on_ExitDetect_body_exited(body):
 	is_near_exit = false
 	can_interact = false
+	if is_locked and type_door == 1:
+		Global.player.hide_idea()
 
 
 func _input(event):
@@ -56,5 +65,4 @@ func _input(event):
 		audio.stream = load(audio_destrancar)
 		audio.play()
 		is_locked = false
-	elif Input.is_action_just_pressed("interact") and not Global.game.has_bath_key and can_interact and is_locked and type_door == 1:
-		Global.player.show_idea(load(idea_texture))
+		Global.player.hide_idea()

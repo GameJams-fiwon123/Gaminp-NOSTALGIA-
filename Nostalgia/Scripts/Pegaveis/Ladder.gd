@@ -19,15 +19,18 @@ func _input(event):
 			is_cut = true
 			audio.play()
 			Global.game.drop_item()
+			Global.player.hide_idea()
 		elif is_cut:
 			Global.game.catch_item(self)
 			can_interact = false	
-		elif not Global.game.has_alicate and not is_cut:
-			Global.player.show_idea(load(idea_texture))
 
 func _on_Detect_body_entered(body):
 	can_interact = true
+	if not Global.game.has_alicate and not is_cut:
+		Global.player.show_idea(load(idea_texture))
 
 
 func _on_Detect_body_exited(body):
 	can_interact = false
+	if not Global.game.has_alicate and not is_cut:
+		Global.player.hide_idea()

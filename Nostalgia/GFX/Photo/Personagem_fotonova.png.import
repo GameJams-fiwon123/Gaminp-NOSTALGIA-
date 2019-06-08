@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/foto.png-b4977407074f3fbffe59acc70fc59cdb.stex"
+path="res://.import/Personagem_fotonova.png-ad242a263b8941e3e12cf2d535bb809e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GFX/Photo/foto.png"
-dest_files=[ "res://.import/foto.png-b4977407074f3fbffe59acc70fc59cdb.stex" ]
+source_file="res://GFX/Photo/Personagem_fotonova.png"
+dest_files=[ "res://.import/Personagem_fotonova.png-ad242a263b8941e3e12cf2d535bb809e.stex" ]
 
 [params]
 

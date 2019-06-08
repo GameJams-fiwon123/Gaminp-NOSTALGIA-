@@ -7,6 +7,8 @@ var maxX
 var minY
 var maxY
 
+onready var sprite = $Ground
+
 onready var areaSize = $DetectArea/CollisionShape2D.shape.extents
 
 func _ready():
@@ -17,6 +19,7 @@ func _ready():
 
 func _on_DetectArea_body_entered(body):
 	get_parent().body_entered(body, self)
+	Global.game.current_comodo = self
 	if index_type >= 1:
 		Global.audio.volume_db = -4000
 		$AudioStreamPlayer.volume_db = 0

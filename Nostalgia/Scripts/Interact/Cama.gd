@@ -19,14 +19,17 @@ func _input(event):
 			Global.player.speed = 0
 			Global.game.remove_item()
 			has_photo = false
-		elif(has_photo):
-			Global.player.show_idea(load(idea_texture))
+			Global.player.hide_idea()
 
 func _on_Detect_body_entered(body):
 	can_interact = true
+	if(has_photo):
+		Global.player.show_idea(load(idea_texture))
 
 func _on_Detect_body_exited(body):
 	can_interact = false
+	if(has_photo):
+		Global.player.hide_idea()
 
 
 func _on_AudioStreamPlayer_finished():

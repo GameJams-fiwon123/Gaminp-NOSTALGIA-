@@ -11,12 +11,15 @@ func _input(event):
 			Global.game.drop_item()
 			$Photo.global_position = $SpawnPhoto.global_position
 			has_photo = false
-		elif(has_photo):
-			Global.player.show_idea(load(idea_texture))
+			Global.player.hide_idea()
 
 func _on_Detect_body_entered(body):
 	can_interact = true
+	if(has_photo):
+		Global.player.show_idea(load(idea_texture))
 
 func _on_Detect_body_exited(body):
 	can_interact = false
+	if(has_photo):
+		Global.player.hide_idea()
 

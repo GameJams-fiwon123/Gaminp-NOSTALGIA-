@@ -16,14 +16,17 @@ func _input(event):
 			Global.player.speed = 0
 			Global.game.remove_item()
 			has_photo = false
-		elif(has_photo):
-			Global.player.show_idea(load(idea_texture))
+			Global.player.hide_idea()
 
 func _on_Detect_body_entered(body):
+	if(has_photo):
+		Global.player.show_idea(load(idea_texture))
 	can_interact = true
 
 
 func _on_Detect_body_exited(body):
+	if(has_photo):
+		Global.player.hide_idea()
 	can_interact = false
 
 
@@ -31,4 +34,4 @@ func _on_AudioStreamPlayer_finished():
 	Global.player.speed = Global.player.base_speed
 	var new_photo = photo.instance()
 	new_photo.global_position = $SpawnPosition.global_position
-	Global.game.add_child(new_photo)
+	Global.game.objects.add_child(new_photo)
