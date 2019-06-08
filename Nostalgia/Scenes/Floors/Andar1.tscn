@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Scripts/Navigation/Regions.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Navigation/Region.gd" type="Script" id=2]
@@ -25,6 +25,12 @@ extents = Vector2( 1280, 360 )
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 640, 360 )
 
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 170.614, 120.74 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 170.614, 117.728 )
+
 [node name="Andar1" type="YSort"]
 
 [node name="YSort" type="YSort" parent="."]
@@ -41,7 +47,6 @@ texture = ExtResource( 3 )
 centered = false
 
 [node name="DetectArea" type="Area2D" parent="YSort/Regions/SalaDeJogos"]
-editor/display_folded = true
 position = Vector2( 1280, 720 )
 collision_layer = 4
 __meta__ = {
@@ -55,8 +60,21 @@ shape = SubResource( 1 )
 z_index = 1
 
 [node name="Stair" parent="YSort/Regions/SalaDeJogos/Stairs" instance=ExtResource( 4 )]
-position = Vector2( 170, 950 )
+position = Vector2( 108.682, 1019.31 )
 index_comodo = 1
+
+[node name="Sprite" parent="YSort/Regions/SalaDeJogos/Stairs/Stair" index="0"]
+visible = false
+
+[node name="CollisionShape2D" parent="YSort/Regions/SalaDeJogos/Stairs/Stair" index="1"]
+position = Vector2( 0.197845, -5.10266 )
+
+[node name="Wall" type="StaticBody2D" parent="YSort/Regions/SalaDeJogos"]
+position = Vector2( 1280, 720 )
+collision_layer = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="YSort/Regions/SalaDeJogos/Wall"]
+polygon = PoolVector2Array( -1205.26, -17.6934, -1208.96, 215.485, -1273.73, 217.336, -1273.73, -363.76, 1267.17, -354.506, 1274.57, 346.879, 1193.15, 346.879, 1196.36, -25.5941, 1005.9, -27.0261, 1005.9, 33.1169, 852.634, 30.4228, 848.385, -31.322, -202.221, -26.9465, -202.221, 32.2734, -509.424, 28.5721, -509.424, -21.3946, -602.206, -19.8661, -603.638, 41.7088, -761.155, 41.7088, -762.587, -22.7301 )
 
 [node name="SalaDeMusica" type="YSort" parent="YSort/Regions"]
 script = ExtResource( 2 )
@@ -70,9 +88,12 @@ centered = false
 z_index = 1
 
 [node name="Stair" parent="YSort/Regions/SalaDeMusica/Stairs" instance=ExtResource( 4 )]
-position = Vector2( 4970, 930 )
+position = Vector2( 5011.53, 1004.46 )
 index_comodo = 3
 teleport_comodo = 2
+
+[node name="Sprite" parent="YSort/Regions/SalaDeMusica/Stairs/Stair" index="0"]
+visible = false
 
 [node name="DetectArea" type="Area2D" parent="YSort/Regions/SalaDeMusica"]
 editor/display_folded = true
@@ -84,6 +105,12 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Regions/SalaDeMusica/DetectArea"]
 shape = SubResource( 2 )
+
+[node name="Wall" type="StaticBody2D" parent="YSort/Regions/SalaDeMusica"]
+collision_layer = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="YSort/Regions/SalaDeMusica/Wall"]
+polygon = PoolVector2Array( 2570.75, 1063.11, 2640.91, 1068.84, 2648.07, 692.232, 2776.95, 696.528, 2778.38, 799.63, 3031.84, 802.494, 3027.55, 695.096, 3959.76, 689.368, 3969.79, 798.198, 4204.63, 801.062, 4200.33, 697.96, 4267.64, 695.096, 4273.36, 799.63, 4679.39, 786.562, 4672.88, 689.368, 5043.77, 696.528, 5048.06, 934.236, 5105.34, 934.236, 5108.7, 364.747, 2575.2, 370.298 )
 
 [node name="Sacada" type="YSort" parent="YSort/Regions"]
 script = ExtResource( 2 )
@@ -188,7 +215,7 @@ shape = SubResource( 3 )
 collision_layer = 2
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="YSort/Regions/Banheiro/Wall"]
-polygon = PoolVector2Array( 10.3716, -23.1662, 501.452, -27.2094, 501.943, -19.9979, 789.462, -20.4005, 788.382, -29.5867, 1252.4, -25.8869, 1249.68, -359.179, 9.01126, -357.819 )
+polygon = PoolVector2Array( 10.7899, 352.212, 123.422, 352.212, 126.728, -30.0602, 501.452, -27.2094, 501.943, -19.9979, 789.462, -20.4005, 788.382, -29.5867, 1252.4, -25.8869, 1249.68, -359.179, 9.01126, -357.819 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="YSort/Regions/Banheiro"]
 stream = ExtResource( 11 )
@@ -198,7 +225,11 @@ autoplay = true
 [node name="Doors" type="YSort" parent="YSort/Regions"]
 
 [node name="Door" parent="YSort/Regions/Doors" instance=ExtResource( 12 )]
+editor/display_folded = true
 position = Vector2( 1272.63, -129.474 )
+
+[node name="Sprite" parent="YSort/Regions/Doors/Door" index="0"]
+visible = false
 
 [node name="Position2D" parent="YSort/Regions/Doors/Door/EnterDetect" index="1"]
 position = Vector2( 87.3115, 97.3843 )
@@ -209,19 +240,40 @@ position = Vector2( 61.8549, -94.129 )
 [node name="Door2" parent="YSort/Regions/Doors" instance=ExtResource( 12 )]
 position = Vector2( 3830, -10 )
 
+[node name="Sprite" parent="YSort/Regions/Doors/Door2" index="0"]
+visible = false
+
 [node name="Door3" parent="YSort/Regions/Doors" instance=ExtResource( 12 )]
-position = Vector2( 3140, 370 )
+position = Vector2( 3043.41, 350.955 )
 rotation = 0.0
+
+[node name="Sprite" parent="YSort/Regions/Doors/Door3" index="0"]
+visible = false
+
+[node name="Position2D" parent="YSort/Regions/Doors/Door3/EnterDetect" index="1"]
+position = Vector2( 310.166, 395.897 )
+
+[node name="CollisionShape2D" parent="YSort/Regions/Doors/Door3/ExitDetect" index="0"]
+position = Vector2( 312.475, 246.139 )
+z_index = 1
+shape = SubResource( 5 )
 
 [node name="Door4" parent="YSort/Regions/Doors" instance=ExtResource( 12 )]
 position = Vector2( 1750.07, 363.933 )
 rotation = 0.0
 
+[node name="Sprite" parent="YSort/Regions/Doors/Door4" index="0"]
+visible = false
+
 [node name="Position2D" parent="YSort/Regions/Doors/Door4/EnterDetect" index="1"]
-position = Vector2( 1.4705, 93.8266 )
+position = Vector2( 4.32377, 376.387 )
+
+[node name="CollisionShape2D" parent="YSort/Regions/Doors/Door4/ExitDetect" index="0"]
+position = Vector2( 14.7858, 231.111 )
+shape = SubResource( 4 )
 
 [node name="Position2D" parent="YSort/Regions/Doors/Door4/ExitDetect" index="1"]
-position = Vector2( -0.735508, -80.5943 )
+position = Vector2( 8.26461, -109.594 )
 
 [node name="Walls" type="Node2D" parent="YSort/Regions"]
 z_index = 1
@@ -320,6 +372,14 @@ shape = ExtResource( 15 )
 [connection signal="body_entered" from="YSort/Regions/Banheiro/DetectArea" to="YSort/Regions/Banheiro" method="_on_DetectArea_body_entered"]
 [connection signal="body_exited" from="YSort/Regions/Banheiro/DetectArea" to="YSort/Regions/Banheiro" method="_on_DetectArea_body_exited"]
 
+[editable path="YSort/Regions/SalaDeJogos/Stairs/Stair"]
+
+[editable path="YSort/Regions/SalaDeMusica/Stairs/Stair"]
+
 [editable path="YSort/Regions/Doors/Door"]
+
+[editable path="YSort/Regions/Doors/Door2"]
+
+[editable path="YSort/Regions/Doors/Door3"]
 
 [editable path="YSort/Regions/Doors/Door4"]

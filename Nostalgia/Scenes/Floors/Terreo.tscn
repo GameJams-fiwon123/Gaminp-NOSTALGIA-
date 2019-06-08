@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Scripts/Navigation/Regions.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Navigation/Region.gd" type="Script" id=2]
@@ -24,6 +24,12 @@ extents = Vector2( 640, 360 )
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 1280, 360 )
 
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 170.614, 127.303 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 170.614, 120.749 )
+
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 10, 720 )
 
@@ -45,10 +51,13 @@ centered = false
 [node name="Stairs" type="Node2D" parent="YSort/Regions/SalaDeEstar"]
 
 [node name="Stair" parent="YSort/Regions/SalaDeEstar/Stairs" instance=ExtResource( 4 )]
-position = Vector2( 170.307, 924.944 )
+position = Vector2( 109.488, 1027.27 )
 z_index = 1
 index_type = 1
 teleport_comodo = 1
+
+[node name="Sprite" parent="YSort/Regions/SalaDeEstar/Stairs/Stair" index="0"]
+visible = false
 
 [node name="DetectArea" type="Area2D" parent="YSort/Regions/SalaDeEstar"]
 position = Vector2( 1280, 727.482 )
@@ -59,6 +68,12 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Regions/SalaDeEstar/DetectArea"]
 shape = SubResource( 1 )
+
+[node name="Wall" type="StaticBody2D" parent="YSort/Regions/SalaDeEstar"]
+collision_layer = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="YSort/Regions/SalaDeEstar/Wall"]
+polygon = PoolVector2Array( 7.21924, 376.807, 10.4133, 697.209, 214.939, 701.041, 228.212, 756.76, 366.495, 761.93, 398.804, 699.897, 486.684, 697.312, 478.93, 746.422, 538.378, 749.006, 534.501, 697.312, 689.584, 698.604, 690.876, 764.515, 795.557, 761.93, 798.142, 699.897, 931.255, 701.189, 932.519, 755.738, 1413.55, 755.752, 1415.89, 693.435, 2540.24, 702.481, 2545.41, 378.1 )
 
 [node name="Banheiro" type="YSort" parent="YSort/Regions"]
 script = ExtResource( 2 )
@@ -108,6 +123,12 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Regions/Garagem/DetectArea"]
 shape = SubResource( 2 )
 
+[node name="Wall" type="StaticBody2D" parent="YSort/Regions/Garagem"]
+collision_layer = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="YSort/Regions/Garagem/Wall"]
+polygon = PoolVector2Array( 2547.22, -341.962, 2539.6, -12.3494, 2305.9, -13.2994, 2297.22, 187.658, 1962.43, 189.244, 1962, -10.4494, 1287.08, -16.9038, 1287.08, -351.986 )
+
 [node name="Lavanderia" type="YSort" parent="YSort/Regions"]
 script = ExtResource( 2 )
 
@@ -125,6 +146,12 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Regions/Lavanderia/DetectArea"]
 shape = SubResource( 2 )
+
+[node name="Wall" type="StaticBody2D" parent="YSort/Regions/Lavanderia"]
+collision_layer = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="YSort/Regions/Lavanderia/Wall"]
+polygon = PoolVector2Array( 2572.42, -346.862, 2571.25, -12.1187, 2729.88, -10.9523, 2732.21, 12.3748, 2882.67, 11.2084, 2881.5, -19.1168, 2975.98, -20.2831, 3005.14, 29.8701, 3069.29, 32.2028, 3093.78, -21.4495, 3154.43, -23.7822, 3155.6, 42.7, 3316.55, 46.199, 3314.22, -16.7841, 3826.25, -14.4512, 3826.25, -351.527 )
 
 [node name="Cozinha" type="YSort" parent="YSort/Regions"]
 script = ExtResource( 2 )
@@ -144,6 +171,12 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Regions/Cozinha/DetectArea"]
 shape = SubResource( 2 )
 
+[node name="Wall" type="StaticBody2D" parent="YSort/Regions/Cozinha"]
+collision_layer = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="YSort/Regions/Cozinha/Wall"]
+polygon = PoolVector2Array( 3852.14, -352.169, 3853.25, -17.5422, 4088.15, -18.6502, 4094.8, 74.4247, 4586.77, 72.2087, 4583.44, -28.6225, 4764.05, -27.5145, 4769.59, 73.3167, 4910.31, 72.2087, 4908.1, -27.5145, 5032.2, -21.9743, 5036.63, 359.19, 5111.98, 359.19, 5110.87, -353.277 )
+
 [node name="SalaDeJantar" type="YSort" parent="YSort/Regions"]
 script = ExtResource( 2 )
 
@@ -153,13 +186,17 @@ texture = ExtResource( 10 )
 centered = false
 
 [node name="Stairs" type="Node2D" parent="YSort/Regions/SalaDeJantar"]
+position = Vector2( 54.0205, 85.9418 )
 z_index = 1
 
 [node name="Stair" parent="YSort/Regions/SalaDeJantar/Stairs" instance=ExtResource( 4 )]
-position = Vector2( 4960, 928 )
+position = Vector2( 4956.32, 940.441 )
 index_type = 1
 index_comodo = 2
 teleport_comodo = 3
+
+[node name="Sprite" parent="YSort/Regions/SalaDeJantar/Stairs/Stair" index="0"]
+visible = false
 
 [node name="DetectArea" type="Area2D" parent="YSort/Regions/SalaDeJantar"]
 position = Vector2( 3840, 725 )
@@ -171,43 +208,94 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Regions/SalaDeJantar/DetectArea"]
 shape = SubResource( 3 )
 
+[node name="Wall" type="StaticBody2D" parent="YSort/Regions/SalaDeJantar"]
+collision_layer = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="YSort/Regions/SalaDeJantar/Wall"]
+polygon = PoolVector2Array( 2574.75, 376.265, 2579.41, 700.511, 2770.7, 701.677, 2768.36, 799.651, 3386.53, 803.15, 3383.03, 692.346, 3471.67, 694.679, 3474.01, 808.982, 3752.77, 808.982, 3757.43, 691.18, 5116.26, 683.428, 5112.92, 382.794 )
+
 [node name="Doors" type="YSort" parent="YSort/Regions"]
 
 [node name="Door" parent="YSort/Regions/Doors" instance=ExtResource( 11 )]
-position = Vector2( 2560, 688 )
+position = Vector2( 2560, 608 )
+
+[node name="Sprite" parent="YSort/Regions/Doors/Door" index="0"]
+visible = false
+
+[node name="Position2D" parent="YSort/Regions/Doors/Door/EnterDetect" index="1"]
+position = Vector2( 140.001, 100.307 )
+
+[node name="Position2D" parent="YSort/Regions/Doors/Door/ExitDetect" index="1"]
+position = Vector2( 156.007, -92.4862 )
 
 [node name="Door2" parent="YSort/Regions/Doors" instance=ExtResource( 11 )]
-position = Vector2( 2560, 0 )
+position = Vector2( 2558.77, -99.4469 )
+
+[node name="Sprite" parent="YSort/Regions/Doors/Door2" index="0"]
+visible = false
+
+[node name="Position2D" parent="YSort/Regions/Doors/Door2/EnterDetect" index="1"]
+position = Vector2( 144.401, 97.7383 )
+
+[node name="Position2D" parent="YSort/Regions/Doors/Door2/ExitDetect" index="1"]
+position = Vector2( 142.409, -116.671 )
 
 [node name="Door3" parent="YSort/Regions/Doors" instance=ExtResource( 11 )]
-position = Vector2( 3840, 0 )
+position = Vector2( 3841.05, -107.369 )
+
+[node name="Sprite" parent="YSort/Regions/Doors/Door3" index="0"]
+visible = false
+
+[node name="Position2D" parent="YSort/Regions/Doors/Door3/EnterDetect" index="1"]
+position = Vector2( 142.106, 97.1487 )
+
+[node name="Position2D" parent="YSort/Regions/Doors/Door3/ExitDetect" index="1"]
+position = Vector2( 158.112, -88.276 )
 
 [node name="DoorBanheiro" parent="YSort/Regions/Doors" instance=ExtResource( 11 )]
-position = Vector2( 1280, -16 )
+position = Vector2( 1273.2, -104.424 )
 type_door = 1
 is_locked = true
 
+[node name="Sprite" parent="YSort/Regions/Doors/DoorBanheiro" index="0"]
+visible = false
+
+[node name="Position2D" parent="YSort/Regions/Doors/DoorBanheiro/EnterDetect" index="1"]
+position = Vector2( 137.47, 112.939 )
+
+[node name="Position2D" parent="YSort/Regions/Doors/DoorBanheiro/ExitDetect" index="1"]
+position = Vector2( 137.393, -117.579 )
+
 [node name="Door5" parent="YSort/Regions/Doors" instance=ExtResource( 11 )]
-position = Vector2( 4608, 368 )
+position = Vector2( 4635.7, 364.676 )
 rotation = 0.0
+
+[node name="Sprite" parent="YSort/Regions/Doors/Door5" index="0"]
+visible = false
+
+[node name="Position2D" parent="YSort/Regions/Doors/Door5/EnterDetect" index="1"]
+position = Vector2( -315.335, 388.211 )
+
+[node name="CollisionShape2D" parent="YSort/Regions/Doors/Door5/ExitDetect" index="0"]
+position = Vector2( -316.123, 241.678 )
+shape = SubResource( 6 )
+
+[node name="Position2D" parent="YSort/Regions/Doors/Door5/ExitDetect" index="1"]
+position = Vector2( -1.64835, -101.615 )
 
 [node name="Door6" parent="YSort/Regions/Doors" instance=ExtResource( 11 )]
-position = Vector2( 1840, 368 )
+position = Vector2( 1778.61, 365.545 )
 rotation = 0.0
 
-[node name="Door7" parent="YSort/Regions/Doors" instance=ExtResource( 11 )]
-position = Vector2( 2896, 1080 )
-rotation = 0.0
-is_locked = true
+[node name="Sprite" parent="YSort/Regions/Doors/Door6" index="0"]
+visible = false
 
-[node name="Door8" parent="YSort/Regions/Doors" instance=ExtResource( 11 )]
-position = Vector2( 2960, 368 )
-rotation = 0.0
+[node name="Position2D" parent="YSort/Regions/Doors/Door6/EnterDetect" index="1"]
+position = Vector2( -14.9637, 404.06 )
 
-[node name="Door9" parent="YSort/Regions/Doors" instance=ExtResource( 11 )]
-position = Vector2( 736, 1080 )
-rotation = 0.0
-is_locked = true
+[node name="CollisionShape2D" parent="YSort/Regions/Doors/Door6/ExitDetect" index="0"]
+position = Vector2( -17.6848, 234.696 )
+shape = SubResource( 5 )
 
 [node name="Walls" type="Node2D" parent="YSort/Regions"]
 z_index = 1
@@ -304,3 +392,19 @@ shape = ExtResource( 14 )
 [connection signal="body_entered" from="YSort/Regions/Lavanderia/DetectArea" to="YSort/Regions/Lavanderia" method="_on_DetectArea_body_entered"]
 [connection signal="body_entered" from="YSort/Regions/Cozinha/DetectArea" to="YSort/Regions/Cozinha" method="_on_DetectArea_body_entered"]
 [connection signal="body_entered" from="YSort/Regions/SalaDeJantar/DetectArea" to="YSort/Regions/SalaDeJantar" method="_on_DetectArea_body_entered"]
+
+[editable path="YSort/Regions/SalaDeEstar/Stairs/Stair"]
+
+[editable path="YSort/Regions/SalaDeJantar/Stairs/Stair"]
+
+[editable path="YSort/Regions/Doors/Door"]
+
+[editable path="YSort/Regions/Doors/Door2"]
+
+[editable path="YSort/Regions/Doors/Door3"]
+
+[editable path="YSort/Regions/Doors/DoorBanheiro"]
+
+[editable path="YSort/Regions/Doors/Door5"]
+
+[editable path="YSort/Regions/Doors/Door6"]

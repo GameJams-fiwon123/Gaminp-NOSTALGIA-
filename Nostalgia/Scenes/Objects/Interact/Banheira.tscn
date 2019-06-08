@@ -5,7 +5,7 @@
 [ext_resource path="res://SFX/desentupindo.ogg" type="AudioStream" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 343.101, 41.082 )
+extents = Vector2( 8.01599, 24.1784 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 356.225, 65.8521 )

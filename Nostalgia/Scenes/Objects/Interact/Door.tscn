@@ -10,7 +10,7 @@ extents = Vector2( 128, 16 )
 extents = Vector2( 160, 16 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 160, 16 )
+extents = Vector2( 170.614, 15.882 )
 
 [node name="Door" type="StaticBody2D"]
 rotation = 1.5708
