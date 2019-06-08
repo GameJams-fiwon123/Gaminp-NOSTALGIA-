@@ -26,11 +26,11 @@ func _input(event):
 
 func _on_Detect_body_entered(body):
 	can_interact = true
-	if not Global.game.has_alicate and not is_cut:
+	if not is_cut:
 		Global.player.show_idea(load(idea_texture))
 
 
 func _on_Detect_body_exited(body):
 	can_interact = false
-	if not Global.game.has_alicate and not is_cut:
+	if not is_cut:
 		Global.player.hide_idea()
