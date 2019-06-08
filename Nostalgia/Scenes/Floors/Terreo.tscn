@@ -1,15 +1,19 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Scripts/Navigation/Regions.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Navigation/Region.gd" type="Script" id=2]
-[ext_resource path="res://GFX/Piso.png" type="Texture" id=3]
+[ext_resource path="res://GFX/Comodos/duplo_saladeestar2.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/Objects/Interact/Stair.tscn" type="PackedScene" id=4]
-[ext_resource path="res://GFX/Comodos/Banheiro_1.png" type="Texture" id=5]
+[ext_resource path="res://GFX/Comodos/Banheiro_2.png" type="Texture" id=5]
 [ext_resource path="res://SFX/Comodos/Banheiros.ogg" type="AudioStream" id=6]
-[ext_resource path="res://Scenes/Objects/Interact/Door.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Shapes/WallVertical.tres" type="Shape2D" id=8]
-[ext_resource path="res://Shapes/WallVertical-half.tres" type="Shape2D" id=9]
-[ext_resource path="res://Shapes/WallHorizontal.tres" type="Shape2D" id=10]
+[ext_resource path="res://GFX/Comodos/garagem.png" type="Texture" id=7]
+[ext_resource path="res://GFX/Comodos/lavanderia.png" type="Texture" id=8]
+[ext_resource path="res://GFX/Comodos/cozinha.png" type="Texture" id=9]
+[ext_resource path="res://GFX/Comodos/duplo_saladejantar.png" type="Texture" id=10]
+[ext_resource path="res://Scenes/Objects/Interact/Door.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Shapes/WallVertical.tres" type="Shape2D" id=12]
+[ext_resource path="res://Shapes/WallVertical-half.tres" type="Shape2D" id=13]
+[ext_resource path="res://Shapes/WallHorizontal.tres" type="Shape2D" id=14]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1280, 360 )
@@ -34,9 +38,7 @@ script = ExtResource( 1 )
 script = ExtResource( 2 )
 
 [node name="Ground" type="Sprite" parent="YSort/Regions/SalaDeEstar"]
-modulate = Color( 0.8, 0.643137, 0.788235, 1 )
 position = Vector2( 0, 364.16 )
-scale = Vector2( 40, 11.185 )
 texture = ExtResource( 3 )
 centered = false
 
@@ -89,14 +91,11 @@ collision_layer = 2
 polygon = PoolVector2Array( 11.6321, -26.1046, 8.81783, -350.892, 1260, -352, 1259.75, -17.7924, 789.983, -19.5894, 787.527, -9.84137, 504.369, -10.894, 503.316, -23.5256 )
 
 [node name="Garagem" type="YSort" parent="YSort/Regions"]
-editor/display_folded = true
 script = ExtResource( 2 )
 
 [node name="Ground" type="Sprite" parent="YSort/Regions/Garagem"]
-modulate = Color( 0.643137, 0.8, 0.654902, 1 )
 position = Vector2( 1280, -352 )
-scale = Vector2( 20, 11.185 )
-texture = ExtResource( 3 )
+texture = ExtResource( 7 )
 centered = false
 
 [node name="DetectArea" type="Area2D" parent="YSort/Regions/Garagem"]
@@ -110,14 +109,11 @@ __meta__ = {
 shape = SubResource( 2 )
 
 [node name="Lavanderia" type="YSort" parent="YSort/Regions"]
-editor/display_folded = true
 script = ExtResource( 2 )
 
 [node name="Ground" type="Sprite" parent="YSort/Regions/Lavanderia"]
-modulate = Color( 0.647059, 0.780392, 0.776471, 1 )
 position = Vector2( 2560, -352 )
-scale = Vector2( 20, 11.375 )
-texture = ExtResource( 3 )
+texture = ExtResource( 8 )
 centered = false
 
 [node name="DetectArea" type="Area2D" parent="YSort/Regions/Lavanderia"]
@@ -131,14 +127,11 @@ __meta__ = {
 shape = SubResource( 2 )
 
 [node name="Cozinha" type="YSort" parent="YSort/Regions"]
-editor/display_folded = true
 script = ExtResource( 2 )
 
 [node name="Ground" type="Sprite" parent="YSort/Regions/Cozinha"]
-modulate = Color( 0.643137, 0.666667, 0.8, 1 )
 position = Vector2( 3840, -352 )
-scale = Vector2( 20, 11.375 )
-texture = ExtResource( 3 )
+texture = ExtResource( 9 )
 centered = false
 
 [node name="DetectArea" type="Area2D" parent="YSort/Regions/Cozinha"]
@@ -155,10 +148,8 @@ shape = SubResource( 2 )
 script = ExtResource( 2 )
 
 [node name="Ground" type="Sprite" parent="YSort/Regions/SalaDeJantar"]
-modulate = Color( 0.823529, 0.819608, 0.752941, 1 )
 position = Vector2( 2560, 364.16 )
-scale = Vector2( 40, 11.185 )
-texture = ExtResource( 3 )
+texture = ExtResource( 10 )
 centered = false
 
 [node name="Stairs" type="Node2D" parent="YSort/Regions/SalaDeJantar"]
@@ -182,38 +173,38 @@ shape = SubResource( 3 )
 
 [node name="Doors" type="YSort" parent="YSort/Regions"]
 
-[node name="Door" parent="YSort/Regions/Doors" instance=ExtResource( 7 )]
+[node name="Door" parent="YSort/Regions/Doors" instance=ExtResource( 11 )]
 position = Vector2( 2560, 688 )
 
-[node name="Door2" parent="YSort/Regions/Doors" instance=ExtResource( 7 )]
+[node name="Door2" parent="YSort/Regions/Doors" instance=ExtResource( 11 )]
 position = Vector2( 2560, 0 )
 
-[node name="Door3" parent="YSort/Regions/Doors" instance=ExtResource( 7 )]
+[node name="Door3" parent="YSort/Regions/Doors" instance=ExtResource( 11 )]
 position = Vector2( 3840, 0 )
 
-[node name="DoorBanheiro" parent="YSort/Regions/Doors" instance=ExtResource( 7 )]
+[node name="DoorBanheiro" parent="YSort/Regions/Doors" instance=ExtResource( 11 )]
 position = Vector2( 1280, -16 )
 type_door = 1
 is_locked = true
 
-[node name="Door5" parent="YSort/Regions/Doors" instance=ExtResource( 7 )]
+[node name="Door5" parent="YSort/Regions/Doors" instance=ExtResource( 11 )]
 position = Vector2( 4608, 368 )
 rotation = 0.0
 
-[node name="Door6" parent="YSort/Regions/Doors" instance=ExtResource( 7 )]
+[node name="Door6" parent="YSort/Regions/Doors" instance=ExtResource( 11 )]
 position = Vector2( 1840, 368 )
 rotation = 0.0
 
-[node name="Door7" parent="YSort/Regions/Doors" instance=ExtResource( 7 )]
+[node name="Door7" parent="YSort/Regions/Doors" instance=ExtResource( 11 )]
 position = Vector2( 2896, 1080 )
 rotation = 0.0
 is_locked = true
 
-[node name="Door8" parent="YSort/Regions/Doors" instance=ExtResource( 7 )]
+[node name="Door8" parent="YSort/Regions/Doors" instance=ExtResource( 11 )]
 position = Vector2( 2960, 368 )
 rotation = 0.0
 
-[node name="Door9" parent="YSort/Regions/Doors" instance=ExtResource( 7 )]
+[node name="Door9" parent="YSort/Regions/Doors" instance=ExtResource( 11 )]
 position = Vector2( 736, 1080 )
 rotation = 0.0
 is_locked = true
@@ -231,7 +222,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Regions/Walls/Vertical/Wall"]
-shape = ExtResource( 8 )
+shape = ExtResource( 12 )
 
 [node name="Wall3" type="StaticBody2D" parent="YSort/Regions/Walls/Vertical"]
 position = Vector2( 5120, 360 )
@@ -241,7 +232,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Regions/Walls/Vertical/Wall3"]
-shape = ExtResource( 8 )
+shape = ExtResource( 12 )
 
 [node name="Wall4" type="StaticBody2D" parent="YSort/Regions/Walls/Vertical"]
 position = Vector2( 1280, 0 )
@@ -251,7 +242,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Regions/Walls/Vertical/Wall4"]
-shape = ExtResource( 9 )
+shape = ExtResource( 13 )
 
 [node name="Wall5" type="StaticBody2D" parent="YSort/Regions/Walls/Vertical"]
 position = Vector2( 3840, 0 )
@@ -261,7 +252,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Regions/Walls/Vertical/Wall5"]
-shape = ExtResource( 9 )
+shape = ExtResource( 13 )
 
 [node name="Wall2" type="StaticBody2D" parent="YSort/Regions/Walls/Vertical"]
 position = Vector2( 2560, 376 )
@@ -284,7 +275,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Regions/Walls/Horizontal/Wall6"]
-shape = ExtResource( 10 )
+shape = ExtResource( 14 )
 
 [node name="Wall7" type="StaticBody2D" parent="YSort/Regions/Walls/Horizontal"]
 position = Vector2( 2560, 1080 )
@@ -294,7 +285,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Regions/Walls/Horizontal/Wall7"]
-shape = ExtResource( 10 )
+shape = ExtResource( 14 )
 
 [node name="Wall8" type="StaticBody2D" parent="YSort/Regions/Walls/Horizontal"]
 position = Vector2( 2560, -360 )
@@ -304,7 +295,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Regions/Walls/Horizontal/Wall8"]
-shape = ExtResource( 10 )
+shape = ExtResource( 14 )
 
 [connection signal="body_entered" from="YSort/Regions/SalaDeEstar/DetectArea" to="YSort/Regions/SalaDeEstar" method="_on_DetectArea_body_entered"]
 [connection signal="body_entered" from="YSort/Regions/Banheiro/DetectArea" to="YSort/Regions/Banheiro" method="_on_DetectArea_body_entered"]

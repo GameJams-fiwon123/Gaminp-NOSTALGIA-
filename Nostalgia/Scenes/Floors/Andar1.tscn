@@ -1,19 +1,20 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Scripts/Navigation/Regions.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Navigation/Region.gd" type="Script" id=2]
-[ext_resource path="res://GFX/Piso.png" type="Texture" id=3]
+[ext_resource path="res://GFX/Comodos/duplo_saladejogos.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/Objects/Interact/Stair.tscn" type="PackedScene" id=4]
-[ext_resource path="res://GFX/Comodos/Area_Aberta.png" type="Texture" id=5]
-[ext_resource path="res://SFX/Comodos/Area.ogg" type="AudioStream" id=6]
-[ext_resource path="res://GFX/Comodos/Escritorio_1.png" type="Texture" id=7]
-[ext_resource path="res://GFX/Comodos/Quarto_1.png" type="Texture" id=8]
-[ext_resource path="res://GFX/Comodos/Banheiro_1.png" type="Texture" id=9]
-[ext_resource path="res://SFX/Comodos/Banheiros.ogg" type="AudioStream" id=10]
-[ext_resource path="res://Scenes/Objects/Interact/Door.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Shapes/WallVertical.tres" type="Shape2D" id=12]
-[ext_resource path="res://Shapes/WallVertical-half.tres" type="Shape2D" id=13]
-[ext_resource path="res://Shapes/WallHorizontal.tres" type="Shape2D" id=14]
+[ext_resource path="res://GFX/Comodos/duplo_salademusica.png" type="Texture" id=5]
+[ext_resource path="res://GFX/Comodos/Area_Aberta.png" type="Texture" id=6]
+[ext_resource path="res://SFX/Comodos/Area.ogg" type="AudioStream" id=7]
+[ext_resource path="res://GFX/Comodos/Escritorio_1.png" type="Texture" id=8]
+[ext_resource path="res://GFX/Comodos/Quarto_1.png" type="Texture" id=9]
+[ext_resource path="res://GFX/Comodos/Banheiro_2.png" type="Texture" id=10]
+[ext_resource path="res://SFX/Comodos/Banheiros.ogg" type="AudioStream" id=11]
+[ext_resource path="res://Scenes/Objects/Interact/Door.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Shapes/WallVertical.tres" type="Shape2D" id=13]
+[ext_resource path="res://Shapes/WallVertical-half.tres" type="Shape2D" id=14]
+[ext_resource path="res://Shapes/WallHorizontal.tres" type="Shape2D" id=15]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1280, 360 )
@@ -35,9 +36,7 @@ script = ExtResource( 1 )
 script = ExtResource( 2 )
 
 [node name="Ground" type="Sprite" parent="YSort/Regions/SalaDeJogos"]
-modulate = Color( 0.909804, 0.898039, 0.631373, 1 )
 position = Vector2( 0, 360 )
-scale = Vector2( 40, 11.185 )
 texture = ExtResource( 3 )
 centered = false
 
@@ -63,10 +62,8 @@ index_comodo = 1
 script = ExtResource( 2 )
 
 [node name="Ground2" type="Sprite" parent="YSort/Regions/SalaDeMusica"]
-modulate = Color( 0.737255, 0.631373, 0.909804, 1 )
 position = Vector2( 2560, 360 )
-scale = Vector2( 40, 11.185 )
-texture = ExtResource( 3 )
+texture = ExtResource( 5 )
 centered = false
 
 [node name="Stairs" type="Node2D" parent="YSort/Regions/SalaDeMusica"]
@@ -94,7 +91,7 @@ index_type = 1
 
 [node name="Ground" type="Sprite" parent="YSort/Regions/Sacada"]
 position = Vector2( 3840, -360 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 centered = false
 
 [node name="DetectArea" type="Area2D" parent="YSort/Regions/Sacada"]
@@ -109,7 +106,7 @@ __meta__ = {
 shape = SubResource( 3 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="YSort/Regions/Sacada"]
-stream = ExtResource( 6 )
+stream = ExtResource( 7 )
 volume_db = -80.0
 autoplay = true
 
@@ -124,7 +121,7 @@ script = ExtResource( 2 )
 
 [node name="Ground" type="Sprite" parent="YSort/Regions/Escritorio"]
 position = Vector2( 2560, -360 )
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 centered = false
 
 [node name="DetectArea" type="Area2D" parent="YSort/Regions/Escritorio"]
@@ -148,7 +145,7 @@ script = ExtResource( 2 )
 
 [node name="Ground" type="Sprite" parent="YSort/Regions/Quarto"]
 position = Vector2( 1280, -360 )
-texture = ExtResource( 8 )
+texture = ExtResource( 9 )
 centered = false
 
 [node name="DetectArea" type="Area2D" parent="YSort/Regions/Quarto"]
@@ -174,7 +171,7 @@ index_type = 2
 
 [node name="Ground" type="Sprite" parent="YSort/Regions/Banheiro"]
 position = Vector2( 0, -360 )
-texture = ExtResource( 9 )
+texture = ExtResource( 10 )
 centered = false
 
 [node name="DetectArea" type="Area2D" parent="YSort/Regions/Banheiro"]
@@ -194,13 +191,13 @@ collision_layer = 2
 polygon = PoolVector2Array( 10.3716, -23.1662, 501.452, -27.2094, 501.943, -19.9979, 789.462, -20.4005, 788.382, -29.5867, 1252.4, -25.8869, 1249.68, -359.179, 9.01126, -357.819 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="YSort/Regions/Banheiro"]
-stream = ExtResource( 10 )
+stream = ExtResource( 11 )
 volume_db = -80.0
 autoplay = true
 
 [node name="Doors" type="YSort" parent="YSort/Regions"]
 
-[node name="Door" parent="YSort/Regions/Doors" instance=ExtResource( 11 )]
+[node name="Door" parent="YSort/Regions/Doors" instance=ExtResource( 12 )]
 position = Vector2( 1272.63, -129.474 )
 
 [node name="Position2D" parent="YSort/Regions/Doors/Door/EnterDetect" index="1"]
@@ -209,14 +206,14 @@ position = Vector2( 87.3115, 97.3843 )
 [node name="Position2D" parent="YSort/Regions/Doors/Door/ExitDetect" index="1"]
 position = Vector2( 61.8549, -94.129 )
 
-[node name="Door2" parent="YSort/Regions/Doors" instance=ExtResource( 11 )]
+[node name="Door2" parent="YSort/Regions/Doors" instance=ExtResource( 12 )]
 position = Vector2( 3830, -10 )
 
-[node name="Door3" parent="YSort/Regions/Doors" instance=ExtResource( 11 )]
+[node name="Door3" parent="YSort/Regions/Doors" instance=ExtResource( 12 )]
 position = Vector2( 3140, 370 )
 rotation = 0.0
 
-[node name="Door4" parent="YSort/Regions/Doors" instance=ExtResource( 11 )]
+[node name="Door4" parent="YSort/Regions/Doors" instance=ExtResource( 12 )]
 position = Vector2( 1750.07, 363.933 )
 rotation = 0.0
 
@@ -239,7 +236,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Regions/Walls/Vertical/Wall"]
-shape = ExtResource( 12 )
+shape = ExtResource( 13 )
 
 [node name="Wall2" type="StaticBody2D" parent="YSort/Regions/Walls/Vertical"]
 position = Vector2( 2560, 360 )
@@ -249,7 +246,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Regions/Walls/Vertical/Wall2"]
-shape = ExtResource( 12 )
+shape = ExtResource( 13 )
 
 [node name="Wall3" type="StaticBody2D" parent="YSort/Regions/Walls/Vertical"]
 position = Vector2( 7680, 10 )
@@ -260,7 +257,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Regions/Walls/Vertical/Wall3"]
 position = Vector2( -3850, -10 )
-shape = ExtResource( 13 )
+shape = ExtResource( 14 )
 
 [node name="Wall4" type="StaticBody2D" parent="YSort/Regions/Walls/Vertical"]
 position = Vector2( 1270, -10 )
@@ -270,7 +267,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Regions/Walls/Vertical/Wall4"]
-shape = ExtResource( 13 )
+shape = ExtResource( 14 )
 
 [node name="Wall5" type="StaticBody2D" parent="YSort/Regions/Walls/Vertical"]
 position = Vector2( 5120, 360 )
@@ -280,7 +277,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Regions/Walls/Vertical/Wall5"]
-shape = ExtResource( 12 )
+shape = ExtResource( 13 )
 
 [node name="Horizontal" type="Node2D" parent="YSort/Regions/Walls"]
 
@@ -292,7 +289,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Regions/Walls/Horizontal/StaticBody2D"]
-shape = ExtResource( 14 )
+shape = ExtResource( 15 )
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="YSort/Regions/Walls/Horizontal"]
 position = Vector2( 2560, 1080 )
@@ -302,7 +299,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Regions/Walls/Horizontal/StaticBody2D2"]
-shape = ExtResource( 14 )
+shape = ExtResource( 15 )
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="YSort/Regions/Walls/Horizontal"]
 position = Vector2( 2570, -370 )
@@ -312,7 +309,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Regions/Walls/Horizontal/StaticBody2D3"]
-shape = ExtResource( 14 )
+shape = ExtResource( 15 )
 
 [connection signal="body_entered" from="YSort/Regions/SalaDeJogos/DetectArea" to="YSort/Regions/SalaDeJogos" method="_on_DetectArea_body_entered"]
 [connection signal="body_entered" from="YSort/Regions/SalaDeMusica/DetectArea" to="YSort/Regions/SalaDeMusica" method="_on_DetectArea_body_entered"]
