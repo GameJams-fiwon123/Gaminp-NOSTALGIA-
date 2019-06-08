@@ -339,6 +339,7 @@ texture = ExtResource( 34 )
 
 [connection signal="body_entered" from="YSort/Privada2/Detect" to="YSort/Privada2" method="_on_Detect_body_entered"]
 [connection signal="body_exited" from="YSort/Privada2/Detect" to="YSort/Privada2" method="_on_Detect_body_exited"]
+[connection signal="finished" from="YSort/Privada2/AudioStreamPlayer" to="YSort/Privada2" method="_on_AudioStreamPlayer_finished"]
 
 [editable path="Gaveta"]
 

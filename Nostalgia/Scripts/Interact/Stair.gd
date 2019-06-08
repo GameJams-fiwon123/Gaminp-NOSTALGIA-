@@ -11,7 +11,6 @@ var audio_type = ["res://SFX/Escada_descendo.ogg", "res://SFX/Escada_Subindo.ogg
 
 func _ready():
 	Global.stairs_positions[index_comodo] = global_position
-	print(audio)
 
 func _input(event):
 	if Input.is_action_just_pressed("interact") and is_enter and Global.hud.can_change_comodo():
