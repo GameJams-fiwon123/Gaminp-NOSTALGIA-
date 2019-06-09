@@ -11,5 +11,5 @@ dest_files=[ "res://.import/janela_Batendo.ogg-a470f7f54428644ebf76757971548cc7.
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

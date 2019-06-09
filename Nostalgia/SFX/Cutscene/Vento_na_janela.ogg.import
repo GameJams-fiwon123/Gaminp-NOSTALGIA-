@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Vento_na_janela.ogg-7289dc93bddb5fc4df55a412a29fc544
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
