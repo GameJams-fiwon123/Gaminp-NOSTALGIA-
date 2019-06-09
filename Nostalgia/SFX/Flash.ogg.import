@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Flash.ogg-ea1c1421e1fe384e2542bd0fd4e6bb86.oggstr" ]
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
