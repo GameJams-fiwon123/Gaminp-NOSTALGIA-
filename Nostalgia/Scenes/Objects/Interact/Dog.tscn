@@ -32,6 +32,7 @@ wait_time = 5.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
+volume_db = 5.0
 
 [node name="SpawnPhoto" type="Position2D" parent="."]
 position = Vector2( -42.9155, -32.1866 )

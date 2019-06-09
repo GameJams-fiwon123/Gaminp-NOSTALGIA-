@@ -22,7 +22,6 @@ func _on_ButtonCredits_pressed():
 	
 func _on_ButtonExit_pressed():
 	if not audio_button_exit.is_playing():
-		$AnimationPlayer.play("change_scene")
 		audio_button_exit.play()
 
 
