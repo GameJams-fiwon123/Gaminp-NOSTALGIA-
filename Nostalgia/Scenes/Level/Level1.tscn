@@ -150,7 +150,6 @@ position = Vector2( -1.0303, 82.1978 )
 stream = ExtResource( 11 )
 
 [node name="Escrivaninha" parent="." instance=ExtResource( 12 )]
-editor/display_folded = true
 position = Vector2( 1553.72, -2939.7 )
 
 [node name="Sprite" parent="Escrivaninha" index="0"]

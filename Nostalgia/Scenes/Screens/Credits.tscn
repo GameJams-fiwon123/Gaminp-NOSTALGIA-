@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/Screens/Credits.gd" type="Script" id=1]
 [ext_resource path="res://GFX/Font/RPGSystem.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://SFX/som_de_botao.ogg" type="AudioStream" id=3]
+[ext_resource path="res://Scenes/Logo/Logo.tscn" type="PackedScene" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 100
@@ -47,9 +48,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -133.5
-margin_top = -137.0
+margin_top = -219.5
 margin_right = 133.5
-margin_bottom = 137.0
+margin_bottom = 219.5
 custom_constants/separation = 30
 
 [node name="Title" type="Label" parent="ColorRect/VBoxContainer2"]
@@ -63,30 +64,72 @@ valign = 1
 [node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/VBoxContainer2"]
 margin_top = 124.0
 margin_right = 267.0
-margin_bottom = 274.0
-custom_constants/separation = 15
+margin_bottom = 436.0
+custom_constants/separation = 30
 
-[node name="Label" type="Label" parent="ColorRect/VBoxContainer2/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/VBoxContainer2/VBoxContainer"]
+margin_right = 267.0
+margin_bottom = 84.0
+
+[node name="Art" type="Label" parent="ColorRect/VBoxContainer2/VBoxContainer/VBoxContainer"]
+modulate = Color( 1, 0.647059, 0.647059, 1 )
 margin_right = 267.0
 margin_bottom = 40.0
+custom_fonts/font = SubResource( 2 )
+text = "Art"
+align = 1
+valign = 1
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer2/VBoxContainer/VBoxContainer"]
+margin_top = 44.0
+margin_right = 267.0
+margin_bottom = 84.0
 custom_fonts/font = SubResource( 2 )
 text = "Carolina Carvalho"
 align = 1
 valign = 1
 
-[node name="Label2" type="Label" parent="ColorRect/VBoxContainer2/VBoxContainer"]
-margin_top = 55.0
+[node name="VBoxContainer2" type="VBoxContainer" parent="ColorRect/VBoxContainer2/VBoxContainer"]
+margin_top = 114.0
 margin_right = 267.0
-margin_bottom = 95.0
+margin_bottom = 198.0
+
+[node name="Sounds" type="Label" parent="ColorRect/VBoxContainer2/VBoxContainer/VBoxContainer2"]
+margin_right = 267.0
+margin_bottom = 40.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 0.647059, 0.647059, 1 )
+text = "Sounds"
+align = 1
+valign = 1
+
+[node name="Label2" type="Label" parent="ColorRect/VBoxContainer2/VBoxContainer/VBoxContainer2"]
+margin_top = 44.0
+margin_right = 267.0
+margin_bottom = 84.0
 custom_fonts/font = SubResource( 2 )
 text = "Euler Moises"
 align = 1
 valign = 1
 
-[node name="Label3" type="Label" parent="ColorRect/VBoxContainer2/VBoxContainer"]
-margin_top = 110.0
+[node name="VBoxContainer3" type="VBoxContainer" parent="ColorRect/VBoxContainer2/VBoxContainer"]
+margin_top = 228.0
 margin_right = 267.0
-margin_bottom = 150.0
+margin_bottom = 312.0
+
+[node name="Programmer" type="Label" parent="ColorRect/VBoxContainer2/VBoxContainer/VBoxContainer3"]
+margin_right = 267.0
+margin_bottom = 40.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 0.647059, 0.647059, 1 )
+text = "Programmer"
+align = 1
+valign = 1
+
+[node name="Label3" type="Label" parent="ColorRect/VBoxContainer2/VBoxContainer/VBoxContainer3"]
+margin_top = 44.0
+margin_right = 267.0
+margin_bottom = 84.0
 custom_fonts/font = SubResource( 2 )
 text = "Felipe Inoue"
 align = 1
@@ -103,6 +146,8 @@ flat = true
 
 [node name="AudioButtonGoBack" type="AudioStreamPlayer" parent="ColorRect/ButtonGoBack"]
 stream = ExtResource( 3 )
+
+[node name="Logo" parent="ColorRect" instance=ExtResource( 4 )]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/change_scene = SubResource( 4 )

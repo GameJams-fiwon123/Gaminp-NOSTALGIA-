@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://GFX/Logo/Logo_Icon.png" type="Texture" id=1]
+[ext_resource path="res://GFX/Font/RPGSystem.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 2 )
+
+[node name="Logo" type="HBoxContainer"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -480.0
+margin_top = 20.0
+margin_right = -20.0
+margin_bottom = 50.0
+custom_constants/separation = 20
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 50.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 50, 50 )
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="."]
+margin_left = 70.0
+margin_top = 17.0
+margin_right = 456.0
+margin_bottom = 32.0
+custom_fonts/font = SubResource( 1 )
+text = "Copyright © 2019 Siricutico Studio - Todos os direitos reservados"
+
