@@ -1,5 +1,6 @@
 extends StaticBody2D
 
+var photo_texture = "res://GFX/Parts/Photo4.png"
 var photo = preload("res://Scenes/Objects/Pegaveis/Photo.tscn")
 
 var idea_texture = "res://GFX/Icons/Balao_bolas_de_sinuca.png"
@@ -19,6 +20,7 @@ func _input(event):
 				var new_photo = photo.instance()
 				new_photo.global_position = $SpawnPhoto.global_position
 				Global.game.objects.add_child(new_photo)
+				new_photo.sprite.texture = load(photo_texture)
 				Global.player.hide_idea()
 
 func _on_Detect_body_entered(body):

@@ -1,13 +1,11 @@
-extends Control
+extends Node2D
 
 onready var audio_button_skip = $ColorRect/ButtonSkip/AudioButtonSkip
 
-func _on_ButtonSkip_pressed():
-	if not audio_button_skip.is_playing():
-		$AnimationPlayer.play("change_scene")
-		Global.audio.volume_db = -4000
-		audio_button_skip.play()
+func _ready():
+	$AnimatedSprite.play("default")
+	Global.audio.volume_db = -4000
 
 
-func _on_AudioButtonSkip_finished():
+func _on_AnimatedSprite_animation_finished():
 	get_tree().change_scene(Global.LEVEL1)

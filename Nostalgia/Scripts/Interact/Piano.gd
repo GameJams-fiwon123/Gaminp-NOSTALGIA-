@@ -1,5 +1,6 @@
 extends StaticBody2D
 
+var photo_texture = "res://GFX/Parts/Photo5.png"
 var photo = preload("res://Scenes/Objects/Pegaveis/Photo.tscn")
 
 var idea_texture = "res://GFX/Icons/Balao_Partitura.png"
@@ -37,3 +38,4 @@ func _on_AudioStreamPlayer_finished():
 	var new_photo = photo.instance()
 	new_photo.global_position = $SpawnPhoto.global_position
 	Global.game.objects.add_child(new_photo)
+	new_photo.sprite.texture = load(photo_texture)

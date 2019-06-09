@@ -1,5 +1,6 @@
 extends KinematicBody2D
 
+var photo_texture = "res://GFX/Parts/Photo6.png"
 var photo = preload("res://Scenes/Objects/Pegaveis/Photo.tscn")
 
 var has_photo = true
@@ -79,7 +80,7 @@ func _input(event):
 			var new_photo = photo.instance()
 			new_photo.global_position = $SpawnPhoto.global_position
 			Global.game.add_child(new_photo)
-			
+			new_photo.sprite.texture = load(photo_texture)
 			has_photo = false
 
 func _on_Detect_body_entered(body):

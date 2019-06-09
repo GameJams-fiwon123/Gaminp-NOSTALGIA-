@@ -77,19 +77,19 @@ script = ExtResource( 5 )
 position = Vector2( 551.555, 847.453 )
 
 [node name="Position2D2" type="Position2D" parent="Navigation2D/Destinations"]
-position = Vector2( 2078.35, 906.439 )
+position = Vector2( 1714.25, 852.994 )
 
 [node name="Position2D3" type="Position2D" parent="Navigation2D/Destinations"]
-position = Vector2( 1351.43, 859.205 )
+position = Vector2( 1303, 964.426 )
 
 [node name="Position2D4" type="Position2D" parent="Navigation2D/Destinations"]
-position = Vector2( 2046.79, 849.782 )
+position = Vector2( 1958.27, 906.568 )
 
 [node name="Position2D5" type="Position2D" parent="Navigation2D/Destinations"]
 position = Vector2( 973.406, 908.831 )
 
 [node name="Position2D6" type="Position2D" parent="Navigation2D/Destinations"]
-position = Vector2( 1614.37, 884.914 )
+position = Vector2( 1682.85, 966.752 )
 
 [node name="Position2D7" type="Position2D" parent="Navigation2D/Destinations"]
 position = Vector2( 540.389, 958.468 )

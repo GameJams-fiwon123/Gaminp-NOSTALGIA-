@@ -1,8 +1,8 @@
 extends Control
 
-onready var audio_button_start = $ColorRect/VBoxContainer2/VBoxContainer/ButtonStart/AudioButtonStart
-onready var audio_button_credits = $ColorRect/VBoxContainer2/VBoxContainer/ButtonCredits/AudioButtonCredis
-onready var audio_button_exit = $ColorRect/VBoxContainer2/VBoxContainer/ButtonExit/AudioButtonExit
+onready var audio_button_start = $ColorRect/VBoxContainer/ButtonStart/AudioButtonStart
+onready var audio_button_credits = $ColorRect/VBoxContainer/ButtonCredits/AudioButtonCredis
+onready var audio_button_exit = $ColorRect/VBoxContainer/ButtonExit/AudioButtonExit
 
 func _ready():
 	if Global.audio.stream != load(Global.audio_main_menu):
