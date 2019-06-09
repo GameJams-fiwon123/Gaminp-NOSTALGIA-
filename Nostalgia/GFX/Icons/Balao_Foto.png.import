@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Photo3.png-37894987ef365ab5c81ccb9b276603fc.stex"
+path="res://.import/Balao_Foto.png-b9ca7e2d275f48a5c6aafa499c15184b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GFX/Parts/Photo3.png"
-dest_files=[ "res://.import/Photo3.png-37894987ef365ab5c81ccb9b276603fc.stex" ]
+source_file="res://GFX/Icons/Balao_Foto.png"
+dest_files=[ "res://.import/Balao_Foto.png-b9ca7e2d275f48a5c6aafa499c15184b.stex" ]
 
 [params]
 

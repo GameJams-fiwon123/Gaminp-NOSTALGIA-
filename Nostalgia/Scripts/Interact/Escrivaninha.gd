@@ -1,5 +1,7 @@
 extends StaticBody2D
 
+var idea_texture = "res://GFX/Icons/Balao_Foto.png"
+
 var can_interact = false
 onready var arrow = $Arrow
 
@@ -15,8 +17,10 @@ func _input(event):
 
 
 func _on_Detect_body_entered(body):
+	Global.player.show_idea(load(idea_texture))
 	can_interact = true
 
 
 func _on_Detect_body_exited(body):
+	Global.player.hide_idea()
 	can_interact = false
