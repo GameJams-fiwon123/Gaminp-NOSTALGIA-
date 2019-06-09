@@ -5,10 +5,6 @@ onready var audio_button_exit = $Control/ButtonExit/AudioButtonExit
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$AnimationPlayer.play("default")
-	if Global.audio.stream != load(Global.audio_final):
-		Global.audio.stream = load(Global.audio_final)
-		Global.audio.play()
-		Global.audio.volume_db = -10
 
 
 func _on_ButtonExit_pressed():
@@ -20,4 +16,9 @@ func _on_ButtonExit_pressed():
 
 func _on_AudioButtonExit_finished():
 	get_tree().change_scene(Global.MAIN_MENU)
+	
+func load_music():
+	Global.audio.stream = load(Global.audio_final)
+	Global.audio.play()
+	Global.audio.volume_db = -10
 
