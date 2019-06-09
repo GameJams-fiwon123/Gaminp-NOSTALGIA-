@@ -1,6 +1,10 @@
 extends StaticBody2D
 
 var can_interact = false
+onready var arrow = $Arrow
+
+func _ready():
+	Global.escrivaninha = self
 
 func _input(event):
 	if Input.is_action_just_pressed("interact") and can_interact:

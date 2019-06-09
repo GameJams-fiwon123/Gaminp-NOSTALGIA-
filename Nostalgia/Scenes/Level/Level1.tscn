@@ -67,6 +67,7 @@ script = ExtResource( 1 )
 position = Vector2( 0, -2880 )
 
 [node name="Navigation2D" type="Navigation2D" parent="."]
+editor/display_folded = true
 script = ExtResource( 4 )
 
 [node name="Destinations" type="NavigationPolygonInstance" parent="Navigation2D"]
@@ -97,12 +98,14 @@ position = Vector2( 540.389, 958.468 )
 [node name="HUD" parent="." instance=ExtResource( 6 )]
 
 [node name="Gaveta" parent="." instance=ExtResource( 7 )]
+editor/display_folded = true
 position = Vector2( 793.815, -2261.35 )
 
 [node name="SpawnPhoto" parent="Gaveta" index="3"]
 position = Vector2( 261.287, 179.493 )
 
 [node name="Geladeira" parent="." instance=ExtResource( 8 )]
+editor/display_folded = true
 position = Vector2( 4842.79, -6.8028 )
 
 [node name="Label" parent="Geladeira" index="0"]
@@ -118,6 +121,7 @@ position = Vector2( -4.71697, -204.753 )
 position = Vector2( 71.894, 131.721 )
 
 [node name="Piano" parent="." instance=ExtResource( 9 )]
+editor/display_folded = true
 position = Vector2( 4369.33, -2288.31 )
 
 [node name="Sprite" parent="Piano" index="0"]
@@ -133,6 +137,7 @@ shape = SubResource( 3 )
 position = Vector2( 266.838, 269.43 )
 
 [node name="Armario" parent="." instance=ExtResource( 10 )]
+editor/display_folded = true
 position = Vector2( 2775.03, -54.0736 )
 
 [node name="CollisionShape2D" parent="Armario/Detect" index="0"]
@@ -145,6 +150,7 @@ position = Vector2( -1.0303, 82.1978 )
 stream = ExtResource( 11 )
 
 [node name="Escrivaninha" parent="." instance=ExtResource( 12 )]
+editor/display_folded = true
 position = Vector2( 1553.72, -2939.7 )
 
 [node name="Sprite" parent="Escrivaninha" index="0"]
@@ -153,7 +159,11 @@ visible = false
 [node name="CollisionShape2D" parent="Escrivaninha/Detect" index="0"]
 position = Vector2( 3.5321, 20.0388 )
 
+[node name="Arrow" parent="Escrivaninha" index="3"]
+visible = false
+
 [node name="YSort" type="YSort" parent="."]
+editor/display_folded = true
 
 [node name="Cama" parent="YSort" instance=ExtResource( 13 )]
 position = Vector2( 2329.2, -2756.3 )

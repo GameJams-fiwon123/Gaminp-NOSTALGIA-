@@ -2,7 +2,6 @@ extends Node2D
 
 var dog = preload("res://Scenes/Objects/Interact/Dog.tscn")
 
-
 var photos = []
 var ref_object = null
 
@@ -55,6 +54,8 @@ func catch_photo():
 		var new_dog = dog.instance()
 		new_dog.global_position = $Navigation2D/Destinations/Position2D.global_position
 		objects.add_child(new_dog)
+	elif photos.size() == 6:
+		Global.escrivaninha.arrow.visible = true
 
 func drop_item():
 	audio.stream = load(audio_soltar)
