@@ -10,13 +10,7 @@ func _ready():
 	                Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	tween.start()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
-
 func _on_Tween_tween_completed(object, key):
-	
 	var position_aux = position1
 	position1 = position2
 	position2 = position_aux

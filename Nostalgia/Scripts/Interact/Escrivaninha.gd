@@ -9,6 +9,7 @@ func _ready():
 func _input(event):
 	if Input.is_action_just_pressed("interact") and can_interact:
 		if Global.game.photos.size() >= 6:
+			Global.player.speed = 0
 			Global.audio.volume_db = -4000
 			Global.hud.change_scene(Global.FINAL)
 

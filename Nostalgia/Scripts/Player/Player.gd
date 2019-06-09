@@ -23,6 +23,7 @@ func show_idea(texture):
 	$AnimationPlayer.play("show_idea")
 	
 func hide_idea():
+	$AnimationPlayer.stop(true)
 	$AnimationPlayer.play("hide_idea")
 	
 func move():

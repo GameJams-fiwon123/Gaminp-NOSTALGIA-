@@ -1,7 +1,5 @@
 extends Node2D
 
-onready var audio_button_skip = $ColorRect/ButtonSkip/AudioButtonSkip
-
 func _ready():
 	$AnimationPlayer.play("default")
 	Global.audio.volume_db = -4000

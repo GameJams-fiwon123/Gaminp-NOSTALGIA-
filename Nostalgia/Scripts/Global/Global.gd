@@ -1,13 +1,13 @@
 extends Node
 
-var player
-var game
-var hud
+var player = null
+var game = null
+var hud = null
 
 
 #IN GAME
 var stairs_positions = [Vector2(), Vector2(), Vector2(), Vector2()]
-var escrivaninha 
+var escrivaninha  = null
 
 #AUDIOS
 onready var audio = $AudioStreamPlayer
@@ -16,8 +16,8 @@ var audio_game = "res://SFX/Gameplay/Scrapbook-Moving_Day.ogg"
 var audio_final = "res://SFX/Screens/Scrapbook-Final.ogg"
 
 #Dog
-var navigation
-var destinations
+var navigation  = null
+var destinations  = null
 
 #Floors
 var andar1 = "res://Scenes/Floors/Andar1.tscn"

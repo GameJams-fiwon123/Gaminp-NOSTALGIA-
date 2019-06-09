@@ -39,7 +39,6 @@ font_data = ExtResource( 16 )
 [node name="Andar1" type="YSort"]
 
 [node name="YSort" type="YSort" parent="."]
-editor/display_folded = true
 
 [node name="Regions" type="YSort" parent="YSort"]
 script = ExtResource( 1 )
@@ -89,7 +88,7 @@ polygon = PoolVector2Array( -1205.26, -17.6934, -1208.96, 215.485, -1273.73, 217
 [node name="SalaDeMusica" type="YSort" parent="YSort/Regions"]
 script = ExtResource( 2 )
 
-[node name="Ground2" type="Sprite" parent="YSort/Regions/SalaDeMusica"]
+[node name="Ground" type="Sprite" parent="YSort/Regions/SalaDeMusica"]
 position = Vector2( 2560, 360 )
 texture = ExtResource( 5 )
 centered = false
