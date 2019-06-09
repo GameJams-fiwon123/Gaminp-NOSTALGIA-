@@ -5,6 +5,7 @@ onready var sprite = $Sprite
 
 func _input(event):
 	if Input.is_action_just_pressed("interact") and can_interact:
+		can_interact = false
 		Global.game.catch_photo()
 		queue_free()
 

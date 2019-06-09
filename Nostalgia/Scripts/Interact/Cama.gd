@@ -36,7 +36,6 @@ func _on_Detect_body_exited(body):
 func _on_AudioStreamPlayer_finished():
 	Global.player.speed = Global.player.base_speed
 	var new_photo = photo.instance()
-	print(new_photo)
 	new_photo.global_position = $SpawnPhoto.global_position
-	Global.game.add_child(new_photo)
+	Global.game.objects.add_child(new_photo)
 	new_photo.sprite.texture = load(photo_texture)

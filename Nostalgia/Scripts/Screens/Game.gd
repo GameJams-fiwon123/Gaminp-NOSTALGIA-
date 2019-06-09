@@ -44,6 +44,7 @@ func teleport(index):
 			
 	
 func catch_photo():
+	print("catch photo")
 	photos.append("photo")
 	Global.hud.change_progress(photos.size())	
 	

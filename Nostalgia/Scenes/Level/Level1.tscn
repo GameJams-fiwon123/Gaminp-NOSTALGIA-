@@ -281,7 +281,7 @@ shape = SubResource( 5 )
 stream = ExtResource( 21 )
 
 [node name="SpawnPosition" type="Position2D" parent="YSort/Privada2"]
-position = Vector2( 74.8915, -76.1192 )
+position = Vector2( 196.608, 124.356 )
 
 [node name="Alicate" parent="YSort" instance=ExtResource( 22 )]
 position = Vector2( 486.306, -2810.04 )

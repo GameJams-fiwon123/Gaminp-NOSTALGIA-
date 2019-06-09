@@ -29,7 +29,7 @@ position = Vector2( -114.375, -243.813 )
 polygon = PoolVector2Array( 30.1961, 60.3884, -15.463, 266.983, 235.886, 268.353, 179.284, 57.3812 )
 
 [node name="SpawnPhoto" type="Position2D" parent="."]
-position = Vector2( -93.3994, -85.6705 )
+position = Vector2( -42.2072, 87.2452 )
 
 [connection signal="body_entered" from="Detect" to="." method="_on_Detect_body_entered"]
 [connection signal="body_exited" from="Detect" to="." method="_on_Detect_body_exited"]

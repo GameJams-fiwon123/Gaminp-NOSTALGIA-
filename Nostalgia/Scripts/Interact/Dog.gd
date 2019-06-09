@@ -77,9 +77,10 @@ func _on_Timer_timeout():
 func _input(event):
 	if Input.is_action_just_pressed("interact") and can_interact:
 		if has_photo:
+			audio.play()
 			var new_photo = photo.instance()
 			new_photo.global_position = $SpawnPhoto.global_position
-			Global.game.add_child(new_photo)
+			Global.game.objects.add_child(new_photo)
 			new_photo.sprite.texture = load(photo_texture)
 			has_photo = false
 
