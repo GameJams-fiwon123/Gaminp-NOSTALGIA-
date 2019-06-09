@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://Scripts/Screens/Game.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Floors/Terreo.tscn" type="PackedScene" id=2]
@@ -34,6 +34,7 @@
 [ext_resource path="res://Scenes/Objects/Pegaveis/Ball.tscn" type="PackedScene" id=32]
 [ext_resource path="res://GFX/Itens/bola 1.png" type="Texture" id=33]
 [ext_resource path="res://GFX/Itens/bola 12.png" type="Texture" id=34]
+[ext_resource path="res://Scenes/Objects/Interact/Passadeira.tscn" type="PackedScene" id=35]
 
 [sub_resource type="NavigationPolygon" id=1]
 vertices = PoolVector2Array( 362.419, 793.632, 2468.62, 782.272, 2476.51, 1022.28, 360.147, 1039.01 )
@@ -162,7 +163,6 @@ position = Vector2( 3.5321, 20.0388 )
 visible = false
 
 [node name="YSort" type="YSort" parent="."]
-editor/display_folded = true
 
 [node name="Cama" parent="YSort" instance=ExtResource( 13 )]
 position = Vector2( 2329.2, -2756.3 )
@@ -345,6 +345,9 @@ z_index = 0
 
 [node name="Sprite" parent="YSort/Balls/Ball3" index="0"]
 texture = ExtResource( 34 )
+
+[node name="Passadeira" parent="YSort" instance=ExtResource( 35 )]
+position = Vector2( 3453.94, 136.675 )
 
 [connection signal="body_entered" from="YSort/Privada2/Detect" to="YSort/Privada2" method="_on_Detect_body_entered"]
 [connection signal="body_exited" from="YSort/Privada2/Detect" to="YSort/Privada2" method="_on_Detect_body_exited"]

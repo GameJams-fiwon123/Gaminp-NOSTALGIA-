@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Vento_na_janela.ogg-7289dc93bddb5fc4df55a412a29fc544.oggstr"
+
+[deps]
+
+source_file="res://SFX/Cutscene/Vento_na_janela.ogg"
+dest_files=[ "res://.import/Vento_na_janela.ogg-7289dc93bddb5fc4df55a412a29fc544.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

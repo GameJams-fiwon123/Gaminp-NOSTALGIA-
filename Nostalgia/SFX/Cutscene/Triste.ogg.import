@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Triste.ogg-6cd1447bc8a7384423eecf6c6d173302.oggstr"
+
+[deps]
+
+source_file="res://SFX/Cutscene/Triste.ogg"
+dest_files=[ "res://.import/Triste.ogg-6cd1447bc8a7384423eecf6c6d173302.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
